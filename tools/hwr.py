@@ -20,6 +20,7 @@ try:
         apply_review_record,
         apply_visual_record,
         build_adapter_packet,
+        build_intake_plan,
         build_run_plan,
         create_source_snapshot,
         doctor,
@@ -44,6 +45,7 @@ except ImportError:
         apply_review_record,
         apply_visual_record,
         build_adapter_packet,
+        build_intake_plan,
         build_run_plan,
         create_source_snapshot,
         doctor,
@@ -60,6 +62,7 @@ except ImportError:
 DEFAULT_REPOSITORY = Path(__file__).resolve().parents[1]
 EXIT_BY_CODE = {
     "INVALID_INPUT": 2,
+    "INVALID_LIMIT": 2,
     "INVALID_TASK": 2,
     "INVALID_JSON": 2,
     "INVALID_JSON_ROOT": 2,
@@ -281,6 +284,27 @@ def build_parser() -> argparse.ArgumentParser:
         help="Plan, validate, and advance a versioned editorial run record.",
     )
     run_commands = runs.add_subparsers(dest="runs_command", required=True)
+    runs_questions = run_commands.add_parser(
+        "questions",
+        help=(
+            "Build the next bounded question batch for an agent-led intake "
+            "without drafting."
+        ),
+    )
+    add_config_task_arguments(runs_questions, task_optional=True)
+    runs_questions.add_argument(
+        "--source-root",
+        help=(
+            "Allowed root for task snapshot_path values; "
+            "default is the task file directory."
+        ),
+    )
+    runs_questions.add_argument(
+        "--limit",
+        type=int,
+        default=5,
+        help="Maximum questions in the current batch; default and maximum 5.",
+    )
     runs_plan = run_commands.add_parser(
         "plan",
         help="Build a pre-draft run record with gates, media, and review plan.",
@@ -691,6 +715,22 @@ def dispatch(args: argparse.Namespace) -> tuple[object, list]:
         if args.out:
             return write_run_record(args.out, run, args.force), warnings
         return run, warnings
+
+    if args.command == "runs" and args.runs_command == "questions":
+        config = read_json(Path(args.config))
+        if args.task:
+            task = load_task_with_source_snapshots(
+                Path(args.task),
+                source_root=Path(args.source_root) if args.source_root else None,
+            )
+        else:
+            task = {"task_id": "interactive-intake"}
+        return build_intake_plan(
+            repository,
+            config,
+            task,
+            limit=args.limit,
+        ), warnings
 
     if args.command == "runs" and args.runs_command == "check":
         run = read_json(Path(args.file))

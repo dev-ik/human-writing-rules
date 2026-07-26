@@ -93,6 +93,14 @@ Use only verified facts from the supplied sources.
 
 The agent starts with `AGENTS.md`, resolves the smallest sufficient module set through `registry/objects.json`, and follows `core/writing-pipeline.md`. `Visuals: auto` means “include a visual only when it adds explanatory or editorial value,” not “always generate an image.”
 
+If the request is incomplete, the agent leads a bounded
+[intake interview](guides/agent-led-intake.md): it asks at most five material
+questions per round, waits for answers, and does not shift research,
+claim-ledger, registry, or review work to the user. A user may begin simply
+with “write an article about mysticism”; the agent gathers the audience,
+outcome, source boundary, platform, author position, constraints, and visual
+requirement before drafting.
+
 ## Expected output
 
 Return these sections separately:

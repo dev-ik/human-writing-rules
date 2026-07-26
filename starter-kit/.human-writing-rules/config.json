@@ -8,15 +8,15 @@
   "content_type": "article",
   "topic": "science",
   "audience": {
-    "description": "Curious readers without specialist training",
+    "description": "Любознательные читатели без специальной подготовки",
     "knowledge_level": "general",
     "needs": [
-      "Understand the main result",
-      "See the evidence boundary",
-      "Know what remains uncertain"
+      "Понять основной результат",
+      "Увидеть границы доказательств",
+      "Разобраться, что остаётся неизвестным"
     ]
   },
-  "intent": "Explain a research result without overstating what it proves",
+  "intent": "Объяснить результат исследования, не преувеличивая его доказательную силу",
   "platform": "blog",
   "skill": "news",
   "tone": "expert",

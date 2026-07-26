@@ -22,6 +22,7 @@ from tools.hwr_reference import (
     apply_review_record,
     apply_visual_record,
     build_adapter_packet,
+    build_intake_plan,
     build_run_plan,
     create_source_snapshot,
     doctor,
@@ -133,6 +134,137 @@ class ReferenceRunnerTests(unittest.TestCase):
         self.assertEqual("ready", run["gates"]["media"]["status"])
         self.assertEqual("planned", run["output_package"]["visual_assets"]["status"])
         self.assertEqual([], validate_run_record(self.repository, run))
+
+    def test_agent_led_intake_asks_a_bounded_first_round(self) -> None:
+        intake = build_intake_plan(
+            self.repository,
+            self.config,
+            {"task_id": "interactive-intake"},
+            limit=3,
+        )
+
+        self.assertEqual("questions-required", intake["status"])
+        self.assertEqual(5, intake["questions_total"])
+        self.assertEqual(2, intake["remaining_question_count"])
+        self.assertEqual(
+            [
+                "Q-SUBJECT",
+                "Q-AUDIENCE-INTENT",
+                "Q-CENTRAL-QUESTION",
+            ],
+            [question["id"] for question in intake["question_batch"]],
+        )
+        self.assertNotIn(
+            '{"description"',
+            intake["question_batch"][1]["prompt"],
+        )
+        self.assertIn(
+            "Любознательные читатели",
+            intake["question_batch"][1]["prompt"],
+        )
+        self.assertIn(
+            "EMPTY_CLAIM_LEDGER",
+            {action["code"] for action in intake["agent_actions"]},
+        )
+        self.assertNotIn(
+            "EMPTY_CLAIM_LEDGER",
+            {question["id"] for question in intake["question_batch"]},
+        )
+
+    def test_agent_led_intake_is_ready_after_explicit_answers(self) -> None:
+        task = copy.deepcopy(self.ready_task)
+        for field in (
+            "language",
+            "locale",
+            "content_type",
+            "topic",
+            "platform",
+            "skill",
+            "tone",
+            "audience",
+            "intent",
+            "author_perspective",
+            "risk_level",
+        ):
+            task[field] = copy.deepcopy(self.config[field])
+        task["visuals"] = copy.deepcopy(self.config["visuals"])
+
+        intake = build_intake_plan(
+            self.repository,
+            self.config,
+            task,
+        )
+
+        self.assertEqual("ready", intake["status"])
+        self.assertEqual([], intake["question_batch"])
+        self.assertEqual([], intake["agent_actions"])
+        self.assertEqual({}, intake["proposed_defaults"])
+
+    def test_agent_led_intake_rejects_unbounded_question_batch(self) -> None:
+        with self.assertRaises(HwrError) as raised:
+            build_intake_plan(
+                self.repository,
+                self.config,
+                {"task_id": "interactive-intake"},
+                limit=6,
+            )
+
+        self.assertEqual("INVALID_LIMIT", raised.exception.code)
+
+    def test_cli_emits_agent_led_intake_without_task_file(self) -> None:
+        result = subprocess.run(
+            [
+                "python3",
+                str(CLI_PATH),
+                "--json",
+                "runs",
+                "questions",
+                "--config",
+                str(CONFIG_PATH),
+                "--limit",
+                "2",
+            ],
+            cwd=ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+
+        self.assertEqual(0, result.returncode, result.stderr)
+        envelope = json.loads(result.stdout)
+        self.assertEqual("runs.questions", envelope["command"])
+        self.assertEqual(
+            ["Q-SUBJECT", "Q-AUDIENCE-INTENT"],
+            [
+                question["id"]
+                for question in envelope["data"]["question_batch"]
+            ],
+        )
+        self.assertEqual(3, envelope["data"]["remaining_question_count"])
+
+    def test_cli_rejects_more_than_five_intake_questions(self) -> None:
+        result = subprocess.run(
+            [
+                "python3",
+                str(CLI_PATH),
+                "--json",
+                "runs",
+                "questions",
+                "--config",
+                str(CONFIG_PATH),
+                "--limit",
+                "6",
+            ],
+            cwd=ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+
+        self.assertEqual(2, result.returncode)
+        envelope = json.loads(result.stdout)
+        self.assertFalse(envelope["ok"])
+        self.assertEqual("INVALID_LIMIT", envelope["error"]["code"])
 
     def test_source_snapshot_is_hashed_and_reaches_adapter_packet(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:

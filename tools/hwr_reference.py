@@ -1492,6 +1492,378 @@ def build_run_plan(repository: dict, config: dict, task: dict) -> dict:
     }
 
 
+def intake_question(
+    question_id: str,
+    field: str,
+    prompt: str,
+    why: str,
+    answer_format: str,
+    *,
+    options: Optional[list[str]] = None,
+) -> dict:
+    return {
+        "id": question_id,
+        "field": field,
+        "prompt": prompt,
+        "why": why,
+        "required": True,
+        "blocks_drafting": True,
+        "answer_format": answer_format,
+        "options": options or [],
+    }
+
+
+def render_intake_audience(value: object, language: str) -> str:
+    if isinstance(value, str):
+        return value
+    if isinstance(value, dict):
+        parts: list[str] = []
+        description = value.get("description")
+        if isinstance(description, str) and description:
+            parts.append(description)
+        knowledge_level = value.get("knowledge_level")
+        if isinstance(knowledge_level, str) and knowledge_level:
+            label = "уровень" if language == "ru" else "knowledge level"
+            parts.append(f"{label}: {knowledge_level}")
+        needs = value.get("needs")
+        if isinstance(needs, list) and needs:
+            rendered_needs = "; ".join(
+                str(item) for item in needs if isinstance(item, str) and item
+            )
+            if rendered_needs:
+                label = "задачи читателя" if language == "ru" else "reader needs"
+                parts.append(f"{label}: {rendered_needs}")
+        if parts:
+            return "; ".join(parts)
+    return json.dumps(value, ensure_ascii=False, separators=(",", ":"))
+
+
+def build_intake_plan(
+    repository: dict,
+    config: dict,
+    task: dict,
+    *,
+    limit: int = 5,
+) -> dict:
+    if (
+        not isinstance(limit, int)
+        or isinstance(limit, bool)
+        or limit < 1
+        or limit > 5
+    ):
+        raise HwrError("INVALID_LIMIT", "--limit must be between 1 and 5")
+
+    run = build_run_plan(repository, config, task)
+    resolution = run["resolution"]
+    inputs = resolution["inputs"]
+    origins = resolution["origins"]
+    language = "ru" if inputs.get("language") == "ru" else "en"
+    questions: list[dict] = []
+    agent_actions: list[dict] = []
+    consumed_blockers: set[tuple[str, str]] = set()
+    agent_action_overrides = {
+        ("MISSING_CONTEXT", "reader_promise"): (
+            "Derive a bounded reader promise after the subject, audience, and "
+            "intent are confirmed."
+        ),
+        ("SOURCE_FRESHNESS_UNRESOLVED", "assessments.source_freshness"): (
+            "Assess source freshness against the task cutoff after sources are "
+            "available."
+        ),
+        (
+            "PLATFORM_CONSTRAINTS_UNRESOLVED",
+            "assessments.platform_constraints",
+        ): "Verify current platform constraints or mark them not applicable.",
+        ("EMPTY_CLAIM_LEDGER", "claims"): (
+            "Build and classify the planned claim ledger from the resolved "
+            "brief and source set."
+        ),
+    }
+
+    def add_question(question: dict) -> None:
+        if question["id"] not in {item["id"] for item in questions}:
+            questions.append(question)
+
+    if not task.get("subject"):
+        add_question(
+            intake_question(
+                "Q-SUBJECT",
+                "subject",
+                (
+                    "О чём именно нужно написать: какой объект, событие, "
+                    "произведение, вопрос или тезис является предметом материала?"
+                    if language == "ru"
+                    else
+                    "What exactly should the piece cover: which object, event, "
+                    "work, question, or claim is its subject?"
+                ),
+                (
+                    "Без точного предмета нельзя определить тезис и нужные источники."
+                    if language == "ru"
+                    else
+                    "The thesis and required sources depend on the exact subject."
+                ),
+                "free-text",
+            )
+        )
+        consumed_blockers.add(("MISSING_CONTEXT", "subject"))
+
+    audience_from_config = origins.get("audience") == "config"
+    intent_from_config = origins.get("intent") == "config"
+    if audience_from_config or intent_from_config:
+        audience = render_intake_audience(inputs.get("audience"), language)
+        intent = str(inputs.get("intent") or "")
+        add_question(
+            intake_question(
+                "Q-AUDIENCE-INTENT",
+                "audience,intent",
+                (
+                    f"Сейчас предполагаются аудитория {audience} и цель "
+                    f"«{intent}». Подтвердите их или уточните, для кого пишем "
+                    "и что читатель должен понять, почувствовать или сделать."
+                    if language == "ru"
+                    else
+                    f"The current defaults assume audience {audience} and intent "
+                    f"“{intent}”. Confirm them or clarify who this is for and "
+                    "what the reader should understand, feel, or do."
+                ),
+                (
+                    "Аудитория и результат для читателя определяют глубину, "
+                    "структуру и язык материала."
+                    if language == "ru"
+                    else
+                    "Audience and reader outcome determine depth, structure, "
+                    "and language."
+                ),
+                "confirm-or-correct",
+                options=["confirm", "change", "agent-choice"],
+            )
+        )
+
+    if inputs.get("content_type") == "article" and not task.get(
+        "central_question"
+    ):
+        add_question(
+            intake_question(
+                "Q-CENTRAL-QUESTION",
+                "central_question",
+                (
+                    "На какой главный вопрос читателя должна ответить статья?"
+                    if language == "ru"
+                    else
+                    "What central reader question must the article answer?"
+                ),
+                (
+                    "Главный вопрос удерживает границы статьи и не даёт "
+                    "подменить материал общими рассуждениями."
+                    if language == "ru"
+                    else
+                    "The central question bounds the article and prevents "
+                    "generic filler."
+                ),
+                "free-text",
+            )
+        )
+        consumed_blockers.add(
+            ("MISSING_CENTRAL_QUESTION", "central_question")
+        )
+
+    confirmable_fields = (
+        "language",
+        "content_type",
+        "topic",
+        "platform",
+        "skill",
+        "tone",
+        "author_perspective",
+        "risk_level",
+        "visual_mode",
+    )
+    proposed_defaults = {
+        field: inputs.get(field)
+        for field in confirmable_fields
+        if origins.get(field) == "config" and inputs.get(field) is not None
+    }
+    if proposed_defaults:
+        rendered_defaults = ", ".join(
+            f"{field}={value}" for field, value in proposed_defaults.items()
+        )
+        add_question(
+            intake_question(
+                "Q-EDITORIAL-DEFAULTS",
+                ",".join(proposed_defaults),
+                (
+                    f"Подтвердите рабочие настройки: {rendered_defaults}. "
+                    "Можно перечислить изменения или ответить «выбери сам»."
+                    if language == "ru"
+                    else
+                    f"Confirm these working defaults: {rendered_defaults}. "
+                    "List changes or answer “use your judgment”."
+                ),
+                (
+                    "Эти значения взяты из конфигурации проекта, а не из "
+                    "текущего задания."
+                    if language == "ru"
+                    else
+                    "These values come from project configuration, not from "
+                    "the current task."
+                ),
+                "confirm-or-correct",
+                options=["confirm", "change", "agent-choice"],
+            )
+        )
+
+    blocker_keys = {
+        (item["code"], item["field"])
+        for item in run["blockers"]
+        if isinstance(item, dict)
+    }
+    if ("MISSING_REQUIRED_SOURCES", "sources") in blocker_keys:
+        add_question(
+            intake_question(
+                "Q-SOURCE-PLAN",
+                "sources",
+                (
+                    "Какие источники уже есть? Если их нет, можно ли агенту "
+                    "самостоятельно найти актуальные источники, или нужно "
+                    "сузить материал до предоставленных данных?"
+                    if language == "ru"
+                    else
+                    "Which sources are already available? If there are none, "
+                    "may the agent research current sources, or should the "
+                    "piece be limited to supplied material?"
+                ),
+                (
+                    "Конфигурация требует источники, а в задании их пока нет."
+                    if language == "ru"
+                    else
+                    "The configuration requires sources, but the task has none."
+                ),
+                "choice-and-free-text",
+                options=["provide-sources", "authorize-research", "narrow-scope"],
+            )
+        )
+        consumed_blockers.add(("MISSING_REQUIRED_SOURCES", "sources"))
+
+    for item in run["blockers"]:
+        key = (item["code"], item["field"])
+        if key in consumed_blockers:
+            continue
+        if item["code"] == "UNAUTHORIZED_PERSPECTIVE":
+            add_question(
+                intake_question(
+                    "Q-AUTHOR-PERSPECTIVE",
+                    item["field"],
+                    (
+                        "Есть ли подтверждённый личный опыт или экспертные "
+                        "материалы автора? Если нет, выбрать редакционную или "
+                        "нейтральную позицию?"
+                        if language == "ru"
+                        else
+                        "Is authorized first-person experience or expert "
+                        "material available? If not, should the piece use an "
+                        "editorial or neutral perspective?"
+                    ),
+                    item["message"],
+                    "choice-and-free-text",
+                    options=[
+                        "supply-author-material",
+                        "editorial",
+                        "neutral",
+                    ],
+                )
+            )
+            continue
+        if item["code"] in {
+            "VISUAL_MODE_CONFLICT",
+            "REQUIRED_VISUAL_OMITTED",
+            "VISUAL_GATE_BLOCKED",
+        }:
+            add_question(
+                intake_question(
+                    "Q-VISUAL-DECISION",
+                    item["field"],
+                    (
+                        "Иллюстрация обязательна, опциональна или не нужна? "
+                        "Если обязательна, какую задачу она должна решать?"
+                        if language == "ru"
+                        else
+                        "Is a visual required, optional, or unnecessary? If "
+                        "required, what job must it perform?"
+                    ),
+                    item["message"],
+                    "choice-and-free-text",
+                    options=["required", "auto", "none"],
+                )
+            )
+            continue
+        if item["code"] == "VISUAL_RIGHTS_UNRESOLVED":
+            add_question(
+                intake_question(
+                    "Q-VISUAL-RIGHTS",
+                    item["field"],
+                    (
+                        "Какие права, согласия, бренды, персонажи или реальные "
+                        "люди нужно учитывать для иллюстрации?"
+                        if language == "ru"
+                        else
+                        "Which rights, permissions, brands, characters, or real "
+                        "people must the visual account for?"
+                    ),
+                    item["message"],
+                    "free-text",
+                )
+            )
+            continue
+        agent_actions.append(
+            {
+                "code": item["code"],
+                "field": item["field"],
+                "action": agent_action_overrides.get(key, item["remediation"]),
+                "reason": item["message"],
+            }
+        )
+
+    question_batch = questions[:limit]
+    remaining = max(0, len(questions) - len(question_batch))
+    if questions:
+        status = "questions-required"
+    elif agent_actions:
+        status = "agent-action-required"
+    else:
+        status = "ready"
+
+    return {
+        "schema_version": "1.0",
+        "task_id": run["task_id"],
+        "spec_revision": run["spec_revision"],
+        "registry_revision": run["registry_revision"],
+        "status": status,
+        "question_batch": question_batch,
+        "questions_total": len(questions),
+        "remaining_question_count": remaining,
+        "agent_actions": agent_actions,
+        "proposed_defaults": proposed_defaults,
+        "instructions": [
+            (
+                "Ask only the current question batch and wait for the answers."
+            ),
+            (
+                "Do not repeat answered questions or ask the user to perform "
+                "research, claim classification, or registry work the agent can do."
+            ),
+            (
+                "Treat “use your judgment” as authority to choose only within "
+                "the stated scope and integrity constraints."
+            ),
+            (
+                "Update the task record after every answer, then regenerate "
+                "questions before drafting."
+            ),
+        ],
+    }
+
+
 def validate_run_record(repository: dict, run: dict) -> list[str]:
     errors: list[str] = []
     required = {
@@ -2749,6 +3121,7 @@ def doctor(repository: dict) -> dict:
             "module-resolution",
             "local-source-snapshots",
             "context-gate",
+            "agent-led-intake",
             "claim-ledger-check",
             "media-decision-check",
             "review-plan",

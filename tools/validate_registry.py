@@ -868,6 +868,7 @@ def main() -> None:
         "schemas/object.schema.json",
         "schemas/config.schema.json",
         "schemas/task-record.schema.json",
+        "schemas/intake-plan.schema.json",
         "schemas/source-snapshot.schema.json",
         "schemas/generated-registry-index.schema.json",
         "schemas/benchmark-case.schema.json",

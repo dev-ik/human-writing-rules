@@ -15,17 +15,61 @@ Runtime modules, examples, and configuration MUST NOT weaken RFC invariants. Exa
 ## Required workflow
 
 1. Read `core/writing-pipeline.md`.
-2. Identify content type, topic, language, audience, intent, platform, author perspective, skill, constraints, source requirements, risk level, and visual mode.
-3. Resolve only relevant modules through `registry/objects.json`.
-4. Separate verified facts, source claims, opinions, inferences, assumptions, and unknowns.
-5. Do not draft until the minimum context gate passes.
-6. Design the content around the reader's question, not a fixed template.
-7. Make an explicit media decision: `none`, `auto`, or `required`.
-8. Draft for meaning first.
-9. Generate a visual only after its purpose, factual basis, and constraints are clear.
-10. Run applicable reviewers.
-11. Revise concrete findings, not unaffected text.
-12. Return the final artifact separately from visual assets, source notes, and review output, and retain the normative audit record.
+2. When the user has not supplied a complete structured task, conduct the
+   agent-led intake below before drafting.
+3. Identify content type, topic, language, audience, intent, platform, author
+   perspective, skill, constraints, source requirements, risk level, and visual
+   mode.
+4. Resolve only relevant modules through `registry/objects.json`.
+5. Separate verified facts, source claims, opinions, inferences, assumptions,
+   and unknowns.
+6. Do not draft until the minimum context gate passes.
+7. Design the content around the reader's question, not a fixed template.
+8. Make an explicit media decision: `none`, `auto`, or `required`.
+9. Draft for meaning first.
+10. Generate a visual only after its purpose, factual basis, and constraints
+    are clear.
+11. Run applicable reviewers.
+12. Revise concrete findings, not unaffected text.
+13. Return the final artifact separately from visual assets, source notes, and
+    review output, and retain the normative audit record.
+
+## Agent-led intake
+
+When the request is conversational rather than a complete task record, the
+agent MUST lead the briefing:
+
+1. Extract everything the user already supplied.
+2. Ask only questions whose answers could materially change the subject,
+   audience, reader outcome, evidence boundary, format, platform, legitimate
+   author position, constraints, or visual requirement.
+3. Ask one short batch of at most five questions and wait for the answers.
+4. Do not repeat answered questions.
+5. Do not ask the user to build a claim ledger, classify evidence, resolve
+   modules, check freshness, or perform other work the agent can do.
+6. Treat “use your judgment” as authority to choose only low-risk editorial
+   defaults; it does not authorize invented facts, experience, sources, rights,
+   or consent.
+7. After each answer batch, update the resolved brief and ask the next smallest
+   necessary batch. Draft only when no material user question remains and the
+   context gate passes.
+
+Prefer this order:
+
+1. exact subject and desired reader outcome;
+2. audience, artifact type, and platform;
+3. supplied sources or permission to research;
+4. author perspective, sensitive constraints, deadline, and disclosures;
+5. whether a visual is required, optional, or unnecessary.
+
+Ask topic-specific follow-ups only when applicable. For example, science may
+need the study and evidence boundary; technology may need product version and
+environment; entertainment may need the exact work, edition, spoiler boundary,
+and review criteria.
+
+For machine-assisted intake, use `python3 tools/hwr.py --json runs questions`.
+The command emits a bounded question batch and separates user questions from
+agent-owned actions.
 
 ## Non-negotiable rules
 

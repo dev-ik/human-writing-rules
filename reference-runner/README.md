@@ -56,6 +56,7 @@ the CLI or when the script cannot infer its repository.
 | `objects get ID` | Read one object record by stable ID |
 | `sources snapshot` | Pin one local UTF-8 source by content, size, and SHA-256 |
 | `modules resolve` | Resolve config and task overrides into roots and dependency order |
+| `runs questions` | Build the next bounded agent-led intake question batch |
 | `runs plan` | Build a pre-draft run record with gates and output slots |
 | `runs check` | Validate a saved run record against current registries |
 | `adapters packet` | Export bounded inputs and the required output schema for one stage |
@@ -70,6 +71,43 @@ the CLI or when the script cannot infer its repository.
 
 Run `python3 tools/hwr.py --help` and each noun's `--help` for the complete
 argument reference.
+
+## Agent-led intake questions
+
+`runs questions` converts missing material inputs, unresolved user choices,
+and unconfirmed project defaults into a bounded question batch:
+
+```sh
+python3 tools/hwr.py --json runs questions \
+  --config starter-kit/.human-writing-rules/config.json \
+  --limit 5
+```
+
+The task file is optional. With no `--task`, the command starts an
+`interactive-intake` record. With a partial task, it preserves explicit task
+values and asks only about remaining material choices:
+
+```sh
+python3 tools/hwr.py --json runs questions \
+  --config starter-kit/.human-writing-rules/config.json \
+  --task path/to/partial-task.json \
+  --limit 3
+```
+
+The result separates:
+
+- `question_batch`: user decisions that currently block drafting;
+- `agent_actions`: research, claim classification, freshness checks, and other
+  work the agent should perform itself;
+- `proposed_defaults`: config-origin values that the current task has not
+  explicitly confirmed;
+- `remaining_question_count`: questions reserved for a later round.
+
+The CLI does not open an interactive prompt or mutate the task. A conversational
+agent or product UI asks the returned batch, records the answers in the task,
+and requests the next batch. See
+[`guides/agent-led-intake.md`](../guides/agent-led-intake.md) and
+[`schemas/intake-plan.schema.json`](../schemas/intake-plan.schema.json).
 
 Run `npm run check` to validate the registries, schemas, starter config, example
 tasks, generated run plans, RFC conformance data, and local documentation links

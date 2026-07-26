@@ -41,8 +41,14 @@ news reporting or a tutorial.
 
 ## Start a run
 
-Fill this brief with facts and source references. Do not replace unknown values
-with plausible guesses.
+For a conversational request, use the
+[agent-led intake](agent-led-intake.md) first. The agent extracts known facts,
+asks at most five material questions per round, and performs its own registry,
+research-planning, evidence-classification, and review work.
+
+The structured brief below remains useful for integrations and users who
+already know the answers. Fill it with facts and source references. Do not
+replace unknown values with plausible guesses.
 
 ```text
 Follow Human Writing Rules revision 1.0.0.

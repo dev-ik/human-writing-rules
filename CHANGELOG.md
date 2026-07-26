@@ -2,7 +2,11 @@
 
 ## Unreleased
 
-- No changes yet.
+- Added agent-led intake for conversational writing requests: bounded adaptive
+  question rounds, config-default confirmation, separation of user decisions
+  from agent-owned research and claim work, a machine-readable intake-plan
+  schema, the `runs questions` CLI command, starter-kit instructions, and
+  executable tests.
 
 ## 1.0.0 — 2026-07-26
 

@@ -42,7 +42,13 @@ tutorial, or open-source announcement. Add `rule.visual-integrity` and
 
 ## Start a run
 
-Fill this brief from known facts and source references:
+For a conversational request, use the
+[agent-led intake](agent-led-intake.md) first. The agent asks only questions
+that can change the post's goal, audience, evidence boundary, platform,
+legitimate perspective, constraints, or visual requirement.
+
+The structured brief below is intended for integrations and already-resolved
+tasks. Fill it from known facts and source references:
 
 ```text
 Follow Human Writing Rules revision 1.0.0.

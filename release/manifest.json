@@ -20,7 +20,7 @@
       "3.9",
       "3.12"
     ],
-    "npm_role": "Optional command aliases only; runtime and validators use the Python standard library.",
+    "npm_role": "Primary TypeScript CLI for discovery, resolution, intake, and planning; Python 3.9 remains a temporary compatibility backend for unported commands and release validators.",
     "network_default": "disabled",
     "provider_core": "vendor-neutral"
   },
@@ -151,6 +151,7 @@
     "Reviewed examples use the declared project review contract and are not independent external evaluations.",
     "The checked-in benchmark runner preserves execution evidence but the repository contains no public comparative model-quality result.",
     "The optional OpenAI adapter requires explicit live opt-in and credentials; release verification is offline.",
+    "The TypeScript migration is incomplete: source creation, lifecycle, adapter, workflow, benchmark, and release commands still require the Python compatibility backend.",
     "Release provenance is anchored by the v1.0.0 tag, specification revision, and generated registry source revision."
   ]
 }

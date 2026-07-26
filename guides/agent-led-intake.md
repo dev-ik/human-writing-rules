@@ -78,7 +78,7 @@ clearly and no material choice remains.
 The reference CLI can produce the next bounded question batch:
 
 ```sh
-python3 tools/hwr.py --json runs questions \
+npm run hwr -- --json runs questions \
   --config starter-kit/.human-writing-rules/config.json \
   --limit 5
 ```

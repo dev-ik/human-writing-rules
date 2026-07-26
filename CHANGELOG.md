@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Made the Node.js/TypeScript CLI the primary user entry point and ported
+  repository diagnostics, registry/object discovery, module resolution,
+  agent-led intake, source-snapshot loading, and run planning. Added complete
+  JSON parity tests against the stable Python implementation, Node 20 CI, an
+  installable `hwr` binary, and an explicit compatibility roadmap for the
+  remaining Python-backed commands.
 - Added agent-led intake for conversational writing requests: bounded adaptive
   question rounds, config-default confirmation, separation of user decisions
   from agent-owned research and claim work, a machine-readable intake-plan

@@ -74,6 +74,22 @@ Verify the complete release offline:
 npm run release:verify
 ```
 
+The primary user-facing CLI is written in TypeScript and runs on Node.js
+20.10 or newer:
+
+```sh
+npm install
+npm run hwr -- --json doctor
+npm run hwr -- --json runs questions \
+  --config starter-kit/.human-writing-rules/config.json
+```
+
+Registry access, object discovery, module resolution, intake questions, and
+run planning execute natively in TypeScript. Commands not yet ported keep
+working through a temporary Python 3.9+ compatibility backend. The migration
+status and removal criteria are documented in
+[TypeScript CLI migration](reference-runner/typescript-migration.md).
+
 ## Quick start
 
 Copy `starter-kit/.human-writing-rules/` into a target repository or add this repository as a pinned submodule. Then instruct an agent:
@@ -127,7 +143,9 @@ registry/      object indexes and dependencies
 examples/      end-to-end examples
 benchmarks/    reproducible evaluation cases
 starter-kit/   project integration package
-tools/         validation tooling
+src/           primary TypeScript CLI and reference runtime
+tools/         Python compatibility, validation, and release tooling
+test-ts/       cross-runtime CLI contract tests
 ```
 
 Canonical registry files are compiled into a deterministic

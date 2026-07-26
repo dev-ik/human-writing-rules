@@ -16,10 +16,18 @@ performed by a human, model, or tool adapter:
 - guarded design, draft, edit, visual, review, revision, and finalization transitions;
 - versioned run-record planning and validation.
 
-The core runner is offline, uses only the Python standard library, requires no
-authentication, and does not call a model or generate prose. An external
-adapter receives a bounded packet and returns JSON matching the declared stage
-schema. The optional OpenAI adapter is isolated behind that same boundary.
+The primary CLI is compiled from TypeScript, remains offline, requires no
+authentication, and does not call a model or generate prose. Its native
+commands have no third-party runtime dependencies. An external adapter receives
+a bounded packet and returns JSON matching the declared stage schema. The
+optional OpenAI adapter is isolated behind that same boundary.
+
+The migration is deliberately incremental. Discovery, resolution, intake, and
+planning run natively on Node.js 20.10+. Commands for source creation,
+lifecycle transitions, adapters, workflows, benchmarks, and release validation
+currently use the Python 3.9+ compatibility backend. The public JSON envelopes
+remain frozen and cross-runtime parity is tested. See
+[TypeScript CLI migration](typescript-migration.md).
 
 The repository-wide validator loads every example task through this runner,
 validates the resulting run record, requires both a `context-ready` and a
@@ -27,19 +35,21 @@ deliberately `blocked` example, and executes one lifecycle through `ready`.
 
 ## Quick start
 
-```text
-python3 tools/hwr.py --json doctor
+```sh
+npm install
 
-python3 tools/hwr.py --json modules resolve \
+npm run hwr -- --json doctor
+
+npm run hwr -- --json modules resolve \
   --config starter-kit/.human-writing-rules/config.json \
   --task examples/tasks/ru-science-article.json
 
-python3 tools/hwr.py --json runs plan \
+npm run hwr -- --json runs plan \
   --config starter-kit/.human-writing-rules/config.json \
   --task examples/tasks/ru-science-article.json \
   --out /tmp/hwr-science-run.json
 
-python3 tools/hwr.py --json runs check \
+npm run hwr -- --json runs check \
   --file /tmp/hwr-science-run.json
 ```
 
@@ -48,29 +58,26 @@ the CLI or when the script cannot infer its repository.
 
 ## Commands
 
-| Command | Purpose |
-| --- | --- |
-| `doctor` | Check repository availability, revisions, indexes, and capabilities |
-| `registry get NAME` | Read one raw registry document |
-| `objects list` | Discover registered objects with bounded filters |
-| `objects get ID` | Read one object record by stable ID |
-| `sources snapshot` | Pin one local UTF-8 source by content, size, and SHA-256 |
-| `modules resolve` | Resolve config and task overrides into roots and dependency order |
-| `runs questions` | Build the next bounded agent-led intake question batch |
-| `runs plan` | Build a pre-draft run record with gates and output slots |
-| `runs check` | Validate a saved run record against current registries |
-| `adapters packet` | Export bounded inputs and the required output schema for one stage |
-| `adapters run` | Invoke one trusted stdin/stdout adapter and apply its result |
-| `workflows run` | Execute and persist one complete adapter-driven editorial workflow |
-| `workflows resume` | Explicitly resume a stopped workflow for at most one revision cycle |
-| `runs apply-design` | Apply content design and enter `media-decided` |
-| `runs apply-artifact` | Apply a `draft`, `edit`, or `revision` artifact |
-| `runs apply-visual` | Apply visual assets produced for the current artifact revision |
-| `runs apply-review` | Apply a complete RFC-0005 review report |
-| `runs finalize` | Enter `ready` only when every completion invariant passes |
+| Command | Runtime now | Purpose |
+| --- | --- | --- |
+| `doctor` | TypeScript | Check repository availability, revisions, indexes, and capabilities |
+| `registry get NAME` | TypeScript | Read one raw registry document |
+| `objects list` | TypeScript | Discover registered objects with bounded filters |
+| `objects get ID` | TypeScript | Read one object record by stable ID |
+| `modules resolve` | TypeScript | Resolve config and task overrides into roots and dependency order |
+| `runs questions` | TypeScript | Build the next bounded agent-led intake question batch |
+| `runs plan` | TypeScript | Build a pre-draft run record with gates and output slots |
+| `sources snapshot` | Python compatibility | Pin one local UTF-8 source by content, size, and SHA-256 |
+| `runs check` | Python compatibility | Validate a saved run record against current registries |
+| `adapters packet` | Python compatibility | Export bounded inputs and the required output schema for one stage |
+| `adapters run` | Python compatibility | Invoke one trusted stdin/stdout adapter and apply its result |
+| `workflows run` | Python compatibility | Execute and persist one complete adapter-driven editorial workflow |
+| `workflows resume` | Python compatibility | Explicitly resume a stopped workflow for at most one revision cycle |
+| `runs apply-*` | Python compatibility | Apply guarded lifecycle transitions |
+| `runs finalize` | Python compatibility | Enter `ready` only when every completion invariant passes |
 
-Run `python3 tools/hwr.py --help` and each noun's `--help` for the complete
-argument reference.
+Run `npm run hwr -- --help` for the native command summary. The compatibility
+backend retains the complete nested help until those commands are ported.
 
 ## Agent-led intake questions
 
@@ -78,7 +85,7 @@ argument reference.
 and unconfirmed project defaults into a bounded question batch:
 
 ```sh
-python3 tools/hwr.py --json runs questions \
+npm run hwr -- --json runs questions \
   --config starter-kit/.human-writing-rules/config.json \
   --limit 5
 ```
@@ -88,7 +95,7 @@ The task file is optional. With no `--task`, the command starts an
 values and asks only about remaining material choices:
 
 ```sh
-python3 tools/hwr.py --json runs questions \
+npm run hwr -- --json runs questions \
   --config starter-kit/.human-writing-rules/config.json \
   --task path/to/partial-task.json \
   --limit 3

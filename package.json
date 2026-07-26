@@ -2,9 +2,17 @@
   "name": "human-writing-rules",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Vendor-neutral rules and benchmarks for AI-assisted articles, social posts, and optional illustrations.",
   "license": "MIT",
+  "bin": {
+    "hwr": "dist/src/cli.js"
+  },
+  "engines": {
+    "node": ">=20.10"
+  },
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "check": "python3 tools/validate_registry.py",
     "check:conformance": "python3 tools/check_conformance_requirements.py",
     "check:registry-index": "python3 tools/hwr_registry_index.py --check",
@@ -15,12 +23,18 @@
     "test:benchmark": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_benchmark_runner",
     "test:reviewed-examples": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_reviewed_examples",
     "test:visual-benchmarks": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_visual_benchmarks",
-    "hwr": "python3 tools/hwr.py",
-    "runner:doctor": "python3 tools/hwr.py --json doctor",
+    "hwr": "npm run build --silent && node dist/src/cli.js",
+    "hwr:python": "python3 tools/hwr.py",
+    "prepare": "npm run build",
+    "runner:doctor": "npm run build --silent && node dist/src/cli.js --json doctor",
+    "runner:doctor:python": "python3 tools/hwr.py --json doctor",
     "release:verify": "PYTHONDONTWRITEBYTECODE=1 python3 tools/hwr_release.py --verify",
     "test:conformance": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_*.py'",
     "test:fixtures": "PYTHONDONTWRITEBYTECODE=1 python3 tools/run_conformance_fixtures.py",
-    "validate:registry": "python3 tools/validate_registry.py"
+    "test:ts": "npm run build --silent && node --test dist/test-ts/*.test.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "validate:registry": "python3 tools/validate_registry.py",
+    "verify": "npm run typecheck && npm run test:ts && npm run release:verify"
   },
   "keywords": [
     "ai",
@@ -35,5 +49,9 @@
     "rules",
     "benchmark",
     "open-standard"
-  ]
+  ],
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "7.0.2"
+  }
 }

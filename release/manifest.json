@@ -1,9 +1,9 @@
 {
   "$schema": "https://human-writing-rules.example/schemas/release-manifest.schema.json",
   "release": "1.0.0",
-  "status": "candidate",
+  "status": "released",
   "channel": "stable",
-  "release_date": null,
+  "release_date": "2026-07-26",
   "spec_revision": "1.0.0",
   "registry_source_revision": "sha256:03bb590a00ed26de1af097c29278137d4e097cf569477edbbc425c8ba0b0f368",
   "profiles": [
@@ -151,6 +151,6 @@
     "Reviewed examples use the declared project review contract and are not independent external evaluations.",
     "The checked-in benchmark runner preserves execution evidence but the repository contains no public comparative model-quality result.",
     "The optional OpenAI adapter requires explicit live opt-in and credentials; release verification is offline.",
-    "Before the immutable v1.0.0 tag exists, candidate provenance is anchored by the specification revision and generated registry source revision."
+    "Release provenance is anchored by the v1.0.0 tag, specification revision, and generated registry source revision."
   ]
 }

@@ -1,18 +1,19 @@
 # Releasing Human Writing Rules
 
-This runbook verifies the stable `1.0.0` source state and defines the boundary
-for publishing it. Verification itself does not push, tag, or create a GitHub
+This runbook verifies a release source state and defines the boundary for
+publishing it. Verification itself does not push, tag, or create a GitHub
 release.
 
-## Current candidate
+## Current stable release
 
 - Distribution: `1.0.0`
 - Specification: `1.0.0`
 - Channel: `stable`
-- Manifest status before publication: `candidate`
+- Manifest status: `released`
+- Release date: `2026-07-26`
 - Network requirement for verification: none
 
-The canonical candidate record is [`release/manifest.json`](release/manifest.json).
+The canonical release record is [`release/manifest.json`](release/manifest.json).
 The internal assessment and its independence limitation are recorded in
 [`release/stability-review.json`](release/stability-review.json).
 
@@ -42,7 +43,7 @@ npm run runner:doctor
 npm run check:release
 ```
 
-## Stable checklist
+## Stable release checklist
 
 - [ ] `VERSION`, `package.json`, and `release/manifest.json` equal `1.0.0`.
 - [ ] Every normative RFC is `active` at revision `1.0.0`.
@@ -66,8 +67,7 @@ npm run check:release
 2. Commit it to the default branch.
 3. Run CI and confirm every matrix job passes.
 4. Set manifest `status` to `released` and `release_date` to the publication
-   date in the release commit, or document why the immutable tag uses the
-   candidate manifest.
+   date in the release commit.
 5. Create annotated tag `v1.0.0` from the verified commit.
 6. Publish release notes from `CHANGELOG.md`.
 7. Confirm the archive contains the required artifacts and no secrets.

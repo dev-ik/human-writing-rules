@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Validate and execute the pinned offline release-candidate gates."""
+"""Validate and execute the pinned offline release gates."""
 
 import argparse
+from datetime import date
 import json
 import os
 import re
@@ -259,11 +260,20 @@ def validate_release_manifest(
         errors.append("release manifest channel is invalid")
     if manifest.get("status") == "candidate" and manifest.get("release_date") is not None:
         errors.append("candidate release_date must be null")
-    if manifest.get("status") == "released" and not isinstance(
-        manifest.get("release_date"),
-        str,
-    ):
-        errors.append("released manifest requires release_date")
+    if manifest.get("status") == "released":
+        release_date = manifest.get("release_date")
+        valid_release_date = False
+        if isinstance(release_date, str):
+            try:
+                valid_release_date = (
+                    date.fromisoformat(release_date).isoformat() == release_date
+                )
+            except ValueError:
+                pass
+        if not valid_release_date:
+            errors.append(
+                "released manifest requires release_date in YYYY-MM-DD format"
+            )
 
     try:
         version_file = (root / "VERSION").read_text(encoding="utf-8").strip()
@@ -658,7 +668,7 @@ def verify_release(manifest: dict, root: Path = ROOT) -> tuple[dict, list[str]]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Validate or execute the pinned release-candidate gates."
+        description="Validate or execute the pinned release gates."
     )
     action = parser.add_mutually_exclusive_group(required=True)
     action.add_argument("--check", action="store_true")

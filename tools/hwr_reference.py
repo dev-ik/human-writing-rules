@@ -2743,7 +2743,7 @@ def doctor(repository: dict) -> dict:
             "generated-registry-index",
             "benchmark-runner",
             "reviewed-example-coverage",
-            "release-candidate-verification",
+            "release-verification",
             "visual-benchmark-acceptance",
             "object-discovery",
             "module-resolution",

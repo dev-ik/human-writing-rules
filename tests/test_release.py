@@ -16,23 +16,23 @@ ROOT = Path(__file__).resolve().parents[1]
 RUNNER_PATH = ROOT / "tools/hwr_release.py"
 
 
-class ReleaseCandidateTests(unittest.TestCase):
+class ReleaseTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.manifest = read_bounded_json(MANIFEST_PATH, "release manifest")
 
-    def test_checked_in_candidate_is_valid(self) -> None:
+    def test_checked_in_release_is_valid(self) -> None:
         summary, errors = validate_checked_in_release(ROOT)
         self.assertEqual([], errors)
         self.assertEqual("1.0.0", summary["release"])
-        self.assertEqual("candidate", summary["status"])
+        self.assertEqual("released", summary["status"])
         self.assertEqual("stable", summary["channel"])
         self.assertEqual(8, summary["gates"])
         self.assertEqual(22, summary["artifacts"])
         self.assertEqual(200, summary["counts"]["requirements"])
         self.assertEqual(16, summary["counts"]["reviewed_examples"])
 
-    def test_version_files_match_candidate(self) -> None:
+    def test_version_files_match_release(self) -> None:
         version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
         package = read_bounded_json(ROOT / "package.json", "package.json")
         self.assertEqual(self.manifest["release"], version)
@@ -80,6 +80,17 @@ class ReleaseCandidateTests(unittest.TestCase):
             )
         )
 
+    def test_released_manifest_rejects_invalid_date(self) -> None:
+        mutated = copy.deepcopy(self.manifest)
+        mutated["release_date"] = "2026-7-26"
+        _, errors = validate_release_manifest(mutated, ROOT)
+        self.assertTrue(
+            any(
+                "release_date in YYYY-MM-DD format" in error
+                for error in errors
+            )
+        )
+
     def test_missing_gate_is_rejected(self) -> None:
         mutated = copy.deepcopy(self.manifest)
         mutated["gates"] = [
@@ -116,7 +127,7 @@ class ReleaseCandidateTests(unittest.TestCase):
         self.assertEqual(0, result.returncode, result.stderr)
         envelope = json.loads(result.stdout)
         self.assertTrue(envelope["ok"])
-        self.assertEqual("candidate", envelope["data"]["status"])
+        self.assertEqual("released", envelope["data"]["status"])
 
 
 if __name__ == "__main__":

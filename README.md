@@ -54,7 +54,7 @@ See [`core/content-model.md`](core/content-model.md) for resolution and fallback
 
 ## Status
 
-The current stable candidate is `1.0.0`, defining the active `1.0.0` normative
+The current stable release is `1.0.0`, defining the active `1.0.0` normative
 profile and stable 1.x identifier and compatibility boundaries. Stable
 specification status does not imply that every writing engine or the bundled
 reference tooling has proven full implementation conformance. See
@@ -68,7 +68,7 @@ reference runner, benchmark contracts, and a starter kit.
 
 RFC-0001 through RFC-0006 form the [stable normative profile](rfcs/README.md). They define conformance, pipeline states, object lifecycle, module resolution, review, and benchmarking. Runtime rules implement narrower behavior and MUST NOT weaken the RFC invariants.
 
-Verify the complete release candidate offline:
+Verify the complete release offline:
 
 ```sh
 npm run release:verify

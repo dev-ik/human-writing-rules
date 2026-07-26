@@ -1,0 +1,645 @@
+{
+  "schema_version": "1.0",
+  "run_id": "pilot.ru.mysticism-article:1",
+  "task_id": "pilot.ru.mysticism-article",
+  "task_revision": "1",
+  "spec_revision": "0.2.0-draft",
+  "registry_revision": "sha256:d1892cffc009aa84d64be2128707613b1985f1030d179420622b917cb285a519",
+  "state": "ready",
+  "blocked_stage": null,
+  "task": {
+    "subject": "Недосказанность как основной механизм мистической истории",
+    "central_question": "Почему ограниченная и последовательная неизвестность может делать мистическую историю сильнее прямого объяснения?",
+    "reader_promise": "Читатель поймёт, из каких элементов складывается работающая мистическая недосказанность и где тайна превращается в пустую туманность.",
+    "primary_job": "critical-analysis",
+    "artifact_form": "article",
+    "resolved_inputs": {
+      "language": "ru",
+      "locale": "ru-RU",
+      "content_type": "article",
+      "topic": "entertainment",
+      "platform": "blog",
+      "skill": null,
+      "tone": "friendly",
+      "audience": {
+        "description": "Читатели общего блога, которым интересны мистика и устройство историй",
+        "knowledge_level": "general",
+        "needs": [
+          "Понять, как недосказанность создаёт мистическое напряжение",
+          "Отличить работающую тайну от произвольной туманности",
+          "Увидеть, почему полное объяснение иногда ослабляет финал"
+        ]
+      },
+      "intent": "Разобрать мистику как повествовательный механизм без утверждений о реальности сверхъестественного",
+      "author_perspective": "editorial",
+      "risk_level": "low",
+      "visual_mode": "auto"
+    },
+    "constraints": [
+      "Писать нативно на русском языке",
+      "Не выдавать сверхъестественное за установленный факт",
+      "Не ссылаться на вымышленные личные переживания",
+      "Не использовать узнаваемых персонажей, бренды и реальные места",
+      "Держать source notes и review вне публичной статьи"
+    ],
+    "required_disclosures": []
+  },
+  "resolution": {
+    "spec_revision": "0.2.0-draft",
+    "registry_revision": "sha256:d1892cffc009aa84d64be2128707613b1985f1030d179420622b917cb285a519",
+    "inputs": {
+      "language": "ru",
+      "locale": "ru-RU",
+      "content_type": "article",
+      "topic": "entertainment",
+      "platform": "blog",
+      "skill": null,
+      "tone": "friendly",
+      "audience": {
+        "description": "Читатели общего блога, которым интересны мистика и устройство историй",
+        "knowledge_level": "general",
+        "needs": [
+          "Понять, как недосказанность создаёт мистическое напряжение",
+          "Отличить работающую тайну от произвольной туманности",
+          "Увидеть, почему полное объяснение иногда ослабляет финал"
+        ]
+      },
+      "intent": "Разобрать мистику как повествовательный механизм без утверждений о реальности сверхъестественного",
+      "author_perspective": "editorial",
+      "risk_level": "low",
+      "visual_mode": "auto"
+    },
+    "origins": {
+      "language": "config",
+      "locale": "config",
+      "content_type": "config",
+      "topic": "config",
+      "platform": "config",
+      "skill": "omitted",
+      "tone": "config",
+      "audience": "config",
+      "intent": "config",
+      "author_perspective": "config",
+      "risk_level": "config",
+      "visual_mode": "config"
+    },
+    "root_objects": [
+      "core.writing-pipeline",
+      "core.content-model",
+      "core.context-selection",
+      "rule.source-integrity",
+      "rule.human-signals.core",
+      "reviewer.source",
+      "reviewer.language",
+      "reviewer.human-signals",
+      "reviewer.editor",
+      "language.ru.foundation",
+      "format.article.foundation",
+      "reviewer.format",
+      "topic.entertainment.foundation",
+      "reviewer.topic",
+      "platform.blog.foundation",
+      "reviewer.platform",
+      "tone.friendly",
+      "rule.visual-integrity",
+      "reviewer.visual"
+    ],
+    "dependency_order": [
+      "core.content-model",
+      "core.context-selection",
+      "principle.audience-before-format",
+      "principle.facts-before-fluency",
+      "principle.meaning-before-engagement",
+      "principle.native-not-translated",
+      "principle.revision-with-purpose",
+      "core.writing-pipeline",
+      "rule.source-integrity",
+      "rule.human-signals.prohibited-practices",
+      "rule.human-signals.core",
+      "reviewer.source",
+      "reviewer.language",
+      "reviewer.human-signals",
+      "reviewer.editor",
+      "language.ru.foundation",
+      "rule.style.no-template-pressure",
+      "format.article.foundation",
+      "reviewer.format",
+      "topic.general.foundation",
+      "topic.entertainment.foundation",
+      "reviewer.topic",
+      "platform.blog.foundation",
+      "reviewer.platform",
+      "tone.friendly",
+      "rule.visual-integrity",
+      "reviewer.visual"
+    ],
+    "fallbacks": [],
+    "inferences": [],
+    "conflicts": [],
+    "warnings": []
+  },
+  "sources": [
+    {
+      "id": "SRC-001",
+      "title": "Entertainment Topic Foundation",
+      "role": "Правила критического анализа жанрового материала",
+      "location": "rules/topic/entertainment/foundation.md",
+      "version": "repository revision",
+      "status": "draft runtime module",
+      "scope": "Разделение наблюдения, интерпретации, критерия и ограниченного суждения",
+      "rights": "repository license"
+    },
+    {
+      "id": "SRC-002",
+      "title": "Article Format Foundation",
+      "role": "Структура и критерии завершённости статьи",
+      "location": "rules/format/article/foundation.md",
+      "version": "repository revision",
+      "status": "draft runtime module",
+      "scope": "Проектирование и редактирование длинной формы",
+      "rights": "repository license"
+    },
+    {
+      "id": "SRC-003",
+      "title": "Visual and Illustration Integrity",
+      "role": "Границы оригинальной редакционной иллюстрации",
+      "location": "rules/visual/illustration-integrity.md",
+      "version": "repository revision",
+      "status": "draft runtime module",
+      "scope": "Недокументальный визуал, права, alt text и provenance",
+      "rights": "repository license"
+    }
+  ],
+  "claim_ledger": [
+    {
+      "id": "C-001",
+      "text": "В рамках выбранного критерия мистическая недосказанность работает, когда история оставляет несколько возможных объяснений, но сохраняет устойчивые последствия и ограничения.",
+      "classification": "inference",
+      "material": true,
+      "source_ids": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "qualification": "Это редакционная интерпретация механики повествования, а не универсальный психологический закон.",
+      "disposition": "use"
+    },
+    {
+      "id": "C-002",
+      "text": "Конкретный след события может поддерживать мистическое напряжение лучше, чем дополнительное объяснение, если сам след не доказывает единственную причину.",
+      "classification": "inference",
+      "material": true,
+      "source_ids": [
+        "SRC-001"
+      ],
+      "qualification": "Вывод ограничен анализом повествовательной формы и не описывает измеренную реакцию всех читателей.",
+      "disposition": "use"
+    },
+    {
+      "id": "C-003",
+      "text": "Полное объяснение в финале может ослабить мистическую историю, когда оно заменяет пространство интерпретации одной буквальной инструкцией.",
+      "classification": "opinion",
+      "material": true,
+      "source_ids": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "qualification": "Это заявленный редакционный критерий, а не обязательное правило для каждого произведения.",
+      "disposition": "use"
+    },
+    {
+      "id": "C-004",
+      "text": "Неоднозначные финалы всегда пугают любого читателя сильнее однозначных.",
+      "classification": "unknown",
+      "material": false,
+      "source_ids": [],
+      "qualification": "Универсальное утверждение не подтверждено и не требуется для тезиса статьи.",
+      "disposition": "omit"
+    }
+  ],
+  "gates": {
+    "framing": {
+      "status": "pass"
+    },
+    "module_resolution": {
+      "status": "pass"
+    },
+    "context": {
+      "gate": "context-gate",
+      "status": "pass",
+      "blockers": [],
+      "checked_claims": 4,
+      "checked_sources": 3
+    },
+    "media": {
+      "mode": "auto",
+      "decision": "selected",
+      "status": "ready",
+      "reason": "Атмосферная обложка визуально показывает границу между видимым следом и неизвестной причиной, не добавляя фактов.",
+      "brief": {
+        "purpose": "Создать редакционную рамку для статьи о недосказанности: показать видимый след и скрытую причину.",
+        "reader_benefit": "Обложка настраивает на тему неизвестности, не изображая конкретное сверхъестественное существо.",
+        "evidence_basis": "Тезисы C-001 и C-002 и правило визуальной целостности.",
+        "must_not_imply": [
+          "что изображено реальное место",
+          "что сверхъестественное событие документально подтверждено",
+          "что за дверью находится конкретное существо",
+          "что иллюстрация относится к существующему фильму, книге или игре"
+        ],
+        "asset_type": "оригинальная атмосферная редакционная обложка",
+        "acceptance_criteria": [
+          "в кадре нет людей, персонажей, логотипов и текста",
+          "источник тревоги остаётся неоднозначным",
+          "визуал не выглядит документальной фотографией",
+          "композиция пригодна для широкого заголовочного изображения",
+          "caption и alt text обозначают концептуальный характер изображения"
+        ]
+      },
+      "findings": []
+    }
+  },
+  "content_design": {
+    "status": "ready",
+    "design_revision": "mysticism-design-1",
+    "reader_promise": "Читатель поймёт, из каких элементов складывается работающая мистическая недосказанность и где тайна превращается в пустую туманность.",
+    "working_thesis": "Мистическая недосказанность становится выразительным приёмом не тогда, когда история скрывает всё, а когда она показывает устойчивые последствия, ограничивает возможные объяснения и оставляет причину открытой.",
+    "sections_or_units": [
+      {
+        "id": "opening",
+        "purpose": "Развести видимый след и неизвестную причину на условном, явно вымышленном примере.",
+        "claim_ids": [
+          "C-002"
+        ]
+      },
+      {
+        "id": "bounded-unknown",
+        "purpose": "Показать, что работающая тайна нуждается в последовательных ограничениях.",
+        "claim_ids": [
+          "C-001"
+        ]
+      },
+      {
+        "id": "consequences",
+        "purpose": "Объяснить роль конкретного последствия, которое не доказывает единственную причину.",
+        "claim_ids": [
+          "C-002"
+        ]
+      },
+      {
+        "id": "empty-fog",
+        "purpose": "Отличить недосказанность от произвольного отказа истории устанавливать связи.",
+        "claim_ids": [
+          "C-001"
+        ]
+      },
+      {
+        "id": "ending",
+        "purpose": "Разобрать ограниченный редакционный критерий, по которому полное объяснение может ослабить финал.",
+        "claim_ids": [
+          "C-003"
+        ]
+      },
+      {
+        "id": "conclusion",
+        "purpose": "Собрать практический тест работающей мистической тайны без универсальных заявлений о реакции аудитории.",
+        "claim_ids": [
+          "C-001",
+          "C-002",
+          "C-003"
+        ]
+      }
+    ],
+    "public_metadata": {
+      "title": "Тень за дверью: как недосказанность работает в мистических историях",
+      "description": "Почему мистической тайне нужны правила, конкретные последствия и пространство для нескольких объяснений."
+    },
+    "visual_role": "Широкая атмосферная обложка показывает видимый след и скрытую причину, не изображая конкретное существо или реальное место.",
+    "adapter": {
+      "id": "codex.pilot-editorial",
+      "mode": "model",
+      "version": "1"
+    }
+  },
+  "review_plan": [
+    {
+      "reviewer_id": "reviewer.source",
+      "title": "Source Reviewer",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.topic",
+      "title": "Topic Reviewer",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.format",
+      "title": "Format Reviewer",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.language",
+      "title": "Language Reviewer",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.human-signals",
+      "title": "Human Signals Reviewer",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.platform",
+      "title": "Platform Reviewer",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.visual",
+      "title": "Visual Reviewer",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.editor",
+      "title": "Editor",
+      "status": "pass"
+    }
+  ],
+  "output_package": {
+    "publication_copy": {
+      "status": "ready",
+      "artifact_revision": "mysticism-edit-1",
+      "content_type": "article",
+      "content": "# Тень за дверью: как недосказанность работает в мистических историях\n\nПредставим условную сцену: в пустом коридоре горит одна лампа, а на полу появляется мокрый след. История может сразу назвать причину, показать чудовище или перечислить правила древнего проклятия. Но может поступить иначе — оставить причину открытой, а след сделать бесспорным внутри вымышленного мира.\n\nВ зазоре между видимым последствием и неизвестной причиной и появляется мистика. Не как доказательство сверхъестественного, а как устройство повествования, в котором привычного объяснения пока недостаточно.\n\n## Мистика начинается не с монстра\n\nПоказанная опасность быстро превращается в конкретную задачу. У неё появляется форма, набор возможностей и, возможно, способ защиты. Неизвестность оставляет рядом несколько версий: бытовую, случайную, человеческую и сверхъестественную.\n\nНо одного отсутствия ответа мало. Если история только прячет информацию и не задаёт границ, неизвестность перестаёт быть напряжением. Она становится обещанием, которое позднее можно выполнить чем угодно.\n\nРаботающая недосказанность ограничена. В условном сюжете дверь открывается только ночью, шаги слышны на одном пролёте, а письмо появляется после определённого выбора. Это не формула жанра, а демонстрация принципа: причина скрыта, но её проявления не случайны.\n\n## Тайне нужны правила\n\nПравило не обязательно произносить вслух. Оно может обнаруживаться через повторение, последовательность или цену ошибки. Важно, чтобы новое событие не отменяло предыдущие только ради очередного эффекта.\n\nОграничения создают пространство для интерпретации. Одна версия объясняет часть признаков, другая — другую, но ни одна не закрывает вопрос полностью. История очерчивает тёмную комнату по краям: содержимое не видно, зато понятны её размеры.\n\nЗдесь проходит граница между недосказанностью и произволом. Тайна допускает несколько объяснений. Произвол не даёт оснований выбрать даже между ними.\n\n## След важнее дополнительной справки\n\nМистический эпизод обретает вес, когда оставляет конкретное последствие: сдвинутый предмет, повторившуюся фразу, изменившийся маршрут или пустое место на фотографии. Это примеры деталей внутри условных историй, а не сообщения о реальных событиях.\n\nТакой след не доказывает сверхъестественную причину — и именно поэтому сохраняет двойственность. Нечто произошло, но объяснение остаётся открытым. Тайна влияет на решения и направление действия, а не висит отдельным облаком атмосферы.\n\nПо выбранному здесь критерию последствие полезнее ещё одного объясняющего абзаца, если оно сужает пространство версий, но не сводит его к инструкции.\n\n## Когда тайна превращается в туман\n\nНедосказанность распадается, когда любое противоречие можно оправдать словами «это мистика». У события нет устойчивой формы, цены и связи с принятыми решениями. Текст откладывает ответ, но ничего не строит вместо него.\n\nПроблема не в отсутствии разгадки, а в отсутствии предмета для разгадки. Если признаки не складываются хотя бы в несколько конкурирующих версий, остаётся не интерпретировать, а ждать авторского объявления.\n\nЕсть практическая проверка: можно ли до финала сформулировать две-три версии и назвать деталь, которая поддерживает или ослабляет каждую? Если нельзя, возможно, история скрывает не ответ, а пустоту.\n\n## Не всякой тайне нужен полный ответ\n\nРазвязка может назвать причину и сохранить мистическое качество. Вопрос не в запрете на объяснения, а в том, что объяснение делает с уже созданным пространством смыслов.\n\nЕсли финал связывает детали, показывает цену событий и открывает новый угол, он завершает историю. Если выдаёт справку о происхождении каждого странного звука, тайна рискует уменьшиться до перечня механических причин.\n\nЭто редакционный критерий, а не обязательный закон жанра. Одним историям нужна точная разгадка. Другим полезнее оставить часть двери закрытой. Решение зависит от обещания текста: решить загадку, пережить неопределённость или увидеть, как разные версии меняют смысл одного события.\n\n## Что остаётся в темноте\n\nСильная мистическая недосказанность — не пустое место вместо ответа, а организованное пространство неизвестного. У него есть границы, повторяющиеся признаки и последствия. Оно допускает несколько версий, но не любую версию.\n\nПоэтому к мистической истории стоит задать не только вопрос «что там было?». Важнее другой: «Что изменилось из-за того, что ответ остался неизвестным?» Если неопределённость влияет на выбор, усиливает тему или сталкивает правдоподобные версии, она участвует в истории. Если не меняется ничего, перед нами, вероятно, просто закрытая дверь.\n\nИногда её стоит открыть. Иногда достаточно увидеть полоску света под порогом.",
+      "metadata": {
+        "title": "Тень за дверью: как недосказанность работает в мистических историях",
+        "description": "Почему мистической тайне нужны правила, конкретные последствия и пространство для нескольких объяснений."
+      },
+      "claim_usage": [
+        {
+          "claim_id": "C-001",
+          "locations": [
+            "Мистика начинается не с монстра",
+            "Тайне нужны правила",
+            "Когда тайна превращается в туман",
+            "Что остаётся в темноте"
+          ]
+        },
+        {
+          "claim_id": "C-002",
+          "locations": [
+            "opening",
+            "След важнее дополнительной справки"
+          ]
+        },
+        {
+          "claim_id": "C-003",
+          "locations": [
+            "Не всякой тайне нужен полный ответ",
+            "Что остаётся в темноте"
+          ]
+        }
+      ],
+      "adapter": {
+        "id": "codex.pilot-editorial",
+        "mode": "model",
+        "version": "1"
+      }
+    },
+    "visual_assets": {
+      "status": "reviewed",
+      "artifact_revision": "mysticism-edit-1",
+      "visual_revision": "mysticism-visual-1",
+      "items": [
+        {
+          "asset": "examples/pilot-runs/ru-mysticism/assets/mystical-doorway-cover.png",
+          "purpose": "Создать редакционную рамку для статьи о недосказанности: показать видимый след и скрытую причину.",
+          "caption": "Концептуальная редакционная иллюстрация: видимый след ведёт к приоткрытой двери, но не раскрывает причину происходящего.",
+          "alt_text": "Пустой сине-серый коридор с приоткрытой дверью в конце; из щели падает тёплый свет, а мокрые следы на полу обрываются перед порогом.",
+          "provenance": "Оригинальная AI-generated редакционная иллюстрация, созданная встроенным imagegen по медиабрифу pilot.ru.mysticism-article; не изображает реальное место или документально подтверждённое событие.",
+          "generation_prompt": "Use case: stylized-concept. Wide 3:2 blog header. Empty worn apartment corridor at blue-gray dusk, one lamp, a door open only a few centimeters, narrow warm light under the threshold, an abstract wet trace stopping before the door. Original painterly editorial illustration with restrained gouache-like texture. Quiet unease, ambiguous cause. No people, ghosts, faces, silhouettes, monsters, text, logos, symbols, brands, real locations, documentary framing, violence or explicit supernatural entity.",
+          "dimensions": "1536x1024",
+          "format": "PNG",
+          "sha256": "99dd4188b4473e8bd60c63cbcad3ebe20ded29169e6d33e2a3739c660f4c5e24",
+          "disclosure": "AI-generated conceptual editorial illustration."
+        }
+      ],
+      "adapter": {
+        "id": "openai.builtin-imagegen",
+        "mode": "model",
+        "version": "2026-07-26"
+      }
+    },
+    "source_notes": {
+      "status": "ready",
+      "sources": [
+        {
+          "id": "SRC-001",
+          "title": "Entertainment Topic Foundation",
+          "role": "Правила критического анализа жанрового материала",
+          "location": "rules/topic/entertainment/foundation.md",
+          "version": "repository revision",
+          "status": "draft runtime module",
+          "scope": "Разделение наблюдения, интерпретации, критерия и ограниченного суждения",
+          "rights": "repository license"
+        },
+        {
+          "id": "SRC-002",
+          "title": "Article Format Foundation",
+          "role": "Структура и критерии завершённости статьи",
+          "location": "rules/format/article/foundation.md",
+          "version": "repository revision",
+          "status": "draft runtime module",
+          "scope": "Проектирование и редактирование длинной формы",
+          "rights": "repository license"
+        },
+        {
+          "id": "SRC-003",
+          "title": "Visual and Illustration Integrity",
+          "role": "Границы оригинальной редакционной иллюстрации",
+          "location": "rules/visual/illustration-integrity.md",
+          "version": "repository revision",
+          "status": "draft runtime module",
+          "scope": "Недокументальный визуал, права, alt text и provenance",
+          "rights": "repository license"
+        }
+      ],
+      "unresolved_claims": [
+        "C-004"
+      ]
+    },
+    "review_report": {
+      "status": "complete",
+      "artifact_revision": "mysticism-edit-1",
+      "review_revision": "mysticism-review-1",
+      "reviewers": [
+        {
+          "reviewer_id": "reviewer.source",
+          "status": "pass"
+        },
+        {
+          "reviewer_id": "reviewer.topic",
+          "status": "pass"
+        },
+        {
+          "reviewer_id": "reviewer.format",
+          "status": "pass"
+        },
+        {
+          "reviewer_id": "reviewer.language",
+          "status": "pass"
+        },
+        {
+          "reviewer_id": "reviewer.human-signals",
+          "status": "pass"
+        },
+        {
+          "reviewer_id": "reviewer.platform",
+          "status": "pass"
+        },
+        {
+          "reviewer_id": "reviewer.visual",
+          "status": "pass"
+        },
+        {
+          "reviewer_id": "reviewer.editor",
+          "status": "pass"
+        }
+      ],
+      "findings": [],
+      "limitations": [
+        "Статья представляет редакционную интерпретацию повествовательной формы и не заявляет эмпирических выводов о реакции всех читателей.",
+        "Иллюстрация концептуальна, сгенерирована AI и не является документальным изображением реального места или события."
+      ],
+      "readiness_candidate": "publication-ready",
+      "adapter": {
+        "id": "codex.pilot-review-panel",
+        "mode": "model",
+        "version": "1"
+      },
+      "readiness": "publication-ready"
+    },
+    "revision_summary": {
+      "status": "updated",
+      "changes": [
+        {
+          "stage": "draft",
+          "artifact_revision": "mysticism-draft-1",
+          "parent_revision": null,
+          "addressed_findings": []
+        },
+        {
+          "stage": "edit",
+          "artifact_revision": "mysticism-edit-1",
+          "parent_revision": "mysticism-draft-1",
+          "addressed_findings": []
+        }
+      ]
+    },
+    "audit": {
+      "status": "complete",
+      "fallbacks": [],
+      "inferences": [],
+      "deviations": [],
+      "history": [
+        {
+          "event": "run-planned",
+          "from_state": null,
+          "to_state": "context-ready",
+          "record_revision": "1"
+        },
+        {
+          "event": "content-design-applied",
+          "from_state": "context-ready",
+          "to_state": "media-decided",
+          "record_revision": "mysticism-design-1",
+          "adapter_runtime": {
+            "protocol_version": "1.0",
+            "stage": "design",
+            "executable": "python3",
+            "argument_count": 3,
+            "passed_environment_names": [],
+            "elapsed_ms": 93,
+            "stdout_bytes": 2838,
+            "stderr_present": false,
+            "stderr_truncated": false
+          }
+        },
+        {
+          "event": "draft-artifact-applied",
+          "from_state": "media-decided",
+          "to_state": "drafted",
+          "record_revision": "mysticism-draft-1",
+          "adapter_runtime": {
+            "protocol_version": "1.0",
+            "stage": "draft",
+            "executable": "python3",
+            "argument_count": 3,
+            "passed_environment_names": [],
+            "elapsed_ms": 92,
+            "stdout_bytes": 10345,
+            "stderr_present": false,
+            "stderr_truncated": false
+          }
+        },
+        {
+          "event": "edit-artifact-applied",
+          "from_state": "drafted",
+          "to_state": "edited",
+          "record_revision": "mysticism-edit-1",
+          "adapter_runtime": {
+            "protocol_version": "1.0",
+            "stage": "edit",
+            "executable": "python3",
+            "argument_count": 3,
+            "passed_environment_names": [],
+            "elapsed_ms": 91,
+            "stdout_bytes": 9822,
+            "stderr_present": false,
+            "stderr_truncated": false
+          }
+        },
+        {
+          "event": "visual-assets-applied",
+          "from_state": "edited",
+          "to_state": "edited",
+          "record_revision": "mysticism-visual-1",
+          "adapter_runtime": {
+            "protocol_version": "1.0",
+            "stage": "visual",
+            "executable": "python3",
+            "argument_count": 3,
+            "passed_environment_names": [],
+            "elapsed_ms": 91,
+            "stdout_bytes": 2079,
+            "stderr_present": false,
+            "stderr_truncated": false
+          }
+        },
+        {
+          "event": "review-applied",
+          "from_state": "edited",
+          "to_state": "reviewed",
+          "record_revision": "mysticism-review-1",
+          "adapter_runtime": {
+            "protocol_version": "1.0",
+            "stage": "review",
+            "executable": "python3",
+            "argument_count": 3,
+            "passed_environment_names": [],
+            "elapsed_ms": 90,
+            "stdout_bytes": 1212,
+            "stderr_present": false,
+            "stderr_truncated": false
+          }
+        },
+        {
+          "event": "run-finalized",
+          "from_state": "reviewed",
+          "to_state": "ready",
+          "record_revision": "mysticism-review-1"
+        }
+      ]
+    }
+  },
+  "blockers": [],
+  "next_actions": [
+    "Publish or hand off the separated output package without internal notes in public copy."
+  ]
+}

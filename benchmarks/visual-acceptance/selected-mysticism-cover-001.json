@@ -1,0 +1,83 @@
+{
+  "$schema": "https://human-writing-rules.example/schemas/visual-acceptance-record.schema.json",
+  "fixture_id": "visual.selected.mysticism-cover.001",
+  "fixture_revision": "1.0.0",
+  "acceptance_revision": "1.0.0",
+  "evaluator": {
+    "id": "fixture-review.mysticism-cover.v1",
+    "type": "fixture",
+    "independence": "not-independent",
+    "notes": "Review against the frozen publication, visual record, asset bytes, and visual-integrity contract."
+  },
+  "artifact_sha256": "d7c80d80f9c1b5bf3430271ac97fdf302d9a2617a7b254e5dd59cd8260d7d224",
+  "asset_sha256": "99dd4188b4473e8bd60c63cbcad3ebe20ded29169e6d33e2a3739c660f4c5e24",
+  "asset_evaluated": true,
+  "dimensions": [
+    {
+      "id": "media_decision",
+      "applies": true,
+      "verdict": "pass",
+      "evidence": "The cover frames the article's stated contrast between a visible trace and an unresolved cause.",
+      "findings": []
+    },
+    {
+      "id": "factual_consistency",
+      "applies": true,
+      "verdict": "pass",
+      "evidence": "The image stays within fictional examples named in the publication and adds no person, entity, location, result, or causal claim.",
+      "findings": []
+    },
+    {
+      "id": "text_image_alignment",
+      "applies": true,
+      "verdict": "pass",
+      "evidence": "The corridor, partly open door, warm light, and stopping trace match the article's opening and conclusion without resolving the mystery.",
+      "findings": []
+    },
+    {
+      "id": "documentary_integrity",
+      "applies": true,
+      "verdict": "pass",
+      "evidence": "The visual record labels the asset as original, AI-generated, conceptual, and unrelated to a real place or documented event.",
+      "findings": []
+    },
+    {
+      "id": "platform_handoff",
+      "applies": true,
+      "verdict": "pass",
+      "evidence": "The checked PNG is a valid 1536x1024 RGB cover with a declared 3:2 editorial composition and no embedded text.",
+      "findings": []
+    },
+    {
+      "id": "accessibility",
+      "applies": true,
+      "verdict": "pass",
+      "evidence": "The visual record contains non-duplicative alt text and a contextual caption describing the communicative content.",
+      "findings": []
+    },
+    {
+      "id": "rights_provenance",
+      "applies": true,
+      "verdict": "pass",
+      "evidence": "The record preserves adapter identity, generation prompt, provenance, SHA-256, and explicit AI-generated disclosure; no logo, likeness, character, or named artist is requested.",
+      "findings": []
+    }
+  ],
+  "hard_failures": [
+    {
+      "id": "false-documentary-visual",
+      "status": "not-triggered",
+      "evidence": "Conceptual generation and non-documentary status are explicit."
+    },
+    {
+      "id": "required-disclosure-missing",
+      "status": "not-triggered",
+      "evidence": "The visual record includes an AI-generated disclosure."
+    }
+  ],
+  "overall": "pass",
+  "limitations": [
+    "The fixture review is not an independent human rating.",
+    "The validator confirms PNG integrity and metadata consistency but cannot automate all semantic visual judgments."
+  ]
+}

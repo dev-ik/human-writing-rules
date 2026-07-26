@@ -1,0 +1,1017 @@
+{
+  "$schema": "https://human-writing-rules.example/schemas/generated-registry-index.schema.json",
+  "counts": {
+    "formats": 2,
+    "languages": 2,
+    "objects": 50,
+    "platforms": 6,
+    "rfcs": 6,
+    "skills": 5,
+    "tones": 3,
+    "topics": 11
+  },
+  "defaults": {
+    "topic_fallback": "general"
+  },
+  "objects": {
+    "core.content-model": {
+      "kind": "core",
+      "path": "core/content-model.md",
+      "requires": [],
+      "status": "active",
+      "tags": [
+        "required",
+        "resolution"
+      ],
+      "title": "Content Model"
+    },
+    "core.context-selection": {
+      "kind": "core",
+      "path": "core/context-selection.md",
+      "requires": [
+        "core.content-model"
+      ],
+      "status": "active",
+      "tags": [
+        "required",
+        "resolution"
+      ],
+      "title": "Selective Context Loading"
+    },
+    "core.writing-pipeline": {
+      "kind": "core",
+      "path": "core/writing-pipeline.md",
+      "requires": [
+        "core.content-model",
+        "core.context-selection",
+        "principle.audience-before-format",
+        "principle.facts-before-fluency",
+        "principle.meaning-before-engagement",
+        "principle.native-not-translated",
+        "principle.revision-with-purpose"
+      ],
+      "status": "active",
+      "tags": [
+        "required"
+      ],
+      "title": "Writing Pipeline"
+    },
+    "format.article.foundation": {
+      "kind": "format",
+      "path": "rules/format/article/foundation.md",
+      "requires": [
+        "core.writing-pipeline",
+        "rule.source-integrity",
+        "rule.human-signals.core",
+        "rule.style.no-template-pressure"
+      ],
+      "selectors": {
+        "formats": [
+          "article"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "format",
+        "long-form"
+      ],
+      "title": "Article Format"
+    },
+    "format.social-post.foundation": {
+      "kind": "format",
+      "path": "rules/format/social-post/foundation.md",
+      "requires": [
+        "core.writing-pipeline",
+        "rule.source-integrity",
+        "rule.human-signals.core",
+        "rule.style.no-template-pressure"
+      ],
+      "selectors": {
+        "formats": [
+          "social-post"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "format",
+        "short-form"
+      ],
+      "title": "Social Post Format"
+    },
+    "language.en.foundation": {
+      "kind": "language",
+      "path": "rules/language/en/foundation.md",
+      "requires": [
+        "rule.human-signals.core"
+      ],
+      "selectors": {
+        "languages": [
+          "en"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "language"
+      ],
+      "title": "English Foundation"
+    },
+    "language.ru.foundation": {
+      "kind": "language",
+      "path": "rules/language/ru/foundation.md",
+      "requires": [
+        "rule.human-signals.core"
+      ],
+      "selectors": {
+        "languages": [
+          "ru"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "language"
+      ],
+      "title": "Russian Foundation"
+    },
+    "platform.blog.foundation": {
+      "kind": "platform",
+      "path": "rules/platform/blog/foundation.md",
+      "requires": [
+        "core.writing-pipeline"
+      ],
+      "selectors": {
+        "formats": [
+          "article"
+        ],
+        "platforms": [
+          "blog"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "platform",
+        "blog"
+      ],
+      "title": "Generic Blog"
+    },
+    "platform.habr.foundation": {
+      "kind": "platform",
+      "path": "rules/platform/habr/foundation.md",
+      "requires": [
+        "platform.blog.foundation"
+      ],
+      "selectors": {
+        "formats": [
+          "article"
+        ],
+        "platforms": [
+          "habr"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "platform",
+        "blog"
+      ],
+      "title": "Habr"
+    },
+    "platform.linkedin.foundation": {
+      "kind": "platform",
+      "path": "rules/platform/linkedin/foundation.md",
+      "requires": [
+        "platform.social.foundation"
+      ],
+      "selectors": {
+        "formats": [
+          "social-post"
+        ],
+        "platforms": [
+          "linkedin"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "platform",
+        "social"
+      ],
+      "title": "LinkedIn"
+    },
+    "platform.setka.foundation": {
+      "kind": "platform",
+      "path": "rules/platform/setka/foundation.md",
+      "requires": [
+        "platform.blog.foundation"
+      ],
+      "selectors": {
+        "formats": [
+          "article"
+        ],
+        "platforms": [
+          "setka"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "platform",
+        "blog"
+      ],
+      "title": "Setka"
+    },
+    "platform.social.foundation": {
+      "kind": "platform",
+      "path": "rules/platform/social/foundation.md",
+      "requires": [
+        "core.writing-pipeline"
+      ],
+      "selectors": {
+        "formats": [
+          "social-post"
+        ],
+        "platforms": [
+          "social"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "platform",
+        "social"
+      ],
+      "title": "Generic Social Platform"
+    },
+    "platform.telegram.foundation": {
+      "kind": "platform",
+      "path": "rules/platform/telegram/foundation.md",
+      "requires": [
+        "platform.social.foundation"
+      ],
+      "selectors": {
+        "formats": [
+          "social-post"
+        ],
+        "platforms": [
+          "telegram"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "platform",
+        "social"
+      ],
+      "title": "Telegram"
+    },
+    "principle.audience-before-format": {
+      "kind": "principle",
+      "path": "principles/audience-before-format.md",
+      "requires": [],
+      "status": "active",
+      "tags": [
+        "principle"
+      ],
+      "title": "Audience Before Format"
+    },
+    "principle.facts-before-fluency": {
+      "kind": "principle",
+      "path": "principles/facts-before-fluency.md",
+      "requires": [],
+      "status": "active",
+      "tags": [
+        "principle"
+      ],
+      "title": "Facts Before Fluency"
+    },
+    "principle.meaning-before-engagement": {
+      "kind": "principle",
+      "path": "principles/meaning-before-engagement.md",
+      "requires": [],
+      "status": "active",
+      "tags": [
+        "principle"
+      ],
+      "title": "Meaning Before Engagement"
+    },
+    "principle.native-not-translated": {
+      "kind": "principle",
+      "path": "principles/native-not-translated.md",
+      "requires": [],
+      "status": "active",
+      "tags": [
+        "principle"
+      ],
+      "title": "Native Not Translated"
+    },
+    "principle.revision-with-purpose": {
+      "kind": "principle",
+      "path": "principles/revision-with-purpose.md",
+      "requires": [],
+      "status": "active",
+      "tags": [
+        "principle"
+      ],
+      "title": "Revision With Purpose"
+    },
+    "reviewer.editor": {
+      "kind": "reviewer",
+      "path": "reviewers/editor.md",
+      "requires": [
+        "core.writing-pipeline"
+      ],
+      "status": "active",
+      "tags": [
+        "reviewer",
+        "required"
+      ],
+      "title": "Editor"
+    },
+    "reviewer.format": {
+      "kind": "reviewer",
+      "path": "reviewers/format.md",
+      "requires": [
+        "core.writing-pipeline"
+      ],
+      "status": "active",
+      "tags": [
+        "reviewer",
+        "format"
+      ],
+      "title": "Format Reviewer"
+    },
+    "reviewer.human-signals": {
+      "kind": "reviewer",
+      "path": "reviewers/human-signals.md",
+      "requires": [
+        "rule.human-signals.core"
+      ],
+      "status": "active",
+      "tags": [
+        "reviewer",
+        "required"
+      ],
+      "title": "Human Signals Reviewer"
+    },
+    "reviewer.language": {
+      "kind": "reviewer",
+      "path": "reviewers/language.md",
+      "requires": [
+        "core.writing-pipeline"
+      ],
+      "status": "active",
+      "tags": [
+        "reviewer",
+        "required"
+      ],
+      "title": "Language Reviewer"
+    },
+    "reviewer.platform": {
+      "kind": "reviewer",
+      "path": "reviewers/platform.md",
+      "requires": [
+        "core.writing-pipeline"
+      ],
+      "status": "active",
+      "tags": [
+        "reviewer",
+        "platform"
+      ],
+      "title": "Platform Reviewer"
+    },
+    "reviewer.source": {
+      "kind": "reviewer",
+      "path": "reviewers/source.md",
+      "requires": [
+        "rule.source-integrity"
+      ],
+      "status": "active",
+      "tags": [
+        "reviewer",
+        "required"
+      ],
+      "title": "Source Reviewer"
+    },
+    "reviewer.topic": {
+      "kind": "reviewer",
+      "path": "reviewers/topic.md",
+      "requires": [
+        "topic.general.foundation"
+      ],
+      "status": "active",
+      "tags": [
+        "reviewer",
+        "topic"
+      ],
+      "title": "Topic Reviewer"
+    },
+    "reviewer.visual": {
+      "kind": "reviewer",
+      "path": "reviewers/visual.md",
+      "requires": [
+        "rule.visual-integrity"
+      ],
+      "status": "active",
+      "tags": [
+        "reviewer",
+        "visual"
+      ],
+      "title": "Visual Reviewer"
+    },
+    "rule.human-signals.core": {
+      "kind": "rule",
+      "path": "rules/human-signals/core.md",
+      "requires": [
+        "core.writing-pipeline",
+        "rule.human-signals.prohibited-practices"
+      ],
+      "status": "active",
+      "tags": [
+        "required",
+        "human-signals"
+      ],
+      "title": "Human Signals"
+    },
+    "rule.human-signals.prohibited-practices": {
+      "kind": "rule",
+      "path": "rules/human-signals/prohibited-practices.md",
+      "requires": [
+        "core.writing-pipeline"
+      ],
+      "status": "active",
+      "tags": [
+        "required",
+        "human-signals",
+        "safety"
+      ],
+      "title": "Prohibited Humanization Practices"
+    },
+    "rule.source-integrity": {
+      "kind": "rule",
+      "path": "rules/sources/source-integrity.md",
+      "requires": [
+        "core.writing-pipeline"
+      ],
+      "status": "active",
+      "tags": [
+        "required",
+        "sources"
+      ],
+      "title": "Source Integrity"
+    },
+    "rule.style.no-template-pressure": {
+      "kind": "rule",
+      "path": "rules/style/no-template-pressure.md",
+      "requires": [
+        "core.writing-pipeline"
+      ],
+      "status": "active",
+      "tags": [
+        "required",
+        "style"
+      ],
+      "title": "No Template Pressure"
+    },
+    "rule.visual-integrity": {
+      "kind": "rule",
+      "path": "rules/visual/illustration-integrity.md",
+      "requires": [
+        "rule.source-integrity"
+      ],
+      "status": "active",
+      "tags": [
+        "visual",
+        "sources",
+        "accessibility",
+        "safety"
+      ],
+      "title": "Visual and Illustration Integrity"
+    },
+    "skill.news": {
+      "kind": "skill",
+      "path": "skills/news/SKILL.md",
+      "requires": [
+        "core.writing-pipeline",
+        "rule.source-integrity",
+        "rule.human-signals.core"
+      ],
+      "status": "active",
+      "tags": [
+        "skill"
+      ],
+      "title": "News"
+    },
+    "skill.opensource": {
+      "kind": "skill",
+      "path": "skills/opensource/SKILL.md",
+      "requires": [
+        "core.writing-pipeline",
+        "rule.source-integrity",
+        "rule.human-signals.core"
+      ],
+      "status": "active",
+      "tags": [
+        "skill"
+      ],
+      "title": "Open Source"
+    },
+    "skill.personal-story": {
+      "kind": "skill",
+      "path": "skills/personal-story/SKILL.md",
+      "requires": [
+        "core.writing-pipeline",
+        "rule.source-integrity",
+        "rule.human-signals.core"
+      ],
+      "status": "active",
+      "tags": [
+        "skill"
+      ],
+      "title": "Personal Story"
+    },
+    "skill.product-launch": {
+      "kind": "skill",
+      "path": "skills/product-launch/SKILL.md",
+      "requires": [
+        "core.writing-pipeline",
+        "rule.source-integrity",
+        "rule.human-signals.core"
+      ],
+      "status": "active",
+      "tags": [
+        "skill"
+      ],
+      "title": "Product Launch"
+    },
+    "skill.tutorial": {
+      "kind": "skill",
+      "path": "skills/tutorial/SKILL.md",
+      "requires": [
+        "core.writing-pipeline",
+        "rule.source-integrity",
+        "rule.human-signals.core"
+      ],
+      "status": "active",
+      "tags": [
+        "skill"
+      ],
+      "title": "Tutorial"
+    },
+    "tone.expert": {
+      "kind": "tone",
+      "path": "rules/tone/expert.md",
+      "requires": [
+        "rule.human-signals.core"
+      ],
+      "status": "active",
+      "tags": [
+        "tone"
+      ],
+      "title": "Expert Tone"
+    },
+    "tone.friendly": {
+      "kind": "tone",
+      "path": "rules/tone/friendly.md",
+      "requires": [
+        "rule.human-signals.core"
+      ],
+      "status": "active",
+      "tags": [
+        "tone"
+      ],
+      "title": "Friendly Tone"
+    },
+    "tone.personal": {
+      "kind": "tone",
+      "path": "rules/tone/personal.md",
+      "requires": [
+        "rule.human-signals.core"
+      ],
+      "status": "active",
+      "tags": [
+        "tone"
+      ],
+      "title": "Personal Tone"
+    },
+    "topic.business.foundation": {
+      "kind": "topic",
+      "path": "rules/topic/business/foundation.md",
+      "requires": [
+        "topic.general.foundation"
+      ],
+      "selectors": {
+        "topics": [
+          "business"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "topic",
+        "business"
+      ],
+      "title": "Business Topic"
+    },
+    "topic.culture.foundation": {
+      "kind": "topic",
+      "path": "rules/topic/culture/foundation.md",
+      "requires": [
+        "topic.general.foundation"
+      ],
+      "selectors": {
+        "topics": [
+          "culture"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "topic",
+        "culture"
+      ],
+      "title": "Culture Topic"
+    },
+    "topic.education.foundation": {
+      "kind": "topic",
+      "path": "rules/topic/education/foundation.md",
+      "requires": [
+        "topic.general.foundation"
+      ],
+      "selectors": {
+        "topics": [
+          "education"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "topic",
+        "education"
+      ],
+      "title": "Education Topic"
+    },
+    "topic.entertainment.foundation": {
+      "kind": "topic",
+      "path": "rules/topic/entertainment/foundation.md",
+      "requires": [
+        "topic.general.foundation"
+      ],
+      "selectors": {
+        "topics": [
+          "entertainment"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "topic",
+        "entertainment"
+      ],
+      "title": "Entertainment Topic"
+    },
+    "topic.finance.foundation": {
+      "kind": "topic",
+      "path": "rules/topic/finance/foundation.md",
+      "requires": [
+        "topic.general.foundation"
+      ],
+      "selectors": {
+        "topics": [
+          "finance"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "topic",
+        "finance",
+        "high-risk"
+      ],
+      "title": "Finance Topic"
+    },
+    "topic.general.foundation": {
+      "kind": "topic",
+      "path": "rules/topic/general/foundation.md",
+      "requires": [
+        "rule.source-integrity"
+      ],
+      "selectors": {
+        "topics": [
+          "general"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "topic",
+        "fallback"
+      ],
+      "title": "General Topic"
+    },
+    "topic.health.foundation": {
+      "kind": "topic",
+      "path": "rules/topic/health/foundation.md",
+      "requires": [
+        "topic.science.foundation"
+      ],
+      "selectors": {
+        "topics": [
+          "health"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "topic",
+        "health",
+        "high-risk"
+      ],
+      "title": "Health Topic"
+    },
+    "topic.lifestyle.foundation": {
+      "kind": "topic",
+      "path": "rules/topic/lifestyle/foundation.md",
+      "requires": [
+        "topic.general.foundation"
+      ],
+      "selectors": {
+        "topics": [
+          "lifestyle"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "topic",
+        "lifestyle"
+      ],
+      "title": "Lifestyle Topic"
+    },
+    "topic.science.foundation": {
+      "kind": "topic",
+      "path": "rules/topic/science/foundation.md",
+      "requires": [
+        "topic.general.foundation"
+      ],
+      "selectors": {
+        "topics": [
+          "science"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "topic",
+        "research"
+      ],
+      "title": "Science Topic"
+    },
+    "topic.technology.foundation": {
+      "kind": "topic",
+      "path": "rules/topic/technology/foundation.md",
+      "requires": [
+        "topic.general.foundation"
+      ],
+      "selectors": {
+        "topics": [
+          "technology"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "topic",
+        "technology"
+      ],
+      "title": "Technology Topic"
+    },
+    "topic.travel.foundation": {
+      "kind": "topic",
+      "path": "rules/topic/travel/foundation.md",
+      "requires": [
+        "topic.general.foundation"
+      ],
+      "selectors": {
+        "topics": [
+          "travel"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "topic",
+        "travel",
+        "time-sensitive"
+      ],
+      "title": "Travel Topic"
+    }
+  },
+  "rfcs": {
+    "RFC-0001": {
+      "depends_on": [],
+      "path": "rfcs/RFC-0001-vision-and-scope.md",
+      "revision": "1.0.0",
+      "status": "active",
+      "title": "Vision and Scope"
+    },
+    "RFC-0002": {
+      "depends_on": [
+        "RFC-0001",
+        "RFC-0003",
+        "RFC-0004",
+        "RFC-0005"
+      ],
+      "path": "rfcs/RFC-0002-normative-writing-pipeline.md",
+      "revision": "1.0.0",
+      "status": "active",
+      "title": "Normative Writing Pipeline"
+    },
+    "RFC-0003": {
+      "depends_on": [
+        "RFC-0001"
+      ],
+      "path": "rfcs/RFC-0003-object-model.md",
+      "revision": "1.0.0",
+      "status": "active",
+      "title": "Object Model"
+    },
+    "RFC-0004": {
+      "depends_on": [
+        "RFC-0001",
+        "RFC-0003"
+      ],
+      "path": "rfcs/RFC-0004-selective-module-resolution.md",
+      "revision": "1.0.0",
+      "status": "active",
+      "title": "Selective Module Resolution"
+    },
+    "RFC-0005": {
+      "depends_on": [
+        "RFC-0001",
+        "RFC-0003"
+      ],
+      "path": "rfcs/RFC-0005-review-contract.md",
+      "revision": "1.0.0",
+      "status": "active",
+      "title": "Review Contract"
+    },
+    "RFC-0006": {
+      "depends_on": [
+        "RFC-0001",
+        "RFC-0002",
+        "RFC-0003",
+        "RFC-0004",
+        "RFC-0005"
+      ],
+      "path": "rfcs/RFC-0006-benchmarking.md",
+      "revision": "1.0.0",
+      "status": "active",
+      "title": "Benchmarking"
+    }
+  },
+  "schema_version": "1.0",
+  "source_files": [
+    "registry/objects.json",
+    "registry/languages.json",
+    "registry/formats.json",
+    "registry/topics.json",
+    "registry/platforms.json",
+    "registry/skills.json",
+    "registry/tones.json",
+    "registry/rfcs.json"
+  ],
+  "source_revision": "sha256:03bb590a00ed26de1af097c29278137d4e097cf569477edbbc425c8ba0b0f368",
+  "spec_revision": "1.0.0",
+  "values": {
+    "formats": {
+      "article": {
+        "module": "format.article.foundation",
+        "name": "Article"
+      },
+      "social-post": {
+        "module": "format.social-post.foundation",
+        "name": "Social Post"
+      }
+    },
+    "languages": {
+      "en": {
+        "default_locale": "en",
+        "module": "language.en.foundation",
+        "name": "English"
+      },
+      "ru": {
+        "default_locale": "ru-RU",
+        "module": "language.ru.foundation",
+        "name": "Russian"
+      }
+    },
+    "platforms": {
+      "blog": {
+        "default_format": "article",
+        "module": "platform.blog.foundation",
+        "name": "Generic Blog"
+      },
+      "habr": {
+        "default_format": "article",
+        "module": "platform.habr.foundation",
+        "name": "Habr"
+      },
+      "linkedin": {
+        "default_format": "social-post",
+        "module": "platform.linkedin.foundation",
+        "name": "LinkedIn"
+      },
+      "setka": {
+        "default_format": "article",
+        "module": "platform.setka.foundation",
+        "name": "Setka"
+      },
+      "social": {
+        "default_format": "social-post",
+        "module": "platform.social.foundation",
+        "name": "Generic Social Platform"
+      },
+      "telegram": {
+        "default_format": "social-post",
+        "module": "platform.telegram.foundation",
+        "name": "Telegram"
+      }
+    },
+    "skills": {
+      "news": {
+        "module": "skill.news",
+        "name": "News"
+      },
+      "opensource": {
+        "module": "skill.opensource",
+        "name": "Open Source"
+      },
+      "personal-story": {
+        "module": "skill.personal-story",
+        "name": "Personal Story"
+      },
+      "product-launch": {
+        "module": "skill.product-launch",
+        "name": "Product Launch"
+      },
+      "tutorial": {
+        "module": "skill.tutorial",
+        "name": "Tutorial"
+      }
+    },
+    "tones": {
+      "expert": {
+        "module": "tone.expert",
+        "name": "Expert"
+      },
+      "friendly": {
+        "module": "tone.friendly",
+        "name": "Friendly"
+      },
+      "personal": {
+        "module": "tone.personal",
+        "name": "Personal"
+      }
+    },
+    "topics": {
+      "business": {
+        "default_risk": "medium",
+        "module": "topic.business.foundation",
+        "name": "Business"
+      },
+      "culture": {
+        "default_risk": "low",
+        "module": "topic.culture.foundation",
+        "name": "Culture"
+      },
+      "education": {
+        "default_risk": "medium",
+        "module": "topic.education.foundation",
+        "name": "Education"
+      },
+      "entertainment": {
+        "default_risk": "low",
+        "module": "topic.entertainment.foundation",
+        "name": "Entertainment"
+      },
+      "finance": {
+        "default_risk": "high",
+        "module": "topic.finance.foundation",
+        "name": "Finance"
+      },
+      "general": {
+        "default_risk": "low",
+        "module": "topic.general.foundation",
+        "name": "General or Mixed"
+      },
+      "health": {
+        "default_risk": "high",
+        "module": "topic.health.foundation",
+        "name": "Health"
+      },
+      "lifestyle": {
+        "default_risk": "low",
+        "module": "topic.lifestyle.foundation",
+        "name": "Lifestyle"
+      },
+      "science": {
+        "default_risk": "medium",
+        "module": "topic.science.foundation",
+        "name": "Science"
+      },
+      "technology": {
+        "default_risk": "medium",
+        "module": "topic.technology.foundation",
+        "name": "Technology"
+      },
+      "travel": {
+        "default_risk": "medium",
+        "module": "topic.travel.foundation",
+        "name": "Travel"
+      }
+    }
+  }
+}

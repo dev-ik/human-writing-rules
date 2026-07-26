@@ -1,0 +1,2667 @@
+{
+  "schema_version": "1.0",
+  "spec_revision": "1.0.0",
+  "rfc_defaults": {
+    "RFC-0001": {
+      "id_prefix": "HWR-SCOPE",
+      "owner": "spec-governance",
+      "profiles": [
+        "editorial-core",
+        "editorial-visual",
+        "benchmark"
+      ],
+      "verification_method": "manual-review"
+    },
+    "RFC-0002": {
+      "id_prefix": "HWR-PIPE",
+      "owner": "pipeline",
+      "profiles": [
+        "editorial-core",
+        "editorial-visual",
+        "benchmark"
+      ],
+      "verification_method": "conformance-fixture"
+    },
+    "RFC-0003": {
+      "id_prefix": "HWR-OBJ",
+      "owner": "object-model",
+      "profiles": [
+        "editorial-core",
+        "editorial-visual",
+        "benchmark"
+      ],
+      "verification_method": "automated-validator"
+    },
+    "RFC-0004": {
+      "id_prefix": "HWR-RESOLVE",
+      "owner": "resolver",
+      "profiles": [
+        "editorial-core",
+        "editorial-visual",
+        "benchmark"
+      ],
+      "verification_method": "automated-test"
+    },
+    "RFC-0005": {
+      "id_prefix": "HWR-REVIEW",
+      "owner": "review",
+      "profiles": [
+        "editorial-core",
+        "editorial-visual",
+        "benchmark"
+      ],
+      "verification_method": "conformance-fixture"
+    },
+    "RFC-0006": {
+      "id_prefix": "HWR-BENCH",
+      "owner": "benchmark",
+      "profiles": [
+        "benchmark"
+      ],
+      "verification_method": "benchmark-audit"
+    }
+  },
+  "requirements": [
+    {
+      "id": "HWR-SCOPE-001",
+      "rfc": "RFC-0001",
+      "section": "Status",
+      "source_text": "`Stable` means normative RFC and active object identifiers follow the compatibility policy for the 1.x line. An implementation claiming conformance with this revision MUST follow its normative requirements or disclose a permitted `SHOULD` deviation. It MUST NOT treat `MUST` requirements as optional because the implementation, adapter, or workflow is experimental.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-002",
+      "rfc": "RFC-0001",
+      "section": "Goals",
+      "source_text": "A conforming implementation MUST be able to:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-003",
+      "rfc": "RFC-0001",
+      "section": "Content model",
+      "source_text": "An implementation MUST keep these axes logically distinct:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-004",
+      "rfc": "RFC-0001",
+      "section": "Content model",
+      "source_text": "A module MAY constrain several axes through declared applicability metadata, but it MUST NOT silently redefine another axis. For example, a platform MAY constrain length and media placement; it MUST NOT weaken a scientific evidence requirement.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 2,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-005",
+      "rfc": "RFC-0001",
+      "section": "Factual integrity",
+      "source_text": "- An implementation MUST NOT invent or silently strengthen material claims.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-006",
+      "rfc": "RFC-0001",
+      "section": "Factual integrity",
+      "source_text": "- An inference MUST NOT be presented as a verified fact.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-007",
+      "rfc": "RFC-0001",
+      "section": "Factual integrity",
+      "source_text": "- Missing evidence MUST NOT be converted into evidence of absence.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-008",
+      "rfc": "RFC-0001",
+      "section": "Factual integrity",
+      "source_text": "- Conflicting or insufficient sources MUST remain visible when they affect interpretation.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-009",
+      "rfc": "RFC-0001",
+      "section": "Legitimate perspective",
+      "source_text": "- First-person experience MUST originate from authorized author material.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-010",
+      "rfc": "RFC-0001",
+      "section": "Legitimate perspective",
+      "source_text": "- Expert authority MUST NOT be inferred from tone alone.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-011",
+      "rfc": "RFC-0001",
+      "section": "Legitimate perspective",
+      "source_text": "- An implementation MUST NOT imitate a named living author or an identifiable private person.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-012",
+      "rfc": "RFC-0001",
+      "section": "Audience integrity",
+      "source_text": "- Audience needs and intended outcome MUST be known or safely inferred before format conventions are optimized.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-013",
+      "rfc": "RFC-0001",
+      "section": "Audience integrity",
+      "source_text": "- Engagement tactics MUST NOT override meaning, evidence, safety, or consent.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-014",
+      "rfc": "RFC-0001",
+      "section": "Visual integrity",
+      "source_text": "- A generated image MUST NOT be presented as a photograph, screenshot, record, or other documentary evidence of a real event, person, place, product, or interface.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-015",
+      "rfc": "RFC-0001",
+      "section": "Visual integrity",
+      "source_text": "- A visual MUST NOT introduce unsupported data, labels, scale, causation, anatomy, features, or historical detail.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-016",
+      "rfc": "RFC-0001",
+      "section": "Visual integrity",
+      "source_text": "- Rights, likeness, privacy, accessibility, provenance, and mandatory disclosure MUST be handled as part of the artifact contract.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-017",
+      "rfc": "RFC-0001",
+      "section": "Review integrity",
+      "source_text": "- A review MUST identify concrete affected content or assets.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-018",
+      "rfc": "RFC-0001",
+      "section": "Review integrity",
+      "source_text": "- A revision MUST address findings rather than create unrelated stylistic churn.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-019",
+      "rfc": "RFC-0001",
+      "section": "Review integrity",
+      "source_text": "- An artifact with an open blocker or major finding MUST NOT be labeled publication-ready.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-020",
+      "rfc": "RFC-0001",
+      "section": "Normative precedence",
+      "source_text": "When requirements conflict, an implementation MUST apply this order:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-021",
+      "rfc": "RFC-0001",
+      "section": "Normative precedence",
+      "source_text": "An explicit user preference MAY override a stylistic default or recommendation. It MUST NOT override source integrity, legitimate perspective, rights, disclosure, or a failed gate.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-022",
+      "rfc": "RFC-0001",
+      "section": "Normative precedence",
+      "source_text": "Within the same level, a narrower applicable requirement SHOULD override a broader one only within its declared scope. If two equal-level requirements remain incompatible, the implementation MUST record a conflict and stop the affected stage rather than choose silently.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-023",
+      "rfc": "RFC-0001",
+      "section": "Editorial Core",
+      "source_text": "Supports text production with `visuals.mode: none`. It MUST implement RFC-0001 through RFC-0005, required registries, context resolution, evidence classification, gates, review, and separated output.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-024",
+      "rfc": "RFC-0001",
+      "section": "Editorial Visual",
+      "source_text": "Includes Editorial Core and visual planning or generation. It MUST implement visual requirements in RFC-0002 and RFC-0005, including provenance and accessibility handoff.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-025",
+      "rfc": "RFC-0001",
+      "section": "Benchmark",
+      "source_text": "Implements RFC-0006 in addition to Editorial Core. A benchmark evaluating generated visuals MUST also conform to Editorial Visual.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-026",
+      "rfc": "RFC-0001",
+      "section": "Conformance statement",
+      "source_text": "A conformance statement MUST include:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-027",
+      "rfc": "RFC-0001",
+      "section": "Conformance statement",
+      "source_text": "An implementation MUST NOT advertise conformance as proof that every individual output is accurate, safe, lawful, accessible, or high quality.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-028",
+      "rfc": "RFC-0001",
+      "section": "Extension boundaries",
+      "source_text": "An extension MUST NOT redefine an existing stable ID for a different meaning.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-029",
+      "rfc": "RFC-0001",
+      "section": "Privacy, security, and rights",
+      "source_text": "Implementations SHOULD minimize collection and retention of personal or confidential source material. They MUST respect authorization boundaries and MUST NOT place private source content into public artifacts, prompts, benchmarks, or visual assets without permission.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 1,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-SCOPE-030",
+      "rfc": "RFC-0001",
+      "section": "Privacy, security, and rights",
+      "source_text": "Security-sensitive instructions, personal data, embargoed material, copyrighted content, trademarks, and likenesses MUST retain their applicable restrictions throughout retrieval, drafting, generation, review, storage, and publication.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-001",
+      "rfc": "RFC-0002",
+      "section": "Abstract",
+      "source_text": "The pipeline is normative. A user interface MAY combine or hide stages, but a conforming implementation MUST preserve their decisions and outputs.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-002",
+      "rfc": "RFC-0002",
+      "section": "Pipeline states",
+      "source_text": "An implementation MAY use additional internal states. It MUST map them to these semantics in its audit record.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-003",
+      "rfc": "RFC-0002",
+      "section": "Required task record",
+      "source_text": "Before drafting, the task record MUST contain or explicitly mark unknown:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-004",
+      "rfc": "RFC-0002",
+      "section": "Required task record",
+      "source_text": "Unknown values MUST remain distinguishable from omitted optional values.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-005",
+      "rfc": "RFC-0002",
+      "section": "Required behavior",
+      "source_text": "The implementation MUST:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-006",
+      "rfc": "RFC-0002",
+      "section": "Stage 2 — Module resolution",
+      "source_text": "The implementation MUST execute RFC-0004 against pinned registries.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-007",
+      "rfc": "RFC-0002",
+      "section": "Exit",
+      "source_text": "A partial or unvalidated module set MUST NOT be used for drafting.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-008",
+      "rfc": "RFC-0002",
+      "section": "Stage 3 — Context collection",
+      "source_text": "The implementation MUST collect only material relevant to the reader promise, evidence needs, constraints, and selected modules.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-009",
+      "rfc": "RFC-0002",
+      "section": "Stage 3 — Context collection",
+      "source_text": "The implementation MUST distinguish user-provided material from retrieved material. It MUST NOT treat a search result snippet, model memory, or unsourced prior output as a verified source.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-010",
+      "rfc": "RFC-0002",
+      "section": "Stage 4 — Evidence mapping",
+      "source_text": "Every material item or planned claim MUST be classified as one of:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-011",
+      "rfc": "RFC-0002",
+      "section": "Stage 4 — Evidence mapping",
+      "source_text": "Material claims MUST map to a source, explicit author material, or a declared non-factual classification. An unsupported claim MUST be removed, narrowed, researched further, or marked unknown.",
+      "normative_terms": {
+        "must": 2,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-012",
+      "rfc": "RFC-0002",
+      "section": "Stage 5 — Context gate",
+      "source_text": "The context gate MUST evaluate:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-013",
+      "rfc": "RFC-0002",
+      "section": "Stage 5 — Context gate",
+      "source_text": "The gate MUST fail when a missing or unsupported item could materially change the thesis, factual risk, artifact type, or legitimate speaking position.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-014",
+      "rfc": "RFC-0002",
+      "section": "Stage 5 — Context gate",
+      "source_text": "The gate MUST NOT pass because the implementation can produce fluent text.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-015",
+      "rfc": "RFC-0002",
+      "section": "Stage 6 — Content design",
+      "source_text": "The implementation MUST define a reader promise describing what the audience should understand, know, feel, or be able to do.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-016",
+      "rfc": "RFC-0002",
+      "section": "Stage 6 — Content design",
+      "source_text": "Content design MUST include:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-017",
+      "rfc": "RFC-0002",
+      "section": "Stage 6 — Content design",
+      "source_text": "The design MUST follow the selected format and topic without forcing optional template elements.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-018",
+      "rfc": "RFC-0002",
+      "section": "Stage 7 — Media decision",
+      "source_text": "The media decision MUST state:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-019",
+      "rfc": "RFC-0002",
+      "section": "Stage 8 — Draft",
+      "source_text": "Drafting MUST begin only when a valid `context-ready` gate record, current content design, and current media decision exist. The active state at that point is `media-decided`.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-020",
+      "rfc": "RFC-0002",
+      "section": "Stage 8 — Draft",
+      "source_text": "The draft MUST:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-021",
+      "rfc": "RFC-0002",
+      "section": "Stage 9 — Edit",
+      "source_text": "The implementation MUST perform passes appropriate to:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-022",
+      "rfc": "RFC-0002",
+      "section": "Stage 9 — Edit",
+      "source_text": "Edits MUST NOT remove necessary uncertainty, disclosure, context, or source boundaries merely to improve flow.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-023",
+      "rfc": "RFC-0002",
+      "section": "Stage 10 — Visual gate and production",
+      "source_text": "Before generation or commissioning, every selected visual MUST have:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-024",
+      "rfc": "RFC-0002",
+      "section": "Stage 10 — Visual gate and production",
+      "source_text": "Generated imagery MUST NOT be presented as documentary evidence.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-025",
+      "rfc": "RFC-0002",
+      "section": "Production failure",
+      "source_text": "The implementation MUST retain generation provenance required by task, law, contract, platform, or profile.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-026",
+      "rfc": "RFC-0002",
+      "section": "Stage 11 — Review",
+      "source_text": "The implementation MUST execute RFC-0005 against the edited text and selected visual assets.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-027",
+      "rfc": "RFC-0002",
+      "section": "Stage 11 — Review",
+      "source_text": "Review MUST use one frozen artifact revision per pass. Required reviewers MUST complete or return an input failure.",
+      "normative_terms": {
+        "must": 2,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-028",
+      "rfc": "RFC-0002",
+      "section": "Stage 12 — Revision loop",
+      "source_text": "The implementation MUST:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-029",
+      "rfc": "RFC-0002",
+      "section": "Stage 13 — Completion",
+      "source_text": "The pipeline MUST NOT label an artifact publication-ready solely because a draft exists.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-030",
+      "rfc": "RFC-0002",
+      "section": "Output package",
+      "source_text": "A ready task MUST return or retain separable parts:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-031",
+      "rfc": "RFC-0002",
+      "section": "Output package",
+      "source_text": "Exact serialization MAY differ. Publication copy MUST remain distinguishable from internal notes.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-032",
+      "rfc": "RFC-0002",
+      "section": "Blocking and resumption",
+      "source_text": "A blocked record MUST identify:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-033",
+      "rfc": "RFC-0002",
+      "section": "Blocking and resumption",
+      "source_text": "Resumption MUST validate that pinned sources, registries, task constraints, and completed artifacts remain current. A material change MUST invalidate affected downstream stages.",
+      "normative_terms": {
+        "must": 2,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-034",
+      "rfc": "RFC-0002",
+      "section": "Auditability",
+      "source_text": "A conforming implementation MUST retain enough information to identify:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-035",
+      "rfc": "RFC-0002",
+      "section": "Stage 3 — Context collection",
+      "source_text": "Each material source SHOULD have a source record containing:",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-036",
+      "rfc": "RFC-0002",
+      "section": "Stage 4 — Evidence mapping",
+      "source_text": "A claim ledger SHOULD contain:",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-037",
+      "rfc": "RFC-0002",
+      "section": "Stage 8 — Draft",
+      "source_text": "The body SHOULD be meaning-complete before the implementation optimizes title, lead, deck, excerpt, tags, or visual copy.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-PIPE-038",
+      "rfc": "RFC-0002",
+      "section": "Stage 10 — Visual gate and production",
+      "source_text": "Exact documentary appearance, verified data, product interfaces, medical anatomy, maps, technical labels, code, and historical records SHOULD use verified assets or manually reviewed construction rather than unconstrained generation.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-001",
+      "rfc": "RFC-0003",
+      "section": "Object identity",
+      "source_text": "Every runtime object MUST have one stable `id`.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-002",
+      "rfc": "RFC-0003",
+      "section": "Object identity",
+      "source_text": "- MUST match `^[a-z0-9][a-z0-9._-]+$`;",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-003",
+      "rfc": "RFC-0003",
+      "section": "Object identity",
+      "source_text": "- MUST be unique within a specification revision;",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-004",
+      "rfc": "RFC-0003",
+      "section": "Object identity",
+      "source_text": "- MUST NOT be reused for a semantically different object;",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-005",
+      "rfc": "RFC-0003",
+      "section": "Object identity",
+      "source_text": "- MUST remain unchanged when only the title, prose, or repository path changes.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-006",
+      "rfc": "RFC-0003",
+      "section": "Object kinds",
+      "source_text": "An object MUST use the narrowest kind matching its responsibility. A platform object MUST NOT encode a universal evidence rule. A tone object MUST NOT create author authority. A topic object SHOULD NOT prescribe a fixed article structure unless the structure is necessary to preserve domain meaning.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 2,
+        "should": 0,
+        "should_not": 1
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-007",
+      "rfc": "RFC-0003",
+      "section": "Runtime object record",
+      "source_text": "A runtime object record MUST contain:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-008",
+      "rfc": "RFC-0003",
+      "section": "Runtime object record",
+      "source_text": "Missing optional arrays MUST be interpreted as empty arrays. An empty applicability array means “not restricted by this selector,” not “applicable nowhere.”",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-009",
+      "rfc": "RFC-0003",
+      "section": "Path rules",
+      "source_text": "- MUST be relative to the repository root;",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-010",
+      "rfc": "RFC-0003",
+      "section": "Path rules",
+      "source_text": "- MUST NOT be absolute;",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-011",
+      "rfc": "RFC-0003",
+      "section": "Path rules",
+      "source_text": "- MUST NOT contain `..` path traversal;",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-012",
+      "rfc": "RFC-0003",
+      "section": "Path rules",
+      "source_text": "- MUST resolve to one file;",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-013",
+      "rfc": "RFC-0003",
+      "section": "Path rules",
+      "source_text": "- MUST be unique among runtime objects;",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-014",
+      "rfc": "RFC-0003",
+      "section": "Path rules",
+      "source_text": "Moving a file without changing its semantics MUST preserve the object ID and MUST update the registry atomically.",
+      "normative_terms": {
+        "must": 2,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-015",
+      "rfc": "RFC-0003",
+      "section": "Frontmatter contract",
+      "source_text": "Each runtime Markdown module MUST begin with frontmatter containing at least:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-016",
+      "rfc": "RFC-0003",
+      "section": "Frontmatter contract",
+      "source_text": "The frontmatter `id`, `kind`, and `status` MUST equal the registry values. Human-readable prose outside frontmatter MUST NOT redefine those values.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-017",
+      "rfc": "RFC-0003",
+      "section": "Frontmatter contract",
+      "source_text": "Additional frontmatter MAY be used when a validator understands or safely ignores it. Required machine metadata MUST live in the registry rather than only in prose.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-018",
+      "rfc": "RFC-0003",
+      "section": "Applicability",
+      "source_text": "- A resolver MUST reject an explicitly selected object when a non-empty selector excludes the task value.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-019",
+      "rfc": "RFC-0003",
+      "section": "Dependencies",
+      "source_text": "- MUST reference known object IDs;",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-020",
+      "rfc": "RFC-0003",
+      "section": "Dependencies",
+      "source_text": "- MUST NOT contain self-dependencies;",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-021",
+      "rfc": "RFC-0003",
+      "section": "Dependencies",
+      "source_text": "- MUST NOT contain cycles;",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-022",
+      "rfc": "RFC-0003",
+      "section": "Dependencies",
+      "source_text": "- MUST load dependencies before dependants;",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-023",
+      "rfc": "RFC-0003",
+      "section": "Dependencies",
+      "source_text": "- MUST preserve transitive dependencies;",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-024",
+      "rfc": "RFC-0003",
+      "section": "Dependencies",
+      "source_text": "An object MUST NOT depend on a narrower object unless that narrower scope is required for every valid use of the dependant.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-025",
+      "rfc": "RFC-0003",
+      "section": "Dependencies",
+      "source_text": "For example, `platform.telegram.foundation` MAY require `platform.social.foundation`. `topic.general.foundation` MUST NOT require every specialist topic.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-026",
+      "rfc": "RFC-0003",
+      "section": "Registry indexes",
+      "source_text": "- MUST map a public configuration value to one known object of the matching kind;",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-027",
+      "rfc": "RFC-0003",
+      "section": "Registry indexes",
+      "source_text": "- MUST use unique value IDs and module IDs within the index;",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-028",
+      "rfc": "RFC-0003",
+      "section": "Registry indexes",
+      "source_text": "- MUST NOT map two values to the same module unless the alias behavior is explicitly documented;",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-029",
+      "rfc": "RFC-0003",
+      "section": "Registry indexes",
+      "source_text": "- MUST remain consistent with the object's applicability selector.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-030",
+      "rfc": "RFC-0003",
+      "section": "Status lifecycle",
+      "source_text": "- MUST retain its ID;",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-031",
+      "rfc": "RFC-0003",
+      "section": "Status lifecycle",
+      "source_text": "- MUST NOT be selected by default for new configurations;",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-032",
+      "rfc": "RFC-0003",
+      "section": "Change classification",
+      "source_text": "Every potentially breaking change MUST include migration notes before release.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-033",
+      "rfc": "RFC-0003",
+      "section": "Extension and namespace rules",
+      "source_text": "Community or vendor extensions SHOULD use a documented namespace when collision is possible. An extension MUST NOT use a core ID for different behavior.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-034",
+      "rfc": "RFC-0003",
+      "section": "Extension and namespace rules",
+      "source_text": "An extension proposal MUST document:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-035",
+      "rfc": "RFC-0003",
+      "section": "Validation",
+      "source_text": "A conforming object validator MUST detect:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-036",
+      "rfc": "RFC-0003",
+      "section": "Validation",
+      "source_text": "Validation failure MUST produce a non-success result and identify the affected file or object.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-037",
+      "rfc": "RFC-0003",
+      "section": "Security considerations",
+      "source_text": "Object paths and index values are untrusted input to tooling. Resolvers MUST prevent path traversal and MUST NOT execute module content as code merely because it is registered.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-038",
+      "rfc": "RFC-0003",
+      "section": "Security considerations",
+      "source_text": "An object MAY contain sensitive guidance but MUST NOT embed private source material, credentials, tokens, or proprietary content without authorization.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-039",
+      "rfc": "RFC-0003",
+      "section": "Object identity",
+      "source_text": "- SHOULD follow `<kind-or-domain>.<name>[.<variant>]`;",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-040",
+      "rfc": "RFC-0003",
+      "section": "Path rules",
+      "source_text": "- SHOULD remain stable when practical, but path stability is weaker than ID stability.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-041",
+      "rfc": "RFC-0003",
+      "section": "Dependencies",
+      "source_text": "- SHOULD avoid dependencies that exist only for prose convenience.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-042",
+      "rfc": "RFC-0003",
+      "section": "Registry indexes",
+      "source_text": "- SHOULD declare a fallback only when fallback semantics are defined by RFC-0004;",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-043",
+      "rfc": "RFC-0003",
+      "section": "Registry indexes",
+      "source_text": "RFCs SHOULD be listed in a separate RFC index because normative-document dependency is not runtime module dependency.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-OBJ-044",
+      "rfc": "RFC-0003",
+      "section": "Status lifecycle",
+      "source_text": "- SHOULD identify its replacement in prose or migration metadata;",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-001",
+      "rfc": "RFC-0004",
+      "section": "Goals",
+      "source_text": "Resolution MUST:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-002",
+      "rfc": "RFC-0004",
+      "section": "Goals",
+      "source_text": "Resolution MUST NOT attempt to improve prose. It prepares the instruction context for RFC-0002.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-003",
+      "rfc": "RFC-0004",
+      "section": "Input authority",
+      "source_text": "The resolver MUST distinguish:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-004",
+      "rfc": "RFC-0004",
+      "section": "Input authority",
+      "source_text": "It MUST preserve the origin of every resolved axis.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-005",
+      "rfc": "RFC-0004",
+      "section": "Normalization",
+      "source_text": "1. MUST preserve the original input value in the audit record;",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-006",
+      "rfc": "RFC-0004",
+      "section": "Normalization",
+      "source_text": "3. MUST NOT fuzzy-match an unknown stable ID or public value;",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-007",
+      "rfc": "RFC-0004",
+      "section": "Normalization",
+      "source_text": "4. MUST NOT translate a public value into a semantically similar value without an explicit alias;",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-008",
+      "rfc": "RFC-0004",
+      "section": "Normalization",
+      "source_text": "5. MUST validate the pinned registry revision before resolution.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-009",
+      "rfc": "RFC-0004",
+      "section": "Normalization",
+      "source_text": "For example, `science` MAY map to `topic.science.foundation` because the topic index declares it. `scientific` MUST NOT map automatically unless an index declares that alias.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-010",
+      "rfc": "RFC-0004",
+      "section": "Required roots",
+      "source_text": "Every Editorial Core resolution MUST include:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-011",
+      "rfc": "RFC-0004",
+      "section": "Required roots",
+      "source_text": "An implementation MAY add a specialist reviewer required by a selected extension. It MUST record the reason.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-012",
+      "rfc": "RFC-0004",
+      "section": "Topic selection",
+      "source_text": "- A known explicit topic MUST map through the topic index.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-013",
+      "rfc": "RFC-0004",
+      "section": "Topic selection",
+      "source_text": "- A high-risk or materially specialist topic MUST NOT silently fall back to general when doing so would weaken evidence or safety requirements.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-014",
+      "rfc": "RFC-0004",
+      "section": "Format and platform compatibility",
+      "source_text": "- If content type is absent and the task can safely inherit the platform default, the resolver MAY infer it and MUST record the inference.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-015",
+      "rfc": "RFC-0004",
+      "section": "Format and platform compatibility",
+      "source_text": "- If an explicit content type conflicts with a non-empty platform format selector, the resolver MUST return an applicability error.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-016",
+      "rfc": "RFC-0004",
+      "section": "Format and platform compatibility",
+      "source_text": "- A platform default MUST NOT determine topic, skill, tone, or author perspective.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-017",
+      "rfc": "RFC-0004",
+      "section": "Skill selection",
+      "source_text": "- An explicit known skill MUST be loaded.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-018",
+      "rfc": "RFC-0004",
+      "section": "Skill selection",
+      "source_text": "- An unknown skill MUST produce an error.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-019",
+      "rfc": "RFC-0004",
+      "section": "Skill selection",
+      "source_text": "- A resolver MUST NOT select a skill merely because its example resembles the requested subject.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-020",
+      "rfc": "RFC-0004",
+      "section": "Skill selection",
+      "source_text": "Multiple skills MAY be loaded only when their jobs are materially required and compatible. The resolver MUST record the primary skill.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-021",
+      "rfc": "RFC-0004",
+      "section": "Tone and perspective",
+      "source_text": "Tone MAY be inferred when the audience, platform, and task establish a low-risk default. The inference MUST be recorded.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-022",
+      "rfc": "RFC-0004",
+      "section": "Tone and perspective",
+      "source_text": "Author perspective MUST NOT be inferred as first-person or expert solely from tone, platform, or topic. If legitimate perspective is unknown and would materially affect the artifact, resolution MAY complete but RFC-0002 context gating MUST fail.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-023",
+      "rfc": "RFC-0004",
+      "section": "Dependency ordering",
+      "source_text": "Dependencies MUST load before dependants.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-024",
+      "rfc": "RFC-0004",
+      "section": "Dependency ordering",
+      "source_text": "Load order MUST NOT silently become a substitute for normative precedence. Conflict handling follows RFC-0001.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-025",
+      "rfc": "RFC-0004",
+      "section": "Conflict handling",
+      "source_text": "- A conversational tone MAY change phrasing but MUST NOT weaken a health disclaimer.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-026",
+      "rfc": "RFC-0004",
+      "section": "Conflict handling",
+      "source_text": "- A Telegram module MAY change paragraphing but MUST NOT remove a scientific limitation.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-027",
+      "rfc": "RFC-0004",
+      "section": "Error contract",
+      "source_text": "A failed resolution MUST return a machine-distinguishable code and human-readable context.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-028",
+      "rfc": "RFC-0004",
+      "section": "Error contract",
+      "source_text": "An error MUST identify the affected value or object. The resolver MUST NOT continue with a silent partial module set when a required root or dependency fails.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-029",
+      "rfc": "RFC-0004",
+      "section": "Resolution record",
+      "source_text": "A successful resolution MUST emit or retain:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-030",
+      "rfc": "RFC-0004",
+      "section": "Resolution record",
+      "source_text": "Exact serialization MAY differ, but the semantics MUST be preserved.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-031",
+      "rfc": "RFC-0004",
+      "section": "Topic selection",
+      "source_text": "The resolver SHOULD choose the narrowest topic controlling the material claims.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-032",
+      "rfc": "RFC-0004",
+      "section": "Skill selection",
+      "source_text": "- When no skill accurately describes the task, the resolver SHOULD omit the skill.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-033",
+      "rfc": "RFC-0004",
+      "section": "Dependency ordering",
+      "source_text": "When multiple valid topological orders exist, an implementation SHOULD use a deterministic order, such as:",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-RESOLVE-034",
+      "rfc": "RFC-0004",
+      "section": "Minimality",
+      "source_text": "Implementations SHOULD expose unused explicitly requested modules as warnings or errors rather than loading them without effect.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-001",
+      "rfc": "RFC-0005",
+      "section": "Goals",
+      "source_text": "A conforming review process MUST:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-002",
+      "rfc": "RFC-0005",
+      "section": "Reviewer roles",
+      "source_text": "One implementation MAY execute several roles, but it MUST preserve each role's scope and findings separately. A combined reviewer MUST NOT omit a required checklist merely because another role appears to cover it.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-003",
+      "rfc": "RFC-0005",
+      "section": "Independence",
+      "source_text": "The reviewer MUST NOT:",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-004",
+      "rfc": "RFC-0005",
+      "section": "Review input",
+      "source_text": "Every review run MUST identify:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-005",
+      "rfc": "RFC-0005",
+      "section": "Review input",
+      "source_text": "A reviewer MUST return an input error rather than guess when a missing item prevents evaluation within its scope.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-006",
+      "rfc": "RFC-0005",
+      "section": "Finding schema",
+      "source_text": "Each finding MUST contain:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-007",
+      "rfc": "RFC-0005",
+      "section": "Finding schema",
+      "source_text": "Exact serialization MAY differ, but the fields and semantics MUST remain recoverable.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-008",
+      "rfc": "RFC-0005",
+      "section": "Note",
+      "source_text": "Severity MUST reflect impact, not correction effort. An easy-to-fix false claim may still be a blocker.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-009",
+      "rfc": "RFC-0005",
+      "section": "Finding status",
+      "source_text": "`accepted-risk` MUST NOT change a claim classification or make an unsupported claim verified. An artifact with an accepted-risk blocker or major finding MUST NOT claim unqualified publication-ready status under this specification.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 2,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-010",
+      "rfc": "RFC-0005",
+      "section": "Review execution",
+      "source_text": "Review MAY be parallelized when reviewers use the same frozen artifact revision. Findings from different revisions MUST NOT be merged without identifying the revision boundary.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-011",
+      "rfc": "RFC-0005",
+      "section": "Aggregation",
+      "source_text": "Aggregation MUST NOT average severities into a lower category.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-012",
+      "rfc": "RFC-0005",
+      "section": "Revision contract",
+      "source_text": "A revision MUST:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-013",
+      "rfc": "RFC-0005",
+      "section": "Re-review",
+      "source_text": "Every fixed blocker or major finding MUST be verified.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-014",
+      "rfc": "RFC-0005",
+      "section": "Re-review",
+      "source_text": "Re-review MUST inspect:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-015",
+      "rfc": "RFC-0005",
+      "section": "Visual review",
+      "source_text": "When a visual is produced, review MUST compare:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-016",
+      "rfc": "RFC-0005",
+      "section": "Visual review",
+      "source_text": "The visual reviewer MUST recommend omission when an optional asset cannot be made truthful, useful, accessible, or authorized.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-017",
+      "rfc": "RFC-0005",
+      "section": "Readiness",
+      "source_text": "An artifact MAY be `ready-with-minor-findings` when only minor findings or notes remain and the publisher accepts them. The review report MUST preserve them.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-018",
+      "rfc": "RFC-0005",
+      "section": "Review report",
+      "source_text": "The report MUST include:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-019",
+      "rfc": "RFC-0005",
+      "section": "Review report",
+      "source_text": "Review notes MUST remain separate from public copy unless disclosure or platform context requires publication.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-020",
+      "rfc": "RFC-0005",
+      "section": "Privacy and security",
+      "source_text": "Reviewers MUST receive only the source material required for their scope. Review reports MUST NOT expose private source content, credentials, hidden personal data, or confidential prompts without authorization.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-021",
+      "rfc": "RFC-0005",
+      "section": "Independence",
+      "source_text": "A reviewer SHOULD evaluate an artifact from the supplied task and evidence record rather than from the draft author's hidden rationale.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-022",
+      "rfc": "RFC-0005",
+      "section": "Independence",
+      "source_text": "For high-risk tasks, implementations SHOULD use a distinct review pass or independent evaluator when practical.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-023",
+      "rfc": "RFC-0005",
+      "section": "Aggregation",
+      "source_text": "Duplicate findings SHOULD be linked to one issue rather than counted as independent evidence of severity.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-REVIEW-024",
+      "rfc": "RFC-0005",
+      "section": "Revision contract",
+      "source_text": "A revision SHOULD NOT rewrite the entire artifact when a local correction is sufficient.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 1
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-001",
+      "rfc": "RFC-0006",
+      "section": "Benchmark case record",
+      "source_text": "Every case MUST include:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-002",
+      "rfc": "RFC-0006",
+      "section": "Benchmark case record",
+      "source_text": "A case MUST NOT contain invented sources or hidden facts used to penalize an output.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-003",
+      "rfc": "RFC-0006",
+      "section": "Source snapshot",
+      "source_text": "Mutable sources MUST be pinned, archived when permitted, or accompanied by enough identity and retrieval metadata to reproduce the evidence boundary.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-004",
+      "rfc": "RFC-0006",
+      "section": "Source snapshot",
+      "source_text": "The snapshot MUST preserve:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-005",
+      "rfc": "RFC-0006",
+      "section": "Source snapshot",
+      "source_text": "Private or licensed sources MUST NOT be published in a benchmark package without authorization. The benchmark MAY publish hashes, metadata, or an access procedure instead.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-006",
+      "rfc": "RFC-0006",
+      "section": "Controlled comparison",
+      "source_text": "When a benchmark claims an effect from Human Writing Rules, arms MUST keep these values equal unless the benchmark explicitly studies them:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-007",
+      "rfc": "RFC-0006",
+      "section": "Controlled comparison",
+      "source_text": "The intended treatment difference MUST be stated precisely.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-008",
+      "rfc": "RFC-0006",
+      "section": "Controlled comparison",
+      "source_text": "A baseline MUST be credible for the tested workflow. It MUST NOT be intentionally crippled to exaggerate improvement.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-009",
+      "rfc": "RFC-0006",
+      "section": "Rules-assisted arm",
+      "source_text": "The rules-assisted arm MUST record:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-010",
+      "rfc": "RFC-0006",
+      "section": "Repeated runs",
+      "source_text": "The benchmark MUST report the number of:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-011",
+      "rfc": "RFC-0006",
+      "section": "Repeated runs",
+      "source_text": "Runs MUST NOT be discarded merely because they weaken the desired result.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-012",
+      "rfc": "RFC-0006",
+      "section": "Visual-mode handling",
+      "source_text": "Evaluation MUST score:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-013",
+      "rfc": "RFC-0006",
+      "section": "Visual-mode handling",
+      "source_text": "An evaluator MUST NOT penalize a correct `none` decision for lacking visual polish. A required visual that cannot be produced or reviewed is a blocked or failed run, not an implicit zero-quality image unless the rubric defines that failure.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-014",
+      "rfc": "RFC-0006",
+      "section": "Required execution record",
+      "source_text": "Each run MUST preserve:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-015",
+      "rfc": "RFC-0006",
+      "section": "Required execution record",
+      "source_text": "Secrets and private chain-of-thought MUST NOT be required for benchmark reproduction. An implementation SHOULD preserve observable decisions and artifacts instead.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-016",
+      "rfc": "RFC-0006",
+      "section": "Hard failures",
+      "source_text": "A high average score MUST NOT erase a hard failure.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-017",
+      "rfc": "RFC-0006",
+      "section": "Evaluator protocol",
+      "source_text": "Evaluation instructions MUST define:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-018",
+      "rfc": "RFC-0006",
+      "section": "Evaluator protocol",
+      "source_text": "Human comparison SHOULD be blinded to arm identity when practical. Evaluators MUST NOT be told the desired winner.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-019",
+      "rfc": "RFC-0006",
+      "section": "Evaluator protocol",
+      "source_text": "An automated reviewer MAY supplement human evaluation. It MUST NOT be described as independent human evidence.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-020",
+      "rfc": "RFC-0006",
+      "section": "Aggregation",
+      "source_text": "Aggregation MUST retain case and dimension detail.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-021",
+      "rfc": "RFC-0006",
+      "section": "Aggregation",
+      "source_text": "Small samples MUST be labeled exploratory. Statistical inference MUST state its assumptions and method.",
+      "normative_terms": {
+        "must": 2,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-022",
+      "rfc": "RFC-0006",
+      "section": "Reporting",
+      "source_text": "A public benchmark report MUST include:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-023",
+      "rfc": "RFC-0006",
+      "section": "Permitted conclusions",
+      "source_text": "Conclusions MUST remain within the tested:",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-024",
+      "rfc": "RFC-0006",
+      "section": "Benchmark lifecycle",
+      "source_text": "Historical results MUST remain associated with the exact case and specification revision used. Re-running a changed case MUST NOT silently replace previous results.",
+      "normative_terms": {
+        "must": 1,
+        "must_not": 1,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-025",
+      "rfc": "RFC-0006",
+      "section": "Security, privacy, and rights",
+      "source_text": "Benchmark packages MUST remove credentials and unauthorized personal or confidential material. Visual assets, source snapshots, prompts, and outputs MUST retain copyright, trademark, likeness, and license restrictions.",
+      "normative_terms": {
+        "must": 2,
+        "must_not": 0,
+        "should": 0,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-026",
+      "rfc": "RFC-0006",
+      "section": "Repeated runs",
+      "source_text": "Generative outputs vary. A comparative claim SHOULD use repeated runs across more than one case and, when possible, more than one model or execution date.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-027",
+      "rfc": "RFC-0006",
+      "section": "Hard failures",
+      "source_text": "Rubrics SHOULD separately record invariant violations such as:",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-028",
+      "rfc": "RFC-0006",
+      "section": "Inter-rater handling",
+      "source_text": "When several human raters are used, the report SHOULD include:",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-029",
+      "rfc": "RFC-0006",
+      "section": "Aggregation",
+      "source_text": "Reports SHOULD include:",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    },
+    {
+      "id": "HWR-BENCH-030",
+      "rfc": "RFC-0006",
+      "section": "Security, privacy, and rights",
+      "source_text": "Adversarial or high-risk cases SHOULD be isolated from live publishing and production systems.",
+      "normative_terms": {
+        "must": 0,
+        "must_not": 0,
+        "should": 1,
+        "should_not": 0
+      },
+      "status": "planned"
+    }
+  ],
+  "retired_requirements": []
+}

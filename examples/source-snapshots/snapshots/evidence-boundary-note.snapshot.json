@@ -1,0 +1,17 @@
+{
+  "$schema": "https://human-writing-rules.example/schemas/source-snapshot.schema.json",
+  "schema_version": "1.0",
+  "snapshot_id": "SNAP-EVIDENCE-BOUNDARY-001",
+  "source_id": "SRC-LOCAL-001",
+  "media_type": "text/markdown",
+  "origin": {
+    "kind": "local-file",
+    "path": "materials/evidence-boundary-note.md"
+  },
+  "captured_at": "2026-07-26",
+  "sha256": "sha256:9e42b97edf95802d3d1ae6273f1f25efd5eda78254361bae5078400035b82bfa",
+  "bytes": 234,
+  "content": "# Evidence boundary note\n\nA material claim should retain the source scope, version, date, and relevant\nlimitations. A local snapshot preserves the exact text supplied to the\neditorial adapter; it does not prove that the text is true.\n",
+  "rights": "Repository example under the project license",
+  "notes": "Synthetic local fixture; not external evidence."
+}

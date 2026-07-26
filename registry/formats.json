@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0",
+  "formats": [
+    {
+      "id": "article",
+      "name": "Article",
+      "module": "format.article.foundation"
+    },
+    {
+      "id": "social-post",
+      "name": "Social Post",
+      "module": "format.social-post.foundation"
+    }
+  ]
+}

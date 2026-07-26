@@ -1,0 +1,30 @@
+{
+  "version": "0.1.0",
+  "skills": [
+    {
+      "id": "product-launch",
+      "name": "Product Launch",
+      "module": "skill.product-launch"
+    },
+    {
+      "id": "personal-story",
+      "name": "Personal Story",
+      "module": "skill.personal-story"
+    },
+    {
+      "id": "tutorial",
+      "name": "Tutorial",
+      "module": "skill.tutorial"
+    },
+    {
+      "id": "news",
+      "name": "News",
+      "module": "skill.news"
+    },
+    {
+      "id": "opensource",
+      "name": "Open Source",
+      "module": "skill.opensource"
+    }
+  ]
+}

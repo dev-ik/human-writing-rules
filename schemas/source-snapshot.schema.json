@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://human-writing-rules.example/schemas/source-snapshot.schema.json",
+  "title": "Human Writing Rules local source snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "source_id",
+    "media_type",
+    "origin",
+    "sha256",
+    "bytes",
+    "content"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://human-writing-rules.example/schemas/source-snapshot.schema.json"
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "media_type": {
+      "enum": [
+        "application/json",
+        "application/xml",
+        "text/csv",
+        "text/html",
+        "text/markdown",
+        "text/plain"
+      ]
+    },
+    "origin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "path"
+      ],
+      "properties": {
+        "kind": {
+          "const": "local-file"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "captured_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "bytes": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2097152
+    },
+    "content": {
+      "type": "string"
+    },
+    "rights": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

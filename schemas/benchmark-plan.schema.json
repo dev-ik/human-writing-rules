@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://human-writing-rules.example/schemas/benchmark-plan.schema.json",
+  "title": "Human Writing Rules benchmark execution plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema_version",
+    "benchmark_run_id",
+    "revision",
+    "case_path",
+    "run_date",
+    "execution_order",
+    "repetitions",
+    "treatment_difference",
+    "controls",
+    "arms"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "benchmark_run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_date": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repetitions": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10
+    },
+    "execution_order": {
+      "const": "declared-arm-order"
+    },
+    "treatment_difference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "model",
+        "model_revision",
+        "settings",
+        "execution_environment",
+        "tool_configuration",
+        "retrieval_configuration",
+        "time_budget_seconds",
+        "retry_policy",
+        "output_requirements"
+      ],
+      "properties": {
+        "provider": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "settings": {
+          "type": "object"
+        },
+        "execution_environment": {
+          "type": "object"
+        },
+        "tool_configuration": {
+          "type": "object"
+        },
+        "retrieval_configuration": {
+          "type": "object"
+        },
+        "time_budget_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 600
+        },
+        "retry_policy": {
+          "const": "none"
+        },
+        "output_requirements": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "arms": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "treatment",
+          "description",
+          "instructions"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "treatment": {
+            "enum": [
+              "baseline",
+              "rules-assisted"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "instructions": {
+            "$ref": "#/$defs/stringArray"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

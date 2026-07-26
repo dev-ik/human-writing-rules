@@ -1,0 +1,31 @@
+{
+  "$schema": "../../schemas/task-record.schema.json",
+  "task_id": "example.ru.blocked-unsupported-claim",
+  "revision": "1",
+  "subject": "An unspecified research result",
+  "central_question": "What did the research prove?",
+  "reader_promise": "Readers will understand a result that has not been supplied.",
+  "primary_job": "news",
+  "artifact_form": "article",
+  "assessments": {
+    "source_freshness": "unknown",
+    "platform_constraints": "known",
+    "perspective": "not-applicable",
+    "rights": "not-applicable"
+  },
+  "sources": [],
+  "claims": [
+    {
+      "id": "C-001",
+      "text": "The unspecified study proves the requested conclusion.",
+      "classification": "verified-fact",
+      "material": true,
+      "source_ids": [],
+      "disposition": "use"
+    }
+  ],
+  "media": {
+    "decision": "none",
+    "reason": "No evidence-backed visual can be selected."
+  }
+}

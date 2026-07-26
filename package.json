@@ -1,0 +1,39 @@
+{
+  "name": "human-writing-rules",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vendor-neutral rules and benchmarks for AI-assisted articles, social posts, and optional illustrations.",
+  "license": "MIT",
+  "scripts": {
+    "check": "python3 tools/validate_registry.py",
+    "check:conformance": "python3 tools/check_conformance_requirements.py",
+    "check:registry-index": "python3 tools/hwr_registry_index.py --check",
+    "check:release": "PYTHONDONTWRITEBYTECODE=1 python3 tools/hwr_release.py --check",
+    "check:reviewed-examples": "PYTHONDONTWRITEBYTECODE=1 python3 tools/hwr_reviewed_examples.py --check",
+    "check:visual-benchmarks": "PYTHONDONTWRITEBYTECODE=1 python3 tools/hwr_visual_benchmarks.py --check",
+    "generate:registry-index": "python3 tools/hwr_registry_index.py --write",
+    "test:benchmark": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_benchmark_runner",
+    "test:reviewed-examples": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_reviewed_examples",
+    "test:visual-benchmarks": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_visual_benchmarks",
+    "hwr": "python3 tools/hwr.py",
+    "runner:doctor": "python3 tools/hwr.py --json doctor",
+    "release:verify": "PYTHONDONTWRITEBYTECODE=1 python3 tools/hwr_release.py --verify",
+    "test:conformance": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_*.py'",
+    "test:fixtures": "PYTHONDONTWRITEBYTECODE=1 python3 tools/run_conformance_fixtures.py",
+    "validate:registry": "python3 tools/validate_registry.py"
+  },
+  "keywords": [
+    "ai",
+    "writing",
+    "llm",
+    "agents",
+    "content",
+    "editorial",
+    "articles",
+    "social-media",
+    "illustrations",
+    "rules",
+    "benchmark",
+    "open-standard"
+  ]
+}

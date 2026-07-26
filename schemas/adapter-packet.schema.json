@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://human-writing-rules.example/schemas/adapter-packet.schema.json",
+  "title": "Human Writing Rules vendor-neutral adapter packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_version",
+    "packet_id",
+    "stage",
+    "run_id",
+    "input_state",
+    "required_output_schema",
+    "instructions",
+    "task",
+    "module_manifest",
+    "sources",
+    "claim_ledger",
+    "gates",
+    "content_design",
+    "current_artifact",
+    "visual_assets",
+    "review_context"
+  ],
+  "properties": {
+    "protocol_version": {
+      "const": "1.0"
+    },
+    "packet_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stage": {
+      "enum": [
+        "design",
+        "draft",
+        "edit",
+        "visual",
+        "review",
+        "revision"
+      ]
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_state": {
+      "type": "string",
+      "minLength": 1
+    },
+    "required_output_schema": {
+      "enum": [
+        "schemas/content-design.schema.json",
+        "schemas/artifact-record.schema.json",
+        "schemas/visual-assets-record.schema.json",
+        "schemas/review-report.schema.json"
+      ]
+    },
+    "instructions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "task": {
+      "type": "object"
+    },
+    "module_manifest": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "path",
+          "content"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "content": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array"
+    },
+    "claim_ledger": {
+      "type": "array"
+    },
+    "gates": {
+      "type": "object"
+    },
+    "content_design": {
+      "type": "object"
+    },
+    "current_artifact": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "visual_assets": {
+      "type": "object"
+    },
+    "review_context": {
+      "type": "object"
+    }
+  }
+}

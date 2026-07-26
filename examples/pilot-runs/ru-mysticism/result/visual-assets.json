@@ -1,0 +1,24 @@
+{
+  "status": "reviewed",
+  "artifact_revision": "mysticism-edit-1",
+  "visual_revision": "mysticism-visual-1",
+  "items": [
+    {
+      "asset": "examples/pilot-runs/ru-mysticism/assets/mystical-doorway-cover.png",
+      "purpose": "Создать редакционную рамку для статьи о недосказанности: показать видимый след и скрытую причину.",
+      "caption": "Концептуальная редакционная иллюстрация: видимый след ведёт к приоткрытой двери, но не раскрывает причину происходящего.",
+      "alt_text": "Пустой сине-серый коридор с приоткрытой дверью в конце; из щели падает тёплый свет, а мокрые следы на полу обрываются перед порогом.",
+      "provenance": "Оригинальная AI-generated редакционная иллюстрация, созданная встроенным imagegen по медиабрифу pilot.ru.mysticism-article; не изображает реальное место или документально подтверждённое событие.",
+      "generation_prompt": "Use case: stylized-concept. Wide 3:2 blog header. Empty worn apartment corridor at blue-gray dusk, one lamp, a door open only a few centimeters, narrow warm light under the threshold, an abstract wet trace stopping before the door. Original painterly editorial illustration with restrained gouache-like texture. Quiet unease, ambiguous cause. No people, ghosts, faces, silhouettes, monsters, text, logos, symbols, brands, real locations, documentary framing, violence or explicit supernatural entity.",
+      "dimensions": "1536x1024",
+      "format": "PNG",
+      "sha256": "99dd4188b4473e8bd60c63cbcad3ebe20ded29169e6d33e2a3739c660f4c5e24",
+      "disclosure": "AI-generated conceptual editorial illustration."
+    }
+  ],
+  "adapter": {
+    "id": "openai.builtin-imagegen",
+    "mode": "model",
+    "version": "2026-07-26"
+  }
+}

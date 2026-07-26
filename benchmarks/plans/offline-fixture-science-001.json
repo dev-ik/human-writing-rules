@@ -1,0 +1,61 @@
+{
+  "$schema": "../../schemas/benchmark-plan.schema.json",
+  "schema_version": "1.0",
+  "benchmark_run_id": "benchmark-run.offline-fixture.science.001",
+  "revision": "1",
+  "case_path": "benchmarks/cases/ru-blog-science-article-001.json",
+  "run_date": "2026-07-26",
+  "execution_order": "declared-arm-order",
+  "repetitions": 1,
+  "treatment_difference": "The rules-assisted arm receives the resolved Human Writing Rules module manifest, gates, and claim ledger; the baseline arm receives the same task, sources, controls, and output requirements without that treatment context.",
+  "controls": {
+    "provider": "offline-fixture",
+    "model": "deterministic-fixture",
+    "model_revision": "1",
+    "settings": {
+      "temperature": 0
+    },
+    "execution_environment": {
+      "runner": "hwr-benchmark-1.0",
+      "adapter": "offline-fixture",
+      "network": false
+    },
+    "tool_configuration": {
+      "shell": false,
+      "external_tools": false
+    },
+    "retrieval_configuration": {
+      "network": false,
+      "source_set": "packet-only"
+    },
+    "time_budget_seconds": 120,
+    "retry_policy": "none",
+    "output_requirements": [
+      "publication copy",
+      "visual decision or assets",
+      "source notes",
+      "review report",
+      "audit record"
+    ]
+  },
+  "arms": [
+    {
+      "id": "baseline",
+      "treatment": "baseline",
+      "description": "Credible structured brief and pinned sources without HWR modules.",
+      "instructions": [
+        "Use only the common task, source records, and output requirements.",
+        "Do not infer missing facts or claim an evaluation result."
+      ]
+    },
+    {
+      "id": "rules-assisted",
+      "treatment": "rules-assisted",
+      "description": "The same inputs with the pinned HWR resolution and module contents.",
+      "instructions": [
+        "Follow the supplied HWR treatment context and preserve its evidence boundaries.",
+        "Do not claim benchmark superiority; return only this arm's output unit."
+      ]
+    }
+  ]
+}

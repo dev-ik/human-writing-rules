@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://human-writing-rules.example/schemas/benchmark-case.schema.json",
+  "title": "Human Writing Rules benchmark case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "id",
+    "revision",
+    "profile",
+    "spec_revision",
+    "language",
+    "content_type",
+    "topic",
+    "platform",
+    "risk_level",
+    "audience",
+    "intent",
+    "author_perspective",
+    "constraints",
+    "visuals",
+    "input",
+    "task_path",
+    "config_path",
+    "source_materials",
+    "required_modules",
+    "required_reviewers",
+    "evaluation",
+    "expected_output_parts",
+    "known_limitations"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile": {
+      "type": "string",
+      "minLength": 1
+    },
+    "spec_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content_type": {
+      "enum": [
+        "article",
+        "social-post"
+      ]
+    },
+    "topic": {
+      "type": "string",
+      "minLength": 1
+    },
+    "platform": {
+      "type": "string",
+      "minLength": 1
+    },
+    "skill": {
+      "type": "string",
+      "minLength": 1
+    },
+    "risk_level": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "audience": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "minProperties": 1
+        }
+      ]
+    },
+    "intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "author_perspective": {
+      "enum": [
+        "editorial",
+        "first-person",
+        "expert",
+        "reporter",
+        "neutral"
+      ]
+    },
+    "constraints": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "visuals": {
+      "type": "object",
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "none",
+            "auto",
+            "required"
+          ]
+        },
+        "max_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "input": {
+      "type": "object",
+      "required": [
+        "brief"
+      ],
+      "properties": {
+        "brief": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "task_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "config_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_materials": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "path",
+          "media_type",
+          "captured_at",
+          "rights"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "media_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "captured_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rights": {
+            "type": "string",
+            "minLength": 1
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "required_modules": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "required_reviewers": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "evaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dimensions",
+        "scale",
+        "instructions",
+        "hard_failures"
+      ],
+      "properties": {
+        "dimensions": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "visual_dimensions_when_generated": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "scale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "instructions": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hard_failures": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "description"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "expected_output_parts": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "known_limitations": {
+      "$ref": "#/$defs/stringArray"
+    }
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

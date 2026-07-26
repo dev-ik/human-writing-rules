@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://human-writing-rules.example/schemas/reviewed-example-catalog.schema.json",
+  "title": "Human Writing Rules reviewed example catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "version",
+    "spec_revision",
+    "coverage_policy",
+    "required_sections",
+    "required_reviewers",
+    "examples"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://human-writing-rules.example/schemas/reviewed-example-catalog.schema.json"
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "spec_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "coverage_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topics",
+        "platforms",
+        "cross_product_required"
+      ],
+      "properties": {
+        "topics": {
+          "const": "every-registered-value-at-least-once"
+        },
+        "platforms": {
+          "const": "every-registered-value-at-least-once"
+        },
+        "cross_product_required": {
+          "const": false
+        }
+      }
+    },
+    "required_sections": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "required_reviewers": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "examples": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "revision",
+          "status",
+          "language",
+          "content_type",
+          "topic",
+          "platform",
+          "visual_mode",
+          "visual_decision",
+          "path",
+          "sha256",
+          "reviewers",
+          "limitations"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revision": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "const": "reviewed"
+          },
+          "language": {
+            "type": "string",
+            "minLength": 1
+          },
+          "content_type": {
+            "enum": [
+              "article",
+              "social-post"
+            ]
+          },
+          "topic": {
+            "type": "string",
+            "minLength": 1
+          },
+          "platform": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visual_mode": {
+            "enum": [
+              "none",
+              "auto",
+              "required"
+            ]
+          },
+          "visual_decision": {
+            "enum": [
+              "none",
+              "selected-brief",
+              "selected-asset",
+              "blocked"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "reviewers": {
+            "$ref": "#/$defs/stringArray"
+          },
+          "limitations": {
+            "$ref": "#/$defs/stringArray"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

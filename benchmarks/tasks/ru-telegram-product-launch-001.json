@@ -1,0 +1,113 @@
+{
+  "$schema": "../../schemas/task-record.schema.json",
+  "task_id": "benchmark.ru.telegram-product-launch.001",
+  "revision": "1",
+  "language": "ru",
+  "locale": "ru-RU",
+  "content_type": "social-post",
+  "topic": "technology",
+  "platform": "telegram",
+  "skill": "product-launch",
+  "tone": "friendly",
+  "author_perspective": "editorial",
+  "risk_level": "medium",
+  "audience": {
+    "description": "Writers, editors, and developers evaluating AI-assisted editorial workflows",
+    "knowledge_level": "general"
+  },
+  "intent": "Announce the repository without unsupported adoption, maturity, or performance claims",
+  "subject": "Human Writing Rules repository",
+  "central_question": "What is available in the repository and what problem does it address?",
+  "reader_promise": "Readers will understand the repository's stable specification scope and the limits of its reference tooling.",
+  "primary_job": "product-launch",
+  "artifact_form": "single Telegram post",
+  "constraints": [
+    "Do not invent users, adoption, metrics, or testimonials",
+    "Do not present roadmap work as shipped",
+    "Do not present reference tooling as a universally conforming production engine"
+  ],
+  "visuals": {
+    "mode": "none"
+  },
+  "assessments": {
+    "source_freshness": "adequate",
+    "platform_constraints": "known",
+    "perspective": "authorized",
+    "rights": "cleared"
+  },
+  "sources": [
+    {
+      "id": "SRC-README",
+      "title": "Human Writing Rules README",
+      "role": "current repository scope and capabilities",
+      "location": "README.md",
+      "status": "repository document",
+      "scope": "Project positioning, supported content, and current tooling",
+      "rights": "repository license"
+    },
+    {
+      "id": "SRC-VISION",
+      "title": "Human Writing Rules Vision",
+      "role": "problem statement and project boundaries",
+      "location": "VISION.md",
+      "status": "repository document",
+      "scope": "Long-term project intent",
+      "rights": "repository license"
+    },
+    {
+      "id": "SRC-ROADMAP",
+      "title": "Human Writing Rules Roadmap",
+      "role": "current and planned release scope",
+      "location": "ROADMAP.md",
+      "status": "mutable repository document",
+      "scope": "Versioned implementation roadmap",
+      "rights": "repository license"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-README-001",
+      "text": "Human Writing Rules is a vendor-neutral editorial specification for articles, social posts, and optional illustrations.",
+      "classification": "verified-fact",
+      "material": true,
+      "source_ids": [
+        "SRC-README"
+      ],
+      "disposition": "use"
+    },
+    {
+      "id": "C-README-002",
+      "text": "The repository contains modular rules, reviewers, schemas, examples, and a guarded reference workflow.",
+      "classification": "verified-fact",
+      "material": true,
+      "source_ids": [
+        "SRC-README"
+      ],
+      "disposition": "use"
+    },
+    {
+      "id": "C-ROADMAP-001",
+      "text": "The specification is stable, but roadmap items are not shipped capabilities and bundled reference tooling does not claim complete implementation conformance.",
+      "classification": "source-claim",
+      "material": true,
+      "source_ids": [
+        "SRC-README",
+        "SRC-ROADMAP"
+      ],
+      "disposition": "attribute"
+    },
+    {
+      "id": "C-EFFECT-001",
+      "text": "The repository measurably improves writing quality for all users.",
+      "classification": "unknown",
+      "material": false,
+      "source_ids": [],
+      "qualification": "No public benchmark evidence supports this universal claim.",
+      "disposition": "omit"
+    }
+  ],
+  "media": {
+    "decision": "none",
+    "reason": "The benchmark isolates text behavior and does not require a visual."
+  }
+}

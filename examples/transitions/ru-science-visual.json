@@ -1,0 +1,20 @@
+{
+  "$schema": "../../schemas/visual-assets-record.schema.json",
+  "run_id": "example.ru.science-article:1",
+  "artifact_revision": "artifact-2",
+  "visual_revision": "visual-1",
+  "items": [
+    {
+      "asset": "asset://example.ru.science-article/evidence-boundary-v1",
+      "purpose": "Показать путь от исследовательского объекта к ограниченному утверждению.",
+      "caption": "Концептуальная схема: статус, объект, метод, результат и ограничения определяют допустимую формулировку.",
+      "alt_text": "Пять блоков — статус публикации, объект, метод, результат и ограничения — сходятся в блок «ограниченное утверждение».",
+      "provenance": "Концептуальная редакционная схема по SRC-001 и SRC-002; не изображает реальное исследование."
+    }
+  ],
+  "adapter": {
+    "id": "fixture.visual-producer",
+    "mode": "tool",
+    "version": "1"
+  }
+}

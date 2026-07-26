@@ -1,0 +1,124 @@
+{
+  "$schema": "../../schemas/benchmark-case.schema.json",
+  "id": "benchmark.ru.telegram.product-launch.001",
+  "revision": "1",
+  "profile": "Editorial Core 1.0.0",
+  "spec_revision": "1.0.0",
+  "language": "ru",
+  "content_type": "social-post",
+  "topic": "technology",
+  "platform": "telegram",
+  "skill": "product-launch",
+  "risk_level": "medium",
+  "audience": {
+    "description": "Writers, editors, and developers evaluating AI-assisted editorial workflows",
+    "knowledge_level": "general"
+  },
+  "intent": "Announce the repository without unsupported adoption, maturity, or performance claims",
+  "author_perspective": "editorial",
+  "constraints": [
+    "Do not invent users, adoption, metrics, or testimonials",
+    "Do not present roadmap work as shipped",
+    "Do not present reference tooling as a universally conforming production engine"
+  ],
+  "visuals": {
+    "mode": "none"
+  },
+  "input": {
+    "brief": "Write a concise Telegram announcement for the Human Writing Rules repository using only the pinned repository documents."
+  },
+  "task_path": "benchmarks/tasks/ru-telegram-product-launch-001.json",
+  "config_path": "benchmarks/configs/ru-telegram-product-launch-001.json",
+  "source_materials": [
+    {
+      "source_id": "SRC-README",
+      "path": "README.md",
+      "media_type": "text/markdown",
+      "captured_at": "2026-07-26",
+      "rights": "Repository license"
+    },
+    {
+      "source_id": "SRC-VISION",
+      "path": "VISION.md",
+      "media_type": "text/markdown",
+      "captured_at": "2026-07-26",
+      "rights": "Repository license"
+    },
+    {
+      "source_id": "SRC-ROADMAP",
+      "path": "ROADMAP.md",
+      "media_type": "text/markdown",
+      "captured_at": "2026-07-26",
+      "rights": "Repository license"
+    }
+  ],
+  "required_modules": [
+    "core.writing-pipeline",
+    "core.content-model",
+    "format.social-post.foundation",
+    "topic.technology.foundation",
+    "platform.social.foundation",
+    "platform.telegram.foundation",
+    "language.ru.foundation",
+    "skill.product-launch",
+    "rule.source-integrity",
+    "rule.human-signals.core"
+  ],
+  "required_reviewers": [
+    "reviewer.source",
+    "reviewer.language",
+    "reviewer.human-signals",
+    "reviewer.format",
+    "reviewer.topic",
+    "reviewer.platform",
+    "reviewer.editor"
+  ],
+  "evaluation": {
+    "dimensions": [
+      "factuality",
+      "native_language",
+      "purpose_fit",
+      "human_signals",
+      "format_fit",
+      "topic_fit",
+      "platform_fit",
+      "limitation_handling"
+    ],
+    "scale": "1-5 with written anchors",
+    "instructions": "Evaluate the pinned post without revealing arm identity when practical. Preserve raw ratings and treat unsupported maturity, adoption, or performance language as a hard failure.",
+    "hard_failures": [
+      {
+        "id": "fabricated-adoption",
+        "description": "The post invents users, adoption, demand, testimonials, or community response."
+      },
+      {
+        "id": "fabricated-performance",
+        "description": "The post claims measured quality or productivity improvement without evidence."
+      },
+      {
+        "id": "false-maturity",
+        "description": "Reference tooling is presented as a universally conforming production engine."
+      },
+      {
+        "id": "invented-feature",
+        "description": "The post announces a feature absent from the pinned source set."
+      },
+      {
+        "id": "unresolved-blocker-ready",
+        "description": "An unresolved blocker is labeled publication-ready."
+      }
+    ]
+  },
+  "expected_output_parts": [
+    "publication_copy",
+    "visual_assets",
+    "source_notes",
+    "review_report",
+    "audit"
+  ],
+  "known_limitations": [
+    "This case covers one Russian Telegram product announcement.",
+    "Repository documents are authored by the project and are not independent evidence.",
+    "The offline fixture adapter validates execution mechanics, not writing quality."
+  ]
+}

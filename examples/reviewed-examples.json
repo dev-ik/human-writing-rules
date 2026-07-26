@@ -1,0 +1,439 @@
+{
+  "$schema": "https://human-writing-rules.example/schemas/reviewed-example-catalog.schema.json",
+  "version": "1.0.0",
+  "spec_revision": "1.0.0",
+  "coverage_policy": {
+    "topics": "every-registered-value-at-least-once",
+    "platforms": "every-registered-value-at-least-once",
+    "cross_product_required": false
+  },
+  "required_sections": [
+    "Task framing",
+    "Resolved modules",
+    "Evidence map",
+    "Context gate",
+    "Content design",
+    "Final artifact",
+    "Media decision",
+    "Source notes",
+    "Review result"
+  ],
+  "required_reviewers": [
+    "reviewer.source",
+    "reviewer.language",
+    "reviewer.human-signals",
+    "reviewer.format",
+    "reviewer.topic",
+    "reviewer.platform",
+    "reviewer.editor"
+  ],
+  "examples": [
+    {
+      "id": "example.ru.article.general",
+      "revision": "ru-general-article-r1",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "article",
+      "topic": "general",
+      "platform": "blog",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/ru/article/general.md",
+      "sha256": "3e58b6878dcdf938a9e64a7ddd9e0e92cccf2021f28b67208c167496e5e7e3a9",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Editorial-method example using repository rules; it contains no external mixed-topic claim."
+      ]
+    },
+    {
+      "id": "example.ru.article.science",
+      "revision": "ru-science-article-example-r2",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "article",
+      "topic": "science",
+      "platform": "blog",
+      "visual_mode": "auto",
+      "visual_decision": "selected-brief",
+      "path": "examples/ru/article/science.md",
+      "sha256": "c8bb230f1d5a195f6490f2e898ed927d49005413ba229d98d646d0c0f8b82b21",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.visual",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Method example; it does not describe a real paper or measure newsroom outcomes."
+      ]
+    },
+    {
+      "id": "example.ru.article.technology",
+      "revision": "ru-technology-article-example-r2",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "article",
+      "topic": "technology",
+      "platform": "blog",
+      "visual_mode": "auto",
+      "visual_decision": "none",
+      "path": "examples/ru/article/technology.md",
+      "sha256": "edb686e519a5cbec70fa2f2c4471f925a83985c5a680e638cc9c0ddcb48753c7",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.visual",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Stable architecture rationale is not benchmark evidence of writing-quality improvement or full implementation conformance."
+      ]
+    },
+    {
+      "id": "example.ru.article.entertainment",
+      "revision": "ru-entertainment-article-example-r2",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "article",
+      "topic": "entertainment",
+      "platform": "blog",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/ru/article/entertainment.md",
+      "sha256": "59c8bc05591fc4da3320df161fbe2ed7fdf17df882fdbc8e4144c1aba6831a4d",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Method example; it does not evaluate, quote, or depict a real work."
+      ]
+    },
+    {
+      "id": "example.ru.habr.business-metrics",
+      "revision": "ru-habr-business-metrics-r1",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "article",
+      "topic": "business",
+      "platform": "habr",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/ru/habr/business-metrics.md",
+      "sha256": "f93942c4709563e269f8c51aca7ae7248c9fb38842214b2c0b332fa89e307d75",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.visual",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Method example; it contains no real company metric or market comparison."
+      ]
+    },
+    {
+      "id": "example.ru.article.health",
+      "revision": "ru-health-evidence-article-r1",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "article",
+      "topic": "health",
+      "platform": "blog",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/ru/article/health.md",
+      "sha256": "4e6e86da32c0e26679bf77b4c926a4e4a8a3002493959384ea2374828571fbf6",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Editorial guidance only; it contains no diagnosis, treatment, dosage, or emergency instruction."
+      ]
+    },
+    {
+      "id": "example.ru.article.finance",
+      "revision": "ru-finance-claims-article-r1",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "article",
+      "topic": "finance",
+      "platform": "blog",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/ru/article/finance.md",
+      "sha256": "816390216d8b3d06a0c33634395444f8c60aba586ae7008ad5bd6290df047c80",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Editorial guidance only; it contains no current financial data or personalized advice."
+      ]
+    },
+    {
+      "id": "example.ru.setka.culture-context",
+      "revision": "ru-setka-culture-context-r1",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "article",
+      "topic": "culture",
+      "platform": "setka",
+      "visual_mode": "auto",
+      "visual_decision": "none",
+      "path": "examples/ru/setka/culture-context.md",
+      "sha256": "4884fc302585f4102729ca501140c5c8b2ee6203135a09537fcd605cc39c44b6",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.visual",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Method example; it does not interpret a real work, archive, creator, or community."
+      ]
+    },
+    {
+      "id": "example.ru.social.lifestyle-recommendation",
+      "revision": "ru-social-lifestyle-recommendation-r1",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "social-post",
+      "topic": "lifestyle",
+      "platform": "social",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/ru/social/lifestyle-recommendation.md",
+      "sha256": "1e78ebbb2da08b9a6de04eaf197d7a05536f963e8f22aa5c0ea3aa856896189d",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Method example; it contains no product, personal experience, price, or endorsement."
+      ]
+    },
+    {
+      "id": "example.ru.social.education-explainer",
+      "revision": "ru-social-education-explainer-r1",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "social-post",
+      "topic": "education",
+      "platform": "social",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/ru/social/education-explainer.md",
+      "sha256": "15c55105a0acfc9cb8f18556ea865b29cdca77ab86a047a61f9b274913e590b8",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Method example; it reports no real learner, course, intervention, or measured outcome."
+      ]
+    },
+    {
+      "id": "example.ru.article.travel",
+      "revision": "ru-travel-planning-article-r1",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "article",
+      "topic": "travel",
+      "platform": "blog",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/ru/article/travel.md",
+      "sha256": "aaf2d3d5f05fa4851de82b9a609810d7a756c4bbea84470165d772ba36eb76a8",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Method example; it contains no destination-specific condition, price, route, or safety advice."
+      ]
+    },
+    {
+      "id": "example.ru.social.entertainment-review",
+      "revision": "ru-social-entertainment-review-r2",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "social-post",
+      "topic": "entertainment",
+      "platform": "social",
+      "visual_mode": "auto",
+      "visual_decision": "none",
+      "path": "examples/ru/social/entertainment-review.md",
+      "sha256": "ea1791f03e8a25cabbd47f0a4a8f400f104ff0eac69261b0f5163a9683717457",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.visual",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Method example; it does not review a real work or claim first-person experience."
+      ]
+    },
+    {
+      "id": "example.ru.telegram.product-launch",
+      "revision": "ru-telegram-product-launch-r2",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "social-post",
+      "topic": "technology",
+      "platform": "telegram",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/ru/telegram/product-launch.md",
+      "sha256": "b1520c12f589b6ebff55df81bdeb3673fb6acc95696198e1a02f016441549f8c",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Repository announcement; adoption, universal implementation conformance, and measured improvement remain unknown."
+      ]
+    },
+    {
+      "id": "example.ru.telegram.science-explainer",
+      "revision": "ru-telegram-science-explainer-r2",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "social-post",
+      "topic": "science",
+      "platform": "telegram",
+      "visual_mode": "auto",
+      "visual_decision": "selected-brief",
+      "path": "examples/ru/telegram/science-explainer.md",
+      "sha256": "8e3c2b4d4ff5c6805a48d2d11c1969a741c2dcd898f7da037d69ac3d727fb0d4",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.visual",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Method example; it reports no real study, dataset, result, or accuracy improvement."
+      ]
+    },
+    {
+      "id": "example.ru.linkedin.technology-explainer",
+      "revision": "ru-linkedin-technology-explainer-r2",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "social-post",
+      "topic": "technology",
+      "platform": "linkedin",
+      "visual_mode": "auto",
+      "visual_decision": "none",
+      "path": "examples/ru/linkedin/technology-explainer.md",
+      "sha256": "4b86e583ca20eb047f5f905a382950830d2352d19cf4ce06922a41a08e5171ef",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.visual",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Stable specification explainer; inspectability is design rationale, not benchmark or engine-conformance evidence."
+      ]
+    },
+    {
+      "id": "example.en.linkedin.opensource",
+      "revision": "en-linkedin-opensource-r2",
+      "status": "reviewed",
+      "language": "en",
+      "content_type": "social-post",
+      "topic": "technology",
+      "platform": "linkedin",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/en/linkedin/opensource.md",
+      "sha256": "ea527f91bd2e6dfb7d8bfe4cf2d628d7542b97c937b9863873efeca5bad49040",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Stable specification announcement; it makes no adoption, universal conformance, or quality-improvement claim."
+      ]
+    }
+  ]
+}

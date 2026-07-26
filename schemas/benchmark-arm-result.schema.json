@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://human-writing-rules.example/schemas/benchmark-arm-result.schema.json",
+  "title": "Human Writing Rules benchmark arm result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_version",
+    "attempt_id",
+    "case_id",
+    "case_revision",
+    "arm_id",
+    "status",
+    "source_access",
+    "output_unit",
+    "errors",
+    "manual_interventions",
+    "hard_failures"
+  ],
+  "properties": {
+    "protocol_version": {
+      "const": "1.0"
+    },
+    "attempt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "arm_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "blocked",
+        "failed",
+        "invalid"
+      ]
+    },
+    "source_access": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "output_unit": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "errors": {
+      "type": "array"
+    },
+    "manual_interventions": {
+      "type": "array"
+    },
+    "hard_failures": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

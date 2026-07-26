@@ -1,0 +1,51 @@
+{
+  "status": "complete",
+  "artifact_revision": "mysticism-edit-1",
+  "review_revision": "mysticism-review-1",
+  "reviewers": [
+    {
+      "reviewer_id": "reviewer.source",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.topic",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.format",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.language",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.human-signals",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.platform",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.visual",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.editor",
+      "status": "pass"
+    }
+  ],
+  "findings": [],
+  "limitations": [
+    "Статья представляет редакционную интерпретацию повествовательной формы и не заявляет эмпирических выводов о реакции всех читателей.",
+    "Иллюстрация концептуальна, сгенерирована AI и не является документальным изображением реального места или события."
+  ],
+  "readiness_candidate": "publication-ready",
+  "adapter": {
+    "id": "codex.pilot-review-panel",
+    "mode": "model",
+    "version": "1"
+  },
+  "readiness": "publication-ready"
+}

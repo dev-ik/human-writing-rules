@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://human-writing-rules.example/schemas/visual-benchmark-fixture.schema.json",
+  "title": "Human Writing Rules visual benchmark fixture",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "id",
+    "revision",
+    "spec_revision",
+    "fixture_purpose",
+    "requested_mode",
+    "decision",
+    "decision_rationale",
+    "artifact",
+    "brief",
+    "visual_record",
+    "asset",
+    "acceptance_path",
+    "required_dimensions",
+    "hard_failures",
+    "expected_overall",
+    "known_limitations"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://human-writing-rules.example/schemas/visual-benchmark-fixture.schema.json"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "spec_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fixture_purpose": {
+      "enum": [
+        "positive",
+        "negative",
+        "boundary"
+      ]
+    },
+    "requested_mode": {
+      "enum": [
+        "none",
+        "auto",
+        "required"
+      ]
+    },
+    "decision": {
+      "enum": [
+        "none",
+        "selected",
+        "blocked"
+      ]
+    },
+    "decision_rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact": {
+      "$ref": "#/$defs/fileReference"
+    },
+    "brief": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/visualBrief"
+        }
+      ]
+    },
+    "visual_record": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/fileReference"
+        }
+      ]
+    },
+    "asset": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/asset"
+        }
+      ]
+    },
+    "acceptance_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "required_dimensions": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "hard_failures": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "expected_overall": {
+      "enum": [
+        "pass",
+        "fail",
+        "blocked",
+        "incomplete"
+      ]
+    },
+    "known_limitations": {
+      "$ref": "#/$defs/stringArray"
+    }
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "fileReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "visualBrief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "purpose",
+        "reader_benefit",
+        "evidence_basis",
+        "must_not_imply",
+        "asset_type",
+        "acceptance_criteria"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reader_benefit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_basis": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "must_not_imply": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "asset_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "acceptance_criteria": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "media_type",
+        "sha256",
+        "width",
+        "height",
+        "provenance",
+        "disclosure"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "media_type": {
+          "const": "image/png"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "provenance": {
+          "type": "string",
+          "minLength": 1
+        },
+        "disclosure": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

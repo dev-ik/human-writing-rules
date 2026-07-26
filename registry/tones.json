@@ -1,0 +1,20 @@
+{
+  "version": "0.1.0",
+  "tones": [
+    {
+      "id": "expert",
+      "name": "Expert",
+      "module": "tone.expert"
+    },
+    {
+      "id": "friendly",
+      "name": "Friendly",
+      "module": "tone.friendly"
+    },
+    {
+      "id": "personal",
+      "name": "Personal",
+      "module": "tone.personal"
+    }
+  ]
+}

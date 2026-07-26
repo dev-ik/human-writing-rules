@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://human-writing-rules.example/schemas/conformance-requirements.schema.json",
+  "title": "Human Writing Rules conformance requirements",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "spec_revision",
+    "rfc_defaults",
+    "requirements",
+    "retired_requirements"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "spec_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rfc_defaults": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/rfcDefault"
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/requirement"
+      }
+    },
+    "retired_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/retiredRequirement"
+      }
+    }
+  },
+  "$defs": {
+    "owner": {
+      "enum": [
+        "spec-governance",
+        "pipeline",
+        "object-model",
+        "resolver",
+        "review",
+        "benchmark"
+      ]
+    },
+    "profile": {
+      "enum": [
+        "editorial-core",
+        "editorial-visual",
+        "benchmark"
+      ]
+    },
+    "verificationMethod": {
+      "enum": [
+        "manual-review",
+        "automated-validator",
+        "automated-test",
+        "conformance-fixture",
+        "benchmark-audit"
+      ]
+    },
+    "rfcDefault": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id_prefix",
+        "owner",
+        "profiles",
+        "verification_method"
+      ],
+      "properties": {
+        "id_prefix": {
+          "type": "string",
+          "pattern": "^HWR-(SCOPE|PIPE|OBJ|RESOLVE|REVIEW|BENCH)$"
+        },
+        "owner": {
+          "$ref": "#/$defs/owner"
+        },
+        "profiles": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/profile"
+          }
+        },
+        "verification_method": {
+          "$ref": "#/$defs/verificationMethod"
+        }
+      }
+    },
+    "normativeTerms": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "must",
+        "must_not",
+        "should",
+        "should_not"
+      ],
+      "properties": {
+        "must": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "must_not": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "should": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "should_not": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "rfc",
+        "section",
+        "source_text",
+        "normative_terms",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^HWR-(SCOPE|PIPE|OBJ|RESOLVE|REVIEW|BENCH)-[0-9]{3}$"
+        },
+        "rfc": {
+          "type": "string",
+          "pattern": "^RFC-[0-9]{4}$"
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normative_terms": {
+          "$ref": "#/$defs/normativeTerms"
+        },
+        "status": {
+          "enum": [
+            "planned",
+            "implemented",
+            "verified",
+            "not-applicable"
+          ]
+        },
+        "owner": {
+          "$ref": "#/$defs/owner"
+        },
+        "profiles": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/profile"
+          }
+        },
+        "verification_method": {
+          "$ref": "#/$defs/verificationMethod"
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "retiredRequirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "rfc",
+        "removed_in",
+        "reason"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^HWR-(SCOPE|PIPE|OBJ|RESOLVE|REVIEW|BENCH)-[0-9]{3}$"
+        },
+        "rfc": {
+          "type": "string",
+          "pattern": "^RFC-[0-9]{4}$"
+        },
+        "removed_in": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

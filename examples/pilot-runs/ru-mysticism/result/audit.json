@@ -1,0 +1,105 @@
+{
+  "status": "complete",
+  "fallbacks": [],
+  "inferences": [],
+  "deviations": [],
+  "history": [
+    {
+      "event": "run-planned",
+      "from_state": null,
+      "to_state": "context-ready",
+      "record_revision": "1"
+    },
+    {
+      "event": "content-design-applied",
+      "from_state": "context-ready",
+      "to_state": "media-decided",
+      "record_revision": "mysticism-design-1",
+      "adapter_runtime": {
+        "protocol_version": "1.0",
+        "stage": "design",
+        "executable": "python3",
+        "argument_count": 3,
+        "passed_environment_names": [],
+        "elapsed_ms": 93,
+        "stdout_bytes": 2838,
+        "stderr_present": false,
+        "stderr_truncated": false
+      }
+    },
+    {
+      "event": "draft-artifact-applied",
+      "from_state": "media-decided",
+      "to_state": "drafted",
+      "record_revision": "mysticism-draft-1",
+      "adapter_runtime": {
+        "protocol_version": "1.0",
+        "stage": "draft",
+        "executable": "python3",
+        "argument_count": 3,
+        "passed_environment_names": [],
+        "elapsed_ms": 92,
+        "stdout_bytes": 10345,
+        "stderr_present": false,
+        "stderr_truncated": false
+      }
+    },
+    {
+      "event": "edit-artifact-applied",
+      "from_state": "drafted",
+      "to_state": "edited",
+      "record_revision": "mysticism-edit-1",
+      "adapter_runtime": {
+        "protocol_version": "1.0",
+        "stage": "edit",
+        "executable": "python3",
+        "argument_count": 3,
+        "passed_environment_names": [],
+        "elapsed_ms": 91,
+        "stdout_bytes": 9822,
+        "stderr_present": false,
+        "stderr_truncated": false
+      }
+    },
+    {
+      "event": "visual-assets-applied",
+      "from_state": "edited",
+      "to_state": "edited",
+      "record_revision": "mysticism-visual-1",
+      "adapter_runtime": {
+        "protocol_version": "1.0",
+        "stage": "visual",
+        "executable": "python3",
+        "argument_count": 3,
+        "passed_environment_names": [],
+        "elapsed_ms": 91,
+        "stdout_bytes": 2079,
+        "stderr_present": false,
+        "stderr_truncated": false
+      }
+    },
+    {
+      "event": "review-applied",
+      "from_state": "edited",
+      "to_state": "reviewed",
+      "record_revision": "mysticism-review-1",
+      "adapter_runtime": {
+        "protocol_version": "1.0",
+        "stage": "review",
+        "executable": "python3",
+        "argument_count": 3,
+        "passed_environment_names": [],
+        "elapsed_ms": 90,
+        "stdout_bytes": 1212,
+        "stderr_present": false,
+        "stderr_truncated": false
+      }
+    },
+    {
+      "event": "run-finalized",
+      "from_state": "reviewed",
+      "to_state": "ready",
+      "record_revision": "mysticism-review-1"
+    }
+  ]
+}

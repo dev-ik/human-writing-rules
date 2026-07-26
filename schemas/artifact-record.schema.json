@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://human-writing-rules.example/schemas/artifact-record.schema.json",
+  "title": "Human Writing Rules draft, edit, or revision adapter result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "artifact_revision",
+    "stage",
+    "publication",
+    "visuals",
+    "claim_usage",
+    "adapter",
+    "addressed_findings"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "parent_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stage": {
+      "enum": [
+        "draft",
+        "edit",
+        "revision"
+      ]
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_type",
+        "text",
+        "metadata"
+      ],
+      "properties": {
+        "content_type": {
+          "enum": [
+            "article",
+            "social-post"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metadata": {
+          "type": "object"
+        }
+      }
+    },
+    "visuals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "asset",
+          "purpose",
+          "caption",
+          "alt_text",
+          "provenance"
+        ],
+        "properties": {
+          "asset": {
+            "type": "string",
+            "minLength": 1
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          },
+          "caption": {
+            "type": "string",
+            "minLength": 1
+          },
+          "alt_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "provenance": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "claim_usage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_id",
+          "locations"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "locations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "adapter": {
+      "$ref": "#/$defs/adapter"
+    },
+    "addressed_findings": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "adapter": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "mode"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mode": {
+          "enum": [
+            "human",
+            "model",
+            "tool"
+          ]
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generated_at": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

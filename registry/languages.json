@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "languages": [
+    {
+      "id": "ru",
+      "name": "Russian",
+      "default_locale": "ru-RU",
+      "module": "language.ru.foundation"
+    },
+    {
+      "id": "en",
+      "name": "English",
+      "default_locale": "en",
+      "module": "language.en.foundation"
+    }
+  ]
+}

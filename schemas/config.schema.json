@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Human Writing Rules Configuration",
+  "type": "object",
+  "required": [
+    "version",
+    "spec_revision",
+    "language",
+    "content_type"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "spec_revision": {
+      "type": "string"
+    },
+    "registry_revision": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "language": {
+      "type": "string"
+    },
+    "locale": {
+      "type": "string"
+    },
+    "content_type": {
+      "enum": [
+        "article",
+        "social-post"
+      ]
+    },
+    "topic": {
+      "type": "string"
+    },
+    "audience": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "required": [
+            "description"
+          ],
+          "properties": {
+            "description": {
+              "type": "string",
+              "minLength": 1
+            },
+            "knowledge_level": {
+              "enum": [
+                "general",
+                "informed",
+                "specialist",
+                "mixed"
+              ]
+            },
+            "needs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "platform": {
+      "type": "string"
+    },
+    "skill": {
+      "type": "string"
+    },
+    "tone": {
+      "type": "string"
+    },
+    "author_perspective": {
+      "enum": [
+        "editorial",
+        "first-person",
+        "expert",
+        "reporter",
+        "neutral"
+      ]
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk_level": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "reviewers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sources": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "allow_inference": {
+          "type": "boolean"
+        },
+        "freshness_cutoff": {
+          "type": "string"
+        },
+        "citation_style": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "visuals": {
+      "type": "object",
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "none",
+            "auto",
+            "required"
+          ]
+        },
+        "allowed_purposes": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "editorial",
+              "explanatory",
+              "cover",
+              "data-visualization",
+              "documentary"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "max_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "aspect_ratio": {
+          "type": "string"
+        },
+        "style": {
+          "type": "string"
+        },
+        "allow_text_in_image": {
+          "type": "boolean"
+        },
+        "require_alt_text": {
+          "type": "boolean"
+        },
+        "include_generation_prompt": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "include_review": {
+          "type": "boolean"
+        },
+        "include_source_notes": {
+          "type": "boolean"
+        },
+        "include_visual_briefs": {
+          "type": "boolean"
+        },
+        "include_revision_summary": {
+          "type": "boolean"
+        },
+        "include_audit": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

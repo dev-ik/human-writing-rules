@@ -1,0 +1,17 @@
+{
+  "status": "updated",
+  "changes": [
+    {
+      "stage": "draft",
+      "artifact_revision": "mysticism-draft-1",
+      "parent_revision": null,
+      "addressed_findings": []
+    },
+    {
+      "stage": "edit",
+      "artifact_revision": "mysticism-edit-1",
+      "parent_revision": "mysticism-draft-1",
+      "addressed_findings": []
+    }
+  ]
+}

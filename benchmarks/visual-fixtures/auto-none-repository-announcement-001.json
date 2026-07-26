@@ -1,0 +1,35 @@
+{
+  "$schema": "https://human-writing-rules.example/schemas/visual-benchmark-fixture.schema.json",
+  "id": "visual.auto-none.repository-announcement.001",
+  "revision": "1.0.0",
+  "spec_revision": "1.0.0",
+  "fixture_purpose": "positive",
+  "requested_mode": "auto",
+  "decision": "none",
+  "decision_rationale": "The short repository announcement is complete without a visual; an image would neither explain the workflow nor add necessary orientation.",
+  "artifact": {
+    "path": "benchmarks/visual-fixtures/artifacts/auto-none-repository-announcement.md",
+    "sha256": "c3040ae2804d01599635e47dba29bfa106c4cfd735663367f6ba33f20c137d8e"
+  },
+  "brief": null,
+  "visual_record": null,
+  "asset": null,
+  "acceptance_path": "benchmarks/visual-acceptance/auto-none-repository-announcement-001.json",
+  "required_dimensions": [
+    "media_decision",
+    "factual_consistency",
+    "text_image_alignment",
+    "documentary_integrity",
+    "platform_handoff",
+    "accessibility",
+    "rights_provenance"
+  ],
+  "hard_failures": [
+    "false-documentary-visual",
+    "required-disclosure-missing"
+  ],
+  "expected_overall": "pass",
+  "known_limitations": [
+    "This fixture evaluates the decision not to create an asset; it provides no evidence about generated-image quality."
+  ]
+}

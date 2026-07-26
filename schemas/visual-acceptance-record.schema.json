@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://human-writing-rules.example/schemas/visual-acceptance-record.schema.json",
+  "title": "Human Writing Rules visual acceptance record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "fixture_id",
+    "fixture_revision",
+    "acceptance_revision",
+    "evaluator",
+    "artifact_sha256",
+    "asset_sha256",
+    "asset_evaluated",
+    "dimensions",
+    "hard_failures",
+    "overall",
+    "limitations"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://human-writing-rules.example/schemas/visual-acceptance-record.schema.json"
+    },
+    "fixture_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fixture_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "acceptance_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evaluator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "independence",
+        "notes"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "human",
+            "tool",
+            "fixture"
+          ]
+        },
+        "independence": {
+          "enum": [
+            "independent",
+            "not-independent",
+            "not-applicable"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "artifact_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "asset_sha256": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/sha256"
+        }
+      ]
+    },
+    "asset_evaluated": {
+      "type": "boolean"
+    },
+    "dimensions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "applies",
+          "verdict",
+          "evidence",
+          "findings"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "applies": {
+            "type": "boolean"
+          },
+          "verdict": {
+            "enum": [
+              "pass",
+              "fail",
+              "not-applicable",
+              "not-reviewed"
+            ]
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "findings": {
+            "$ref": "#/$defs/stringArray"
+          }
+        }
+      }
+    },
+    "hard_failures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "status",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "triggered",
+              "not-triggered",
+              "not-reviewed"
+            ]
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "overall": {
+      "enum": [
+        "pass",
+        "fail",
+        "blocked",
+        "incomplete"
+      ]
+    },
+    "limitations": {
+      "$ref": "#/$defs/stringArray"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "stringArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

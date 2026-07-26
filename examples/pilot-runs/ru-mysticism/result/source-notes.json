@@ -1,0 +1,38 @@
+{
+  "status": "ready",
+  "sources": [
+    {
+      "id": "SRC-001",
+      "title": "Entertainment Topic Foundation",
+      "role": "Правила критического анализа жанрового материала",
+      "location": "rules/topic/entertainment/foundation.md",
+      "version": "repository revision",
+      "status": "draft runtime module",
+      "scope": "Разделение наблюдения, интерпретации, критерия и ограниченного суждения",
+      "rights": "repository license"
+    },
+    {
+      "id": "SRC-002",
+      "title": "Article Format Foundation",
+      "role": "Структура и критерии завершённости статьи",
+      "location": "rules/format/article/foundation.md",
+      "version": "repository revision",
+      "status": "draft runtime module",
+      "scope": "Проектирование и редактирование длинной формы",
+      "rights": "repository license"
+    },
+    {
+      "id": "SRC-003",
+      "title": "Visual and Illustration Integrity",
+      "role": "Границы оригинальной редакционной иллюстрации",
+      "location": "rules/visual/illustration-integrity.md",
+      "version": "repository revision",
+      "status": "draft runtime module",
+      "scope": "Недокументальный визуал, права, alt text и provenance",
+      "rights": "repository license"
+    }
+  ],
+  "unresolved_claims": [
+    "C-004"
+  ]
+}

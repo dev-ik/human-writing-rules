@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://human-writing-rules.example/schemas/stability-review.schema.json",
+  "title": "Human Writing Rules stability review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "target_release",
+    "spec_revision",
+    "review_revision",
+    "reviewer",
+    "dimensions",
+    "external_review",
+    "decision",
+    "limitations"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://human-writing-rules.example/schemas/stability-review.schema.json"
+    },
+    "target_release": {
+      "type": "string",
+      "minLength": 1
+    },
+    "spec_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "independence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "internal"
+        },
+        "independence": {
+          "const": "not-independent"
+        }
+      }
+    },
+    "dimensions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "verdict",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verdict": {
+            "const": "pass"
+          },
+          "evidence": {
+            "$ref": "#/$defs/stringArray"
+          }
+        }
+      }
+    },
+    "external_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "notes"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "not-run",
+            "completed"
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "decision": {
+      "const": "ready-for-stable-candidate"
+    },
+    "limitations": {
+      "$ref": "#/$defs/stringArray"
+    }
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

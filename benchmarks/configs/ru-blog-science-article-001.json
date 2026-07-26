@@ -1,0 +1,66 @@
+{
+  "$schema": "../../schemas/config.schema.json",
+  "version": "0.1",
+  "spec_revision": "1.0.0",
+  "registry_revision": "sha256:03bb590a00ed26de1af097c29278137d4e097cf569477edbbc425c8ba0b0f368",
+  "language": "ru",
+  "locale": "ru-RU",
+  "content_type": "article",
+  "topic": "science",
+  "audience": {
+    "description": "Curious readers without specialist training",
+    "knowledge_level": "general",
+    "needs": [
+      "Understand the main result",
+      "See the evidence boundary",
+      "Know what remains uncertain"
+    ]
+  },
+  "intent": "Explain how an article preserves a scientific claim's evidence boundary",
+  "platform": "blog",
+  "skill": "news",
+  "tone": "expert",
+  "author_perspective": "neutral",
+  "constraints": [
+    "Write natively in Russian",
+    "Do not imply that the method has measured newsroom effectiveness",
+    "Keep source and review notes outside publication copy"
+  ],
+  "risk_level": "medium",
+  "reviewers": [
+    "reviewer.source",
+    "reviewer.language",
+    "reviewer.human-signals",
+    "reviewer.format",
+    "reviewer.topic",
+    "reviewer.platform",
+    "reviewer.visual",
+    "reviewer.editor"
+  ],
+  "sources": {
+    "required": true,
+    "allow_inference": true,
+    "freshness_cutoff": "case-pinned",
+    "citation_style": "linked source notes"
+  },
+  "visuals": {
+    "mode": "auto",
+    "allowed_purposes": [
+      "editorial",
+      "explanatory"
+    ],
+    "max_count": 1,
+    "aspect_ratio": "platform-specific",
+    "style": "conceptual editorial illustration",
+    "allow_text_in_image": false,
+    "require_alt_text": true,
+    "include_generation_prompt": true
+  },
+  "output": {
+    "include_review": true,
+    "include_source_notes": true,
+    "include_visual_briefs": true,
+    "include_revision_summary": true,
+    "include_audit": true
+  }
+}

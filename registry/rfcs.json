@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "profile": "human-writing-rules-1.0",
+  "rfcs": [
+    {
+      "id": "RFC-0001",
+      "title": "Vision and Scope",
+      "status": "active",
+      "revision": "1.0.0",
+      "path": "rfcs/RFC-0001-vision-and-scope.md",
+      "depends_on": []
+    },
+    {
+      "id": "RFC-0002",
+      "title": "Normative Writing Pipeline",
+      "status": "active",
+      "revision": "1.0.0",
+      "path": "rfcs/RFC-0002-normative-writing-pipeline.md",
+      "depends_on": [
+        "RFC-0001",
+        "RFC-0003",
+        "RFC-0004",
+        "RFC-0005"
+      ]
+    },
+    {
+      "id": "RFC-0003",
+      "title": "Object Model",
+      "status": "active",
+      "revision": "1.0.0",
+      "path": "rfcs/RFC-0003-object-model.md",
+      "depends_on": [
+        "RFC-0001"
+      ]
+    },
+    {
+      "id": "RFC-0004",
+      "title": "Selective Module Resolution",
+      "status": "active",
+      "revision": "1.0.0",
+      "path": "rfcs/RFC-0004-selective-module-resolution.md",
+      "depends_on": [
+        "RFC-0001",
+        "RFC-0003"
+      ]
+    },
+    {
+      "id": "RFC-0005",
+      "title": "Review Contract",
+      "status": "active",
+      "revision": "1.0.0",
+      "path": "rfcs/RFC-0005-review-contract.md",
+      "depends_on": [
+        "RFC-0001",
+        "RFC-0003"
+      ]
+    },
+    {
+      "id": "RFC-0006",
+      "title": "Benchmarking",
+      "status": "active",
+      "revision": "1.0.0",
+      "path": "rfcs/RFC-0006-benchmarking.md",
+      "depends_on": [
+        "RFC-0001",
+        "RFC-0002",
+        "RFC-0003",
+        "RFC-0004",
+        "RFC-0005"
+      ]
+    }
+  ]
+}

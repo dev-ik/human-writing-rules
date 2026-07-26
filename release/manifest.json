@@ -1,0 +1,156 @@
+{
+  "$schema": "https://human-writing-rules.example/schemas/release-manifest.schema.json",
+  "release": "1.0.0",
+  "status": "candidate",
+  "channel": "stable",
+  "release_date": null,
+  "spec_revision": "1.0.0",
+  "registry_source_revision": "sha256:03bb590a00ed26de1af097c29278137d4e097cf569477edbbc425c8ba0b0f368",
+  "profiles": [
+    "editorial-core",
+    "editorial-visual",
+    "benchmark"
+  ],
+  "compatibility": {
+    "stability": "stable",
+    "identifier_policy": "Active RFC and object identifiers retain their meaning throughout the 1.x line and are never silently reused.",
+    "schema_policy": "Backward-compatible additions may use 1.x; breaking normative, schema, protocol, or identifier changes require 2.0 and migration notes.",
+    "minimum_python": "3.9",
+    "ci_python": [
+      "3.9",
+      "3.12"
+    ],
+    "npm_role": "Optional command aliases only; runtime and validators use the Python standard library.",
+    "network_default": "disabled",
+    "provider_core": "vendor-neutral"
+  },
+  "expected_counts": {
+    "objects": 50,
+    "rfcs": 6,
+    "requirements": 200,
+    "conformance_cases": 10,
+    "benchmark_cases": 2,
+    "benchmark_plans": 1,
+    "visual_fixtures": 3,
+    "reviewed_examples": 16,
+    "topics": 11,
+    "platforms": 6
+  },
+  "required_artifacts": [
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "COMPATIBILITY.md",
+    "RELEASING.md",
+    "MIGRATING-TO-1.0.md",
+    "GOVERNANCE.md",
+    "SUPPORT.md",
+    "SECURITY.md",
+    "CODE_OF_CONDUCT.md",
+    "VERSION",
+    "AGENTS.md",
+    "schemas/release-manifest.schema.json",
+    "schemas/stability-review.schema.json",
+    "rfcs/README.md",
+    "registry/generated-index.json",
+    "conformance/requirements.json",
+    "examples/reviewed-examples.json",
+    "benchmarks/README.md",
+    "release/1.0.0.md",
+    "release/stability-review.json",
+    "release/manifest.json"
+  ],
+  "gates": [
+    {
+      "id": "unit-tests",
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py"
+      ],
+      "timeout_seconds": 180
+    },
+    {
+      "id": "repository-validation",
+      "argv": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "timeout_seconds": 120
+    },
+    {
+      "id": "normative-requirements",
+      "argv": [
+        "npm",
+        "run",
+        "check:conformance"
+      ],
+      "timeout_seconds": 120
+    },
+    {
+      "id": "conformance-fixtures",
+      "argv": [
+        "npm",
+        "run",
+        "test:fixtures"
+      ],
+      "timeout_seconds": 120
+    },
+    {
+      "id": "generated-registry-index",
+      "argv": [
+        "npm",
+        "run",
+        "check:registry-index"
+      ],
+      "timeout_seconds": 120
+    },
+    {
+      "id": "visual-benchmarks",
+      "argv": [
+        "npm",
+        "run",
+        "check:visual-benchmarks"
+      ],
+      "timeout_seconds": 120
+    },
+    {
+      "id": "reviewed-example-coverage",
+      "argv": [
+        "npm",
+        "run",
+        "check:reviewed-examples"
+      ],
+      "timeout_seconds": 120
+    },
+    {
+      "id": "runner-doctor",
+      "argv": [
+        "npm",
+        "run",
+        "runner:doctor"
+      ],
+      "timeout_seconds": 120
+    }
+  ],
+  "unsupported_capabilities": [
+    "Independent external review of the normative RFC profile",
+    "Public comparative benchmark evidence",
+    "Inter-rater reliability evidence",
+    "Published installable package distribution",
+    "MCP, CMS, and asset-pipeline integrations"
+  ],
+  "known_limitations": [
+    "The stable specification was internally reviewed; independent external normative review has not yet been completed.",
+    "Reviewed examples use the declared project review contract and are not independent external evaluations.",
+    "The checked-in benchmark runner preserves execution evidence but the repository contains no public comparative model-quality result.",
+    "The optional OpenAI adapter requires explicit live opt-in and credentials; release verification is offline.",
+    "Before the immutable v1.0.0 tag exists, candidate provenance is anchored by the specification revision and generated registry source revision."
+  ]
+}

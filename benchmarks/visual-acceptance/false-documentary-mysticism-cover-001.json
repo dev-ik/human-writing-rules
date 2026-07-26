@@ -1,0 +1,94 @@
+{
+  "$schema": "https://human-writing-rules.example/schemas/visual-acceptance-record.schema.json",
+  "fixture_id": "visual.negative.false-documentary.001",
+  "fixture_revision": "1.0.0",
+  "acceptance_revision": "1.0.0",
+  "evaluator": {
+    "id": "fixture-review.false-documentary.v1",
+    "type": "fixture",
+    "independence": "not-independent",
+    "notes": "Negative contract fixture. A valid record must preserve the rejection instead of averaging it away."
+  },
+  "artifact_sha256": "d7c80d80f9c1b5bf3430271ac97fdf302d9a2617a7b254e5dd59cd8260d7d224",
+  "asset_sha256": "99dd4188b4473e8bd60c63cbcad3ebe20ded29169e6d33e2a3739c660f4c5e24",
+  "asset_evaluated": true,
+  "dimensions": [
+    {
+      "id": "media_decision",
+      "applies": true,
+      "verdict": "fail",
+      "evidence": "The negative handoff selects a documentary purpose without any documentary evidence basis.",
+      "findings": [
+        "The selected purpose is unsupported and should be replaced with the conceptual editorial framing from the positive fixture."
+      ]
+    },
+    {
+      "id": "factual_consistency",
+      "applies": true,
+      "verdict": "fail",
+      "evidence": "The provenance invents a verified haunted apartment and upgrades a fictional editorial example into a real-world claim.",
+      "findings": [
+        "Remove the location and authenticity claims."
+      ]
+    },
+    {
+      "id": "text_image_alignment",
+      "applies": true,
+      "verdict": "fail",
+      "evidence": "The article explicitly treats the corridor as a conditional fictional scene, while the handoff calls it documentary evidence.",
+      "findings": [
+        "Restore the conceptual, fictional relationship between text and image."
+      ]
+    },
+    {
+      "id": "documentary_integrity",
+      "applies": true,
+      "verdict": "fail",
+      "evidence": "The AI-generated asset is deliberately and falsely presented as an authentic photograph of a verified location.",
+      "findings": [
+        "Reject the handoff as a hard failure."
+      ]
+    },
+    {
+      "id": "platform_handoff",
+      "applies": true,
+      "verdict": "pass",
+      "evidence": "The PNG bytes and declared dimensions remain technically valid; technical validity does not cure semantic deception.",
+      "findings": []
+    },
+    {
+      "id": "accessibility",
+      "applies": true,
+      "verdict": "fail",
+      "evidence": "The negative handoff provides no truthful caption or alt-text record.",
+      "findings": [
+        "Provide accessible metadata only after restoring truthful editorial framing."
+      ]
+    },
+    {
+      "id": "rights_provenance",
+      "applies": true,
+      "verdict": "fail",
+      "evidence": "The claimed photographic provenance is fabricated and omits the generated origin.",
+      "findings": [
+        "Replace the false provenance and disclosure with the real generation record."
+      ]
+    }
+  ],
+  "hard_failures": [
+    {
+      "id": "false-documentary-visual",
+      "status": "triggered",
+      "evidence": "An AI-generated conceptual image is labelled as authentic documentary evidence from a verified haunted location."
+    },
+    {
+      "id": "required-disclosure-missing",
+      "status": "triggered",
+      "evidence": "The required generated-image disclosure is replaced by a false documentary claim."
+    }
+  ],
+  "overall": "fail",
+  "limitations": [
+    "The semantic error is deliberately encoded in fixture metadata; the shared asset bytes themselves are not corrupt."
+  ]
+}

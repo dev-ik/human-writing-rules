@@ -1,0 +1,55 @@
+{
+  "$schema": "../../schemas/task-record.schema.json",
+  "task_id": "example.ru.local-source-snapshot",
+  "revision": "1",
+  "subject": "How source snapshots preserve evidence boundaries",
+  "central_question": "What does a local source snapshot preserve, and what can it not prove?",
+  "reader_promise": "Readers will distinguish source integrity from source truth.",
+  "primary_job": "explainer",
+  "artifact_form": "article",
+  "assessments": {
+    "source_freshness": "adequate",
+    "platform_constraints": "known",
+    "perspective": "not-applicable",
+    "rights": "cleared"
+  },
+  "sources": [
+    {
+      "id": "SRC-LOCAL-001",
+      "title": "Evidence boundary note",
+      "role": "local supplied material",
+      "location": "materials/evidence-boundary-note.md",
+      "publication_date": "2026-07-26",
+      "status": "synthetic example",
+      "scope": "Source snapshot integrity and limitations",
+      "rights": "repository license",
+      "snapshot_path": "snapshots/evidence-boundary-note.snapshot.json"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-LOCAL-001",
+      "text": "A local snapshot preserves the exact UTF-8 text supplied to the editorial adapter.",
+      "classification": "verified-fact",
+      "material": true,
+      "source_ids": [
+        "SRC-LOCAL-001"
+      ],
+      "disposition": "use"
+    },
+    {
+      "id": "C-LOCAL-002",
+      "text": "A matching snapshot hash does not establish that the source content is true.",
+      "classification": "verified-fact",
+      "material": true,
+      "source_ids": [
+        "SRC-LOCAL-001"
+      ],
+      "disposition": "use"
+    }
+  ],
+  "media": {
+    "decision": "none",
+    "reason": "This contract example does not need a visual."
+  }
+}

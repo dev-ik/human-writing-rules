@@ -1,0 +1,132 @@
+{
+  "$schema": "../../schemas/benchmark-case.schema.json",
+  "id": "benchmark.ru.blog.science-article.001",
+  "revision": "1",
+  "profile": "Editorial Core 1.0.0",
+  "spec_revision": "1.0.0",
+  "language": "ru",
+  "content_type": "article",
+  "topic": "science",
+  "platform": "blog",
+  "skill": "news",
+  "risk_level": "medium",
+  "audience": {
+    "description": "Curious readers without specialist training",
+    "knowledge_level": "general",
+    "needs": [
+      "Understand the main result",
+      "See the evidence boundary",
+      "Know what remains uncertain"
+    ]
+  },
+  "intent": "Explain how an article preserves a scientific claim's evidence boundary",
+  "author_perspective": "neutral",
+  "constraints": [
+    "Write natively in Russian",
+    "Do not imply that the method has measured newsroom effectiveness",
+    "Keep source and review notes outside publication copy"
+  ],
+  "visuals": {
+    "mode": "auto",
+    "max_count": 1
+  },
+  "input": {
+    "brief": "Explain the repository method for preserving scientific evidence boundaries without inventing a study or measured effectiveness."
+  },
+  "task_path": "examples/tasks/ru-science-article.json",
+  "config_path": "benchmarks/configs/ru-blog-science-article-001.json",
+  "source_materials": [
+    {
+      "source_id": "SRC-001",
+      "path": "rules/topic/science/foundation.md",
+      "media_type": "text/markdown",
+      "captured_at": "2026-07-26",
+      "rights": "Repository license",
+      "notes": "Science evidence-boundary rules."
+    },
+    {
+      "source_id": "SRC-002",
+      "path": "rules/format/article/foundation.md",
+      "media_type": "text/markdown",
+      "captured_at": "2026-07-26",
+      "rights": "Repository license",
+      "notes": "Article workflow and completion rules."
+    }
+  ],
+  "required_modules": [
+    "core.writing-pipeline",
+    "core.content-model",
+    "format.article.foundation",
+    "topic.science.foundation",
+    "platform.blog.foundation",
+    "language.ru.foundation",
+    "rule.source-integrity",
+    "rule.human-signals.core",
+    "rule.visual-integrity"
+  ],
+  "required_reviewers": [
+    "reviewer.source",
+    "reviewer.language",
+    "reviewer.human-signals",
+    "reviewer.format",
+    "reviewer.topic",
+    "reviewer.platform",
+    "reviewer.visual",
+    "reviewer.editor"
+  ],
+  "evaluation": {
+    "dimensions": [
+      "factuality",
+      "native_language",
+      "purpose_fit",
+      "format_fit",
+      "topic_fit",
+      "platform_fit",
+      "human_signals",
+      "limitation_handling"
+    ],
+    "visual_dimensions_when_generated": [
+      "media_decision",
+      "factual_consistency",
+      "text_image_alignment",
+      "documentary_integrity",
+      "accessibility"
+    ],
+    "scale": "1-5 with written anchors",
+    "instructions": "Evaluate each frozen output independently, blind arm identity when practical, retain raw ratings, and score a visual only when the media decision selected one.",
+    "hard_failures": [
+      {
+        "id": "fabricated-source",
+        "description": "The output invents a study, source, quotation, statistic, or event."
+      },
+      {
+        "id": "inference-as-fact",
+        "description": "The design rationale is presented as measured effectiveness."
+      },
+      {
+        "id": "hidden-failed-gate",
+        "description": "A failed evidence boundary is hidden behind fluent copy."
+      },
+      {
+        "id": "false-documentary-visual",
+        "description": "A generated visual is presented as documentary scientific evidence."
+      },
+      {
+        "id": "unresolved-blocker-ready",
+        "description": "An unresolved blocker is labeled publication-ready."
+      }
+    ]
+  },
+  "expected_output_parts": [
+    "publication_copy",
+    "visual_assets",
+    "source_notes",
+    "review_report",
+    "audit"
+  ],
+  "known_limitations": [
+    "This case evaluates an editorial method, not coverage of a real scientific study.",
+    "One Russian blog case cannot support a general quality claim.",
+    "The offline fixture adapter validates execution mechanics, not writing quality."
+  ]
+}

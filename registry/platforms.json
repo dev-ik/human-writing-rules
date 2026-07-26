@@ -1,0 +1,41 @@
+{
+  "version": "0.1.0",
+  "platforms": [
+    {
+      "id": "blog",
+      "name": "Generic Blog",
+      "module": "platform.blog.foundation",
+      "default_format": "article"
+    },
+    {
+      "id": "social",
+      "name": "Generic Social Platform",
+      "module": "platform.social.foundation",
+      "default_format": "social-post"
+    },
+    {
+      "id": "telegram",
+      "name": "Telegram",
+      "module": "platform.telegram.foundation",
+      "default_format": "social-post"
+    },
+    {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "module": "platform.linkedin.foundation",
+      "default_format": "social-post"
+    },
+    {
+      "id": "habr",
+      "name": "Habr",
+      "module": "platform.habr.foundation",
+      "default_format": "article"
+    },
+    {
+      "id": "setka",
+      "name": "Setka",
+      "module": "platform.setka.foundation",
+      "default_format": "article"
+    }
+  ]
+}

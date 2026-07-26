@@ -1,0 +1,29 @@
+{
+  "responses": {
+    "id": "resp_fixture_visual_001",
+    "object": "response",
+    "status": "completed",
+    "model": "gpt-5.6-sol",
+    "output": [
+      {
+        "id": "msg_fixture_visual_001",
+        "type": "message",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "{\"prompt\":\"A clean conceptual editorial diagram showing publication status, research object, method, measured result, and limitations converging into one bounded scientific claim. Clearly schematic, not a real study or dataset. Do not imply peer review guarantees truth or that the result is causal. No decorative data points and no embedded prose.\",\"caption\":\"Концептуальная схема показывает, какие сведения ограничивают допустимую формулировку научного вывода.\",\"alt_text\":\"Пять элементов — статус публикации, объект, метод, результат и ограничения — сходятся в ограниченное научное утверждение.\",\"provenance\":\"Сгенерированная концептуальная редакционная схема по выбранному медиабрифу; не изображает реальное исследование или данные.\"}"
+          }
+        ]
+      }
+    ]
+  },
+  "images": {
+    "created": 1785000000,
+    "data": [
+      {
+        "b64_json": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      }
+    ]
+  }
+}

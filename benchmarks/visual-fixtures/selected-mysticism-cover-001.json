@@ -1,0 +1,65 @@
+{
+  "$schema": "https://human-writing-rules.example/schemas/visual-benchmark-fixture.schema.json",
+  "id": "visual.selected.mysticism-cover.001",
+  "revision": "1.0.0",
+  "spec_revision": "1.0.0",
+  "fixture_purpose": "positive",
+  "requested_mode": "auto",
+  "decision": "selected",
+  "decision_rationale": "A conceptual cover provides a truthful editorial frame for the article's contrast between visible traces and an unknown cause.",
+  "artifact": {
+    "path": "examples/pilot-runs/ru-mysticism/result/publication.md",
+    "sha256": "d7c80d80f9c1b5bf3430271ac97fdf302d9a2617a7b254e5dd59cd8260d7d224"
+  },
+  "brief": {
+    "purpose": "Editorial cover",
+    "reader_benefit": "Frame the article's central idea of a visible consequence with an unresolved cause without depicting a supernatural claim as real.",
+    "evidence_basis": [
+      "The final article uses a corridor, a partly open door, light, and a wet trace as explicitly fictional examples."
+    ],
+    "must_not_imply": [
+      "A real haunted location",
+      "A documented supernatural event",
+      "The presence of a person, ghost, monster, or identifiable entity"
+    ],
+    "asset_type": "AI-generated conceptual editorial illustration",
+    "acceptance_criteria": [
+      "The image remains conceptual rather than documentary.",
+      "The corridor, door, light, and trace align with the final text.",
+      "The asset includes truthful provenance, disclosure, caption, and alt text.",
+      "The PNG is valid and matches the declared 1536x1024 handoff."
+    ]
+  },
+  "visual_record": {
+    "path": "examples/pilot-runs/ru-mysticism/result/visual-assets.json",
+    "sha256": "eb3e8c9ac526381177b4591e26ac5943ab813d0377ea023d59d9bb7054200244"
+  },
+  "asset": {
+    "path": "examples/pilot-runs/ru-mysticism/assets/mystical-doorway-cover.png",
+    "media_type": "image/png",
+    "sha256": "99dd4188b4473e8bd60c63cbcad3ebe20ded29169e6d33e2a3739c660f4c5e24",
+    "width": 1536,
+    "height": 1024,
+    "provenance": "Original AI-generated conceptual editorial illustration; it does not depict a real place or documented event.",
+    "disclosure": "AI-generated conceptual editorial illustration."
+  },
+  "acceptance_path": "benchmarks/visual-acceptance/selected-mysticism-cover-001.json",
+  "required_dimensions": [
+    "media_decision",
+    "factual_consistency",
+    "text_image_alignment",
+    "documentary_integrity",
+    "platform_handoff",
+    "accessibility",
+    "rights_provenance"
+  ],
+  "hard_failures": [
+    "false-documentary-visual",
+    "required-disclosure-missing"
+  ],
+  "expected_overall": "pass",
+  "known_limitations": [
+    "This fixture records one editorial cover and does not establish quality for diagrams, data visualizations, or documentary assets.",
+    "The acceptance review is a checked-in fixture review, not an independent multi-rater study."
+  ]
+}

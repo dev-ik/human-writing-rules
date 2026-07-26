@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schemas/config.schema.json",
+  "version": "0.1",
+  "spec_revision": "1.0.0",
+  "registry_revision": "sha256:03bb590a00ed26de1af097c29278137d4e097cf569477edbbc425c8ba0b0f368",
+  "language": "ru",
+  "locale": "ru-RU",
+  "content_type": "social-post",
+  "topic": "technology",
+  "audience": {
+    "description": "Writers, editors, and developers evaluating AI-assisted editorial workflows",
+    "knowledge_level": "general"
+  },
+  "intent": "Announce the repository without unsupported adoption, maturity, or performance claims",
+  "platform": "telegram",
+  "skill": "product-launch",
+  "tone": "friendly",
+  "author_perspective": "editorial",
+  "constraints": [
+    "Do not invent users, adoption, metrics, or testimonials",
+    "Do not present roadmap work as shipped",
+    "Do not present reference tooling as a universally conforming production engine"
+  ],
+  "risk_level": "medium",
+  "reviewers": [
+    "reviewer.source",
+    "reviewer.language",
+    "reviewer.human-signals",
+    "reviewer.format",
+    "reviewer.topic",
+    "reviewer.platform",
+    "reviewer.editor"
+  ],
+  "sources": {
+    "required": true,
+    "allow_inference": false,
+    "freshness_cutoff": "benchmark-run-date",
+    "citation_style": "linked source notes"
+  },
+  "visuals": {
+    "mode": "none",
+    "max_count": 0
+  },
+  "output": {
+    "include_review": true,
+    "include_source_notes": true,
+    "include_visual_briefs": false,
+    "include_revision_summary": true,
+    "include_audit": true
+  }
+}

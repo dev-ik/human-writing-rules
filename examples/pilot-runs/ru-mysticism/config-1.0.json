@@ -1,0 +1,67 @@
+{
+  "$schema": "../../../schemas/config.schema.json",
+  "version": "0.1",
+  "spec_revision": "1.0.0",
+  "registry_revision": "sha256:03bb590a00ed26de1af097c29278137d4e097cf569477edbbc425c8ba0b0f368",
+  "language": "ru",
+  "locale": "ru-RU",
+  "content_type": "article",
+  "topic": "entertainment",
+  "audience": {
+    "description": "Читатели общего блога, которым интересны мистика и устройство историй",
+    "knowledge_level": "general",
+    "needs": [
+      "Понять, как недосказанность создаёт мистическое напряжение",
+      "Отличить работающую тайну от произвольной туманности",
+      "Увидеть, почему полное объяснение иногда ослабляет финал"
+    ]
+  },
+  "intent": "Разобрать мистику как повествовательный механизм без утверждений о реальности сверхъестественного",
+  "platform": "blog",
+  "tone": "friendly",
+  "author_perspective": "editorial",
+  "constraints": [
+    "Писать нативно на русском языке",
+    "Не выдавать сверхъестественное за установленный факт",
+    "Не ссылаться на вымышленные личные переживания",
+    "Не использовать узнаваемых персонажей, бренды и реальные места",
+    "Держать source notes и review вне публичной статьи"
+  ],
+  "risk_level": "low",
+  "reviewers": [
+    "reviewer.source",
+    "reviewer.language",
+    "reviewer.human-signals",
+    "reviewer.format",
+    "reviewer.topic",
+    "reviewer.platform",
+    "reviewer.visual",
+    "reviewer.editor"
+  ],
+  "sources": {
+    "required": true,
+    "allow_inference": true,
+    "freshness_cutoff": "not-applicable",
+    "citation_style": "source notes"
+  },
+  "visuals": {
+    "mode": "auto",
+    "allowed_purposes": [
+      "editorial",
+      "cover"
+    ],
+    "max_count": 1,
+    "aspect_ratio": "3:2 landscape",
+    "style": "original atmospheric editorial illustration; no documentary framing",
+    "allow_text_in_image": false,
+    "require_alt_text": true,
+    "include_generation_prompt": true
+  },
+  "output": {
+    "include_review": true,
+    "include_source_notes": true,
+    "include_visual_briefs": true,
+    "include_revision_summary": true,
+    "include_audit": true
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0",
+  "spec_revision": "1.0.0",
+  "target": "conformance-requirements",
+  "cases": [
+    {
+      "id": "CONF-BASELINE-VALID",
+      "description": "The checked-in normative profile and matrix agree.",
+      "related_requirements": [],
+      "mutations": [],
+      "expected": {
+        "valid": true,
+        "error_contains": []
+      }
+    },
+    {
+      "id": "CONF-INLINE-KEYWORD-VALID",
+      "description": "An inline-code keyword is explanatory text, not a new requirement.",
+      "related_requirements": [
+        "HWR-SCOPE-001"
+      ],
+      "mutations": [
+        {
+          "type": "text-append",
+          "path": "rfcs/RFC-0001-vision-and-scope.md",
+          "text": "\nAn inline literal such as `MUST` does not create an obligation.\n"
+        }
+      ],
+      "expected": {
+        "valid": true,
+        "error_contains": []
+      }
+    },
+    {
+      "id": "CONF-MAY-PERMISSION-VALID",
+      "description": "A MAY statement is permitted variation and does not require a matrix ID.",
+      "related_requirements": [
+        "HWR-SCOPE-001"
+      ],
+      "mutations": [
+        {
+          "type": "text-append",
+          "path": "rfcs/RFC-0001-vision-and-scope.md",
+          "text": "\nAn implementation MAY retain additional diagnostics.\n"
+        }
+      ],
+      "expected": {
+        "valid": true,
+        "error_contains": []
+      }
+    },
+    {
+      "id": "CONF-CHANGED-MUST-BLOCKED",
+      "description": "Rewording a mapped MUST source requires explicit matrix review.",
+      "related_requirements": [
+        "HWR-SCOPE-002"
+      ],
+      "mutations": [
+        {
+          "type": "text-replace",
+          "path": "rfcs/RFC-0001-vision-and-scope.md",
+          "old": "A conforming implementation MUST be able to:",
+          "new": "A conforming implementation MUST demonstrably be able to:"
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "error_contains": [
+          "HWR-SCOPE-002 is stale",
+          "unmapped normative source unit"
+        ]
+      }
+    },
+    {
+      "id": "CONF-NEW-SHOULD-BLOCKED",
+      "description": "A new SHOULD source requires a stable matrix ID.",
+      "related_requirements": [
+        "HWR-SCOPE-001"
+      ],
+      "mutations": [
+        {
+          "type": "text-append",
+          "path": "rfcs/RFC-0001-vision-and-scope.md",
+          "text": "\nAn implementation SHOULD retain a human-readable decision summary.\n"
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "error_contains": [
+          "unmapped normative source unit",
+          "source has 28"
+        ]
+      }
+    },
+    {
+      "id": "CONF-VERIFIED-NEEDS-EVIDENCE",
+      "description": "A requirement cannot become verified without an evidence reference.",
+      "related_requirements": [
+        "HWR-SCOPE-026"
+      ],
+      "mutations": [
+        {
+          "type": "requirement-set",
+          "requirement_id": "HWR-SCOPE-026",
+          "field": "status",
+          "value": "verified"
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "error_contains": [
+          "evidence is required when status is verified"
+        ]
+      }
+    },
+    {
+      "id": "CONF-DUPLICATE-ID-BLOCKED",
+      "description": "An active requirement ID cannot identify two source units.",
+      "related_requirements": [
+        "HWR-SCOPE-028"
+      ],
+      "mutations": [
+        {
+          "type": "requirement-set",
+          "requirement_id": "HWR-SCOPE-002",
+          "field": "id",
+          "value": "HWR-SCOPE-001"
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "error_contains": [
+          "duplicate requirement ID: HWR-SCOPE-001"
+        ]
+      }
+    },
+    {
+      "id": "CONF-REVISION-DRIFT-BLOCKED",
+      "description": "The conformance matrix must match the pinned RFC revision.",
+      "related_requirements": [
+        "HWR-SCOPE-026"
+      ],
+      "mutations": [
+        {
+          "type": "manifest-set",
+          "field": "spec_revision",
+          "value": "0.1.0-obsolete"
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "error_contains": [
+          "conformance spec_revision must equal registry/rfcs.json version"
+        ]
+      }
+    },
+    {
+      "id": "CONF-TERM-COUNT-DRIFT-BLOCKED",
+      "description": "A changed normative-term count invalidates the mapped record.",
+      "related_requirements": [
+        "HWR-SCOPE-001"
+      ],
+      "mutations": [
+        {
+          "type": "requirement-set",
+          "requirement_id": "HWR-SCOPE-001",
+          "field": "normative_terms.must",
+          "value": 2
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "error_contains": [
+          "HWR-SCOPE-001 normative term counts changed",
+          "matrix covers 133 MUST terms"
+        ]
+      }
+    },
+    {
+      "id": "CONF-RETIRED-ID-REUSE-BLOCKED",
+      "description": "A retired requirement ID cannot remain active or be reused.",
+      "related_requirements": [
+        "HWR-SCOPE-028"
+      ],
+      "mutations": [
+        {
+          "type": "reuse-retired-id",
+          "requirement_id": "HWR-SCOPE-028",
+          "removed_in": "0.2.0-draft",
+          "reason": "Fixture attempts to reuse an active ID."
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "error_contains": [
+          "duplicate active or retired requirement ID: HWR-SCOPE-028"
+        ]
+      }
+    }
+  ]
+}

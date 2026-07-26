@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://human-writing-rules.example/schemas/release-manifest.schema.json",
+  "title": "Human Writing Rules release candidate manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "release",
+    "status",
+    "channel",
+    "release_date",
+    "spec_revision",
+    "registry_source_revision",
+    "profiles",
+    "compatibility",
+    "expected_counts",
+    "required_artifacts",
+    "gates",
+    "unsupported_capabilities",
+    "known_limitations"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://human-writing-rules.example/schemas/release-manifest.schema.json"
+    },
+    "release": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "status": {
+      "enum": [
+        "candidate",
+        "released",
+        "withdrawn"
+      ]
+    },
+    "channel": {
+      "enum": [
+        "draft-preview",
+        "release-candidate",
+        "stable"
+      ]
+    },
+    "release_date": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "format": "date"
+        }
+      ]
+    },
+    "spec_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "registry_source_revision": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "profiles": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "editorial-core",
+          "editorial-visual",
+          "benchmark"
+        ]
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stability",
+        "identifier_policy",
+        "schema_policy",
+        "minimum_python",
+        "ci_python",
+        "npm_role",
+        "network_default",
+        "provider_core"
+      ],
+      "properties": {
+        "stability": {
+          "enum": [
+            "pre-stable",
+            "stable"
+          ]
+        },
+        "identifier_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schema_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minimum_python": {
+          "const": "3.9"
+        },
+        "ci_python": {
+          "type": "array",
+          "const": [
+            "3.9",
+            "3.12"
+          ]
+        },
+        "npm_role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "network_default": {
+          "const": "disabled"
+        },
+        "provider_core": {
+          "const": "vendor-neutral"
+        }
+      }
+    },
+    "expected_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "objects",
+        "rfcs",
+        "requirements",
+        "conformance_cases",
+        "benchmark_cases",
+        "benchmark_plans",
+        "visual_fixtures",
+        "reviewed_examples",
+        "topics",
+        "platforms"
+      ],
+      "properties": {
+        "objects": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "rfcs": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "requirements": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "conformance_cases": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "benchmark_cases": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "benchmark_plans": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "visual_fixtures": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "reviewed_examples": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "topics": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "platforms": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "required_artifacts": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "gates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "argv",
+          "timeout_seconds"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "argv": {
+            "$ref": "#/$defs/stringArray"
+          },
+          "timeout_seconds": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 600
+          }
+        }
+      }
+    },
+    "unsupported_capabilities": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "known_limitations": {
+      "$ref": "#/$defs/stringArray"
+    }
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

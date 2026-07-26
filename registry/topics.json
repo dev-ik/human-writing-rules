@@ -1,0 +1,72 @@
+{
+  "version": "0.1.0",
+  "fallback": "general",
+  "topics": [
+    {
+      "id": "general",
+      "name": "General or Mixed",
+      "module": "topic.general.foundation",
+      "default_risk": "low"
+    },
+    {
+      "id": "science",
+      "name": "Science",
+      "module": "topic.science.foundation",
+      "default_risk": "medium"
+    },
+    {
+      "id": "technology",
+      "name": "Technology",
+      "module": "topic.technology.foundation",
+      "default_risk": "medium"
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "module": "topic.entertainment.foundation",
+      "default_risk": "low"
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "module": "topic.business.foundation",
+      "default_risk": "medium"
+    },
+    {
+      "id": "health",
+      "name": "Health",
+      "module": "topic.health.foundation",
+      "default_risk": "high"
+    },
+    {
+      "id": "finance",
+      "name": "Finance",
+      "module": "topic.finance.foundation",
+      "default_risk": "high"
+    },
+    {
+      "id": "culture",
+      "name": "Culture",
+      "module": "topic.culture.foundation",
+      "default_risk": "low"
+    },
+    {
+      "id": "lifestyle",
+      "name": "Lifestyle",
+      "module": "topic.lifestyle.foundation",
+      "default_risk": "low"
+    },
+    {
+      "id": "education",
+      "name": "Education",
+      "module": "topic.education.foundation",
+      "default_risk": "medium"
+    },
+    {
+      "id": "travel",
+      "name": "Travel",
+      "module": "topic.travel.foundation",
+      "default_risk": "medium"
+    }
+  ]
+}

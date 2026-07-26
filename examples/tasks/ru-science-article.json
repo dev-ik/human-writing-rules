@@ -1,0 +1,91 @@
+{
+  "$schema": "../../schemas/task-record.schema.json",
+  "task_id": "example.ru.science-article",
+  "revision": "1",
+  "subject": "The repository method for preserving a scientific claim's evidence boundary",
+  "central_question": "Which evidence boundaries should an article retain when explaining a study?",
+  "reader_promise": "General readers will understand which research details control a claim and why limitations belong beside the result.",
+  "primary_job": "explainer",
+  "artifact_form": "article",
+  "assessments": {
+    "source_freshness": "adequate",
+    "platform_constraints": "known",
+    "perspective": "not-applicable",
+    "rights": "not-applicable"
+  },
+  "sources": [
+    {
+      "id": "SRC-001",
+      "title": "Science Topic Foundation",
+      "role": "domain evidence and writing rules",
+      "location": "rules/topic/science/foundation.md",
+      "version": "repository revision",
+      "status": "active runtime module",
+      "scope": "Editorial handling of scientific claims",
+      "rights": "repository license"
+    },
+    {
+      "id": "SRC-002",
+      "title": "Article Format Foundation",
+      "role": "article workflow and completion gate",
+      "location": "rules/format/article/foundation.md",
+      "version": "repository revision",
+      "status": "active runtime module",
+      "scope": "Long-form article production",
+      "rights": "repository license"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-001",
+      "text": "The science module requires publication status, population or material, method, measured outcome, and limitations to remain identifiable.",
+      "classification": "verified-fact",
+      "material": true,
+      "source_ids": [
+        "SRC-001"
+      ],
+      "disposition": "use"
+    },
+    {
+      "id": "C-002",
+      "text": "A compact research-object record can make omitted evidence boundaries easier to inspect before drafting.",
+      "classification": "inference",
+      "material": true,
+      "source_ids": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "qualification": "This is a design rationale, not measured proof that the method improves accuracy.",
+      "disposition": "use"
+    },
+    {
+      "id": "C-003",
+      "text": "The method improves the error rate of a particular newsroom.",
+      "classification": "unknown",
+      "material": false,
+      "source_ids": [],
+      "qualification": "No benchmark or newsroom evidence is supplied.",
+      "disposition": "omit"
+    }
+  ],
+  "media": {
+    "decision": "selected",
+    "reason": "A conceptual flow makes the evidence boundary easier to inspect.",
+    "brief": {
+      "purpose": "Explain the path from research object to bounded article claim.",
+      "reader_benefit": "Readers can inspect where method, result, and limitation enter the claim.",
+      "evidence_basis": "The selected science and article runtime modules.",
+      "must_not_imply": [
+        "a real study or dataset",
+        "that peer review guarantees truth",
+        "a causal result"
+      ],
+      "asset_type": "conceptual editorial diagram",
+      "acceptance_criteria": [
+        "conceptual status is clear",
+        "labels are manually verified",
+        "alt text communicates the evidence path"
+      ]
+    }
+  }
+}

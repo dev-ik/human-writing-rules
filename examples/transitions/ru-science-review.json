@@ -1,0 +1,49 @@
+{
+  "$schema": "../../schemas/review-report.schema.json",
+  "run_id": "example.ru.science-article:1",
+  "artifact_revision": "artifact-2",
+  "review_revision": "review-1",
+  "reviewers": [
+    {
+      "reviewer_id": "reviewer.source",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.topic",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.format",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.language",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.human-signals",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.platform",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.visual",
+      "status": "pass"
+    },
+    {
+      "reviewer_id": "reviewer.editor",
+      "status": "pass"
+    }
+  ],
+  "findings": [],
+  "limitations": [
+    "Пример проверяет редакционный метод репозитория, а не эффективность метода в реальной редакции."
+  ],
+  "readiness_candidate": "publication-ready",
+  "adapter": {
+    "id": "fixture.editorial-review-suite",
+    "version": "1"
+  }
+}

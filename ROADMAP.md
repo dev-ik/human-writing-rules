@@ -7,7 +7,7 @@
 - Schemas and registries
 - RU and EN foundations
 - Article and social-post formats
-- Generic blog/social plus Telegram, LinkedIn, Habr, and Setka modules
+- Generic blog/social plus Telegram, LinkedIn, Habr, Dzen, and Setka modules
 - General, science, technology, entertainment, business, health, finance, culture, lifestyle, education, and travel topics
 - Optional illustration integrity and review
 - Initial skills, full examples, reviewers, and starter kit
@@ -28,7 +28,7 @@
   pinning and stale/non-canonical checks
 - Evaluator-neutral benchmark runner contract with pinned shared controls,
   source snapshots, arm packets, failure retention, and execution records
-- Reviewed example catalog covering all 11 registered topics and all 6
+- Reviewed example catalog covering all 11 registered topics and all 7
   platform families, with pinned revisions, artifact digests, review contracts,
   and automated coverage checks
 - Visual benchmark fixtures and acceptance records for `auto → none`, selected

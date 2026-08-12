@@ -37,7 +37,7 @@
       "id": "runtime-alignment",
       "verdict": "pass",
       "evidence": [
-        "All 50 registered runtime objects are active and resolve through the generated index.",
+        "All 56 registered runtime objects are active and resolve through the generated index.",
         "The starter config pins specification 1.0.0 and the generated registry source revision."
       ]
     },
@@ -53,7 +53,7 @@
       "id": "reviewed-examples",
       "verdict": "pass",
       "evidence": [
-        "Sixteen reviewed examples cover all 11 registered topics and all 6 platform families.",
+        "Seventeen reviewed examples cover all 11 registered topics and all 7 platform families.",
         "High-risk examples preserve their non-advisory editorial-method boundary."
       ]
     },

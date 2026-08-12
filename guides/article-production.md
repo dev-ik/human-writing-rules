@@ -396,6 +396,15 @@ Do not optimize the title, opening flourish, CTA, or metadata yet.
 - Write natively in the selected language.
 - Prefer specific nouns and verbs over generic significance.
 - Vary rhythm because the thought varies, not to simulate humanness.
+- Bring the reader closer by naming the real question, objection, constraint,
+  or decision that would make the article worth reading.
+- Add texture only from supplied experience, source material, product use,
+  observation, or careful editorial inference.
+- Let section weight follow the argument. Do not force equal-length blocks,
+  mirrored transitions, or a universal three-part shape.
+- Run the human edit pass from `rule.human-signals.core`: cut plausible filler,
+  replace abstractions, move caveats next to claims, and land the ending on the
+  reader promise.
 - Remove synthetic quotations, fabricated anecdotes, decorative uncertainty,
   and claims of personal experience.
 - Do not add errors or awkwardness to evade AI detection.

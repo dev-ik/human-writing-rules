@@ -16,7 +16,7 @@
 
 ## 1.0.0 — 2026-07-26
 
-- Promoted RFC-0001 through RFC-0006 and all 50 registered runtime objects to
+- Promoted RFC-0001 through RFC-0006 and all 56 registered runtime objects to
   the stable `1.0.0` profile, with explicit 1.x compatibility, identifier,
   migration, governance, support, security, and release policies.
 - Added a machine-readable internal stability review that records the
@@ -66,10 +66,17 @@
   media-decision and asset applicability, frozen publication and PNG digests,
   visual-record handoff checks, an `auto → none` case, a reviewed generated
   cover, an expected false-documentary hard failure, and standalone validation.
+- Added a Dzen platform module for feed-discovered article constraints and a
+  reviewed Dzen method example, while tightening Habr publication metadata,
+  hub, tag, difficulty, translation, news, and preview checks.
+- Added style tone profiles for `blogger`, `developer`, `writer`,
+  `screenwriter`, and `amateur`, with explicit guards that tone changes
+  delivery but never grants unsupplied authority, experience, scenes, or
+  expertise.
 - Added a machine-readable reviewed-example catalog with pinned revisions and
   SHA-256 values, canonical editorial sections, reviewer and visual-decision
   checks, orphan detection, and complete coverage of all 11 registered topics
-  and all 6 platform families; added eight bounded RU examples for the
+  and all 7 platform families; added eight bounded RU examples for the
   previously uncovered topic and platform values.
 - Added a complete conformance matrix for mandatory and recommended RFC terms,
   lifecycle and evidence rules, a checker, and executable negative fixtures.

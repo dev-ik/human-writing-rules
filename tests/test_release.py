@@ -30,7 +30,7 @@ class ReleaseTests(unittest.TestCase):
         self.assertEqual(8, summary["gates"])
         self.assertEqual(22, summary["artifacts"])
         self.assertEqual(200, summary["counts"]["requirements"])
-        self.assertEqual(16, summary["counts"]["reviewed_examples"])
+        self.assertEqual(17, summary["counts"]["reviewed_examples"])
 
     def test_version_files_match_release(self) -> None:
         version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()

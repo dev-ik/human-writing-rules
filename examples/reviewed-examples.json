@@ -157,6 +157,31 @@
       ]
     },
     {
+      "id": "example.ru.dzen.reader-promise",
+      "revision": "ru-dzen-reader-promise-r1",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "article",
+      "topic": "lifestyle",
+      "platform": "dzen",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/ru/dzen/reader-promise.md",
+      "sha256": "4f09254ca7a735d2d939c60df4360a5b0b88f76b02342580f2597197bb3f73d3",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Method example; it contains no external Dzen metric, monetization promise, traffic claim, or moderation outcome."
+      ]
+    },
+    {
       "id": "example.ru.article.health",
       "revision": "ru-health-evidence-article-r1",
       "status": "reviewed",

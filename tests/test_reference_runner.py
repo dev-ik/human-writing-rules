@@ -73,7 +73,7 @@ class ReferenceRunnerTests(unittest.TestCase):
         self.assertTrue(result["ready"])
         self.assertEqual("offline", result["mode"])
         self.assertFalse(result["auth_required"])
-        self.assertEqual(50, result["object_count"])
+        self.assertEqual(56, result["object_count"])
         self.assertRegex(result["registry_revision"], r"^sha256:[a-f0-9]{64}$")
         self.assertEqual("not-configured", result["model_adapter"])
         self.assertEqual(

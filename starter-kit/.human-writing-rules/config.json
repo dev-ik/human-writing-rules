@@ -2,7 +2,7 @@
   "$schema": "../../schemas/config.schema.json",
   "version": "0.1",
   "spec_revision": "1.0.0",
-  "registry_revision": "sha256:03bb590a00ed26de1af097c29278137d4e097cf569477edbbc425c8ba0b0f368",
+  "registry_revision": "sha256:2ac12acb50fb231bf317f4608152335a588515c05927fe568e15ff1411517f42",
   "language": "ru",
   "locale": "ru-RU",
   "content_type": "article",

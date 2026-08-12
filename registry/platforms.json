@@ -32,6 +32,12 @@
       "default_format": "article"
     },
     {
+      "id": "dzen",
+      "name": "Dzen",
+      "module": "platform.dzen.foundation",
+      "default_format": "article"
+    },
+    {
       "id": "setka",
       "name": "Setka",
       "module": "platform.setka.foundation",

@@ -16,7 +16,7 @@ Use independent axes so editorial intent does not become entangled with platform
 | Topic | Domain evidence and risk rules | `science`, `technology`, `entertainment` |
 | Platform | Publishing constraints | `blog`, `habr`, `social`, `telegram` |
 | Skill | Job to be done | `news`, `tutorial`, `product-launch` |
-| Tone | Delivery choices | `expert`, `friendly`, `personal` |
+| Tone | Delivery choices | `expert`, `friendly`, `personal`, `blogger`, `developer` |
 | Author perspective | Legitimate speaking position | `editorial`, `first-person`, `expert`, `reporter`, `neutral` |
 | Visual mode | Whether visuals are produced | `none`, `auto`, `required` |
 
@@ -49,7 +49,7 @@ Topic selection changes source expectations and review questions. It must not pr
 
 Specific platforms inherit a generic foundation:
 
-- Habr and Setka inherit `blog`;
+- Habr, Dzen, and Setka inherit `blog`;
 - Telegram and LinkedIn inherit `social`.
 
 Use the generic platform directly for an unlisted blog or social network. Add a new platform module only when it has durable, material constraints.
@@ -69,6 +69,10 @@ No skill is better than a misleading skill. A general explanatory article may us
 ## Author perspective
 
 Use first person only when the author supplied real experience, observations, or opinions. Use `expert` only when the author or named source has the relevant standing. `Neutral` does not mean view-from-nowhere: preserve attribution, uncertainty, and editorial choices.
+
+## Tone profiles
+
+Tone profiles shape delivery, not authority. `blogger`, `developer`, `writer`, `screenwriter`, and `amateur` may change rhythm, structure, examples, and reader proximity. They must not create unsupplied experience, profession, expertise, production access, literary scenes, dialogue, or personal learning history.
 
 ## Fallbacks
 

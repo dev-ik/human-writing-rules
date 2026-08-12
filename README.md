@@ -8,7 +8,7 @@ It is not an AI writer, an AI-detector evasion kit, or one giant prompt. It is a
 
 ## Supported content
 
-- Long-form articles for a generic blog, Habr, or Setka
+- Long-form articles for a generic blog, Habr, Dzen, or Setka
 - Social posts for a generic social platform, Telegram, or LinkedIn
 - Science, technology, entertainment, business, health, finance, culture, lifestyle, education, travel, and mixed topics
 - Product launches, personal stories, tutorials, news, and open-source announcements
@@ -47,7 +47,7 @@ Each selection answers a different question:
 | `topic` | What evidence and domain risks apply? | `science`, `technology`, `entertainment` |
 | `platform` | Where will it be published? | `blog`, `habr`, `telegram` |
 | `skill` | What job should the artifact do? | `news`, `tutorial`, `product-launch` |
-| `tone` | How should it sound? | `expert`, `friendly`, `personal` |
+| `tone` | How should it sound? | `expert`, `friendly`, `personal`, `blogger`, `developer` |
 | `author_perspective` | From whose position is it written? | `editorial`, `first-person`, `expert`, `neutral` |
 
 See [`core/content-model.md`](core/content-model.md) for resolution and fallback rules.

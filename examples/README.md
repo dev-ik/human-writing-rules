@@ -77,6 +77,7 @@ forecast, transaction instruction, or personalized advice.
 | Telegram | [Science explainer](ru/telegram/science-explainer.md) |
 | LinkedIn | [English open-source announcement](en/linkedin/opensource.md) |
 | Habr | [Business metric method](ru/habr/business-metrics.md) |
+| Dzen | [Reader promise method](ru/dzen/reader-promise.md) |
 | Setka | [Culture context article](ru/setka/culture-context.md) |
 
 ## Add a reviewed example

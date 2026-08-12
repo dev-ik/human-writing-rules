@@ -467,6 +467,11 @@ Review:
 7. media truthfulness, crop, accessibility, rights, provenance, and disclosure;
 8. overall coherence and readiness.
 
+For human signals in posts, check that compression has not erased the human
+reason for speaking. A strong post may use one concrete situation, objection,
+turn, or consequence; it must not invent first-person experience, consensus,
+emotion, or casual familiarity to sound less generated.
+
 Every finding names severity, location, reason, and smallest useful correction.
 Resolve blockers and majors and re-review affected units.
 

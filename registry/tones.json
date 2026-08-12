@@ -15,6 +15,31 @@
       "id": "personal",
       "name": "Personal",
       "module": "tone.personal"
+    },
+    {
+      "id": "blogger",
+      "name": "Blogger",
+      "module": "tone.blogger"
+    },
+    {
+      "id": "developer",
+      "name": "Developer",
+      "module": "tone.developer"
+    },
+    {
+      "id": "writer",
+      "name": "Writer",
+      "module": "tone.writer"
+    },
+    {
+      "id": "screenwriter",
+      "name": "Screenwriter",
+      "module": "tone.screenwriter"
+    },
+    {
+      "id": "amateur",
+      "name": "Amateur",
+      "module": "tone.amateur"
     }
   ]
 }

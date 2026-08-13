@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-- No changes yet.
+- Polished README and package positioning to emphasize grounded AI-assisted
+  editorial workflow, evidence boundaries, review contracts, and audit records
+  rather than detector-oriented naturalness.
 
 ## 1.1.0 — 2026-08-13
 

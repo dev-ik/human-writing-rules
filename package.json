@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "private": true,
   "type": "module",
-  "description": "Vendor-neutral rules and benchmarks for AI-assisted articles, social posts, and optional illustrations.",
+  "description": "Vendor-neutral editorial rules, review contracts, and benchmarks for grounded AI-assisted content.",
   "license": "MIT",
   "bin": {
     "hwr": "dist/src/cli.js"

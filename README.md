@@ -2,11 +2,11 @@
 
 [English](README.md) | [Русский](README.ru.md)
 
-> A vendor-neutral editorial specification for publication-ready articles, social posts, and optional illustrations.
+> A vendor-neutral editorial standard for grounded AI-assisted articles, social posts, and optional illustrations.
 
-Human Writing Rules helps an AI agent turn a brief and a source set into a grounded, audience-aware content package. The package may contain a long-form article, a social post, and—when it serves a clear purpose—an illustration brief and generated visual.
+Human Writing Rules helps an AI agent turn a brief and a source set into a publication-ready content package with explicit evidence boundaries, author perspective, review output, and audit records. The package may contain a long-form article, a social post, and—when it serves a clear purpose—an illustration brief and generated visual.
 
-It is not an AI writer, an AI-detector evasion kit, or one giant prompt. It is a modular specification for a repeatable editorial process.
+It is not an AI writer, an AI-detector evasion kit, or one giant prompt. It is a modular specification for a repeatable editorial process that keeps facts, sources, platform constraints, tone, and legitimate author position separate.
 
 ## Supported content
 

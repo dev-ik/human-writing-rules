@@ -1,8 +1,24 @@
-# Human Writing Rules
+<p align="center">
+  <img src="assets/human-writing-rules-mark.svg" width="112" height="112" alt="Human Writing Rules mark: three source nodes connected into one writing path">
+</p>
 
-[English](README.md) | [Русский](README.ru.md)
+<h1 align="center">Human Writing Rules</h1>
 
-> A vendor-neutral editorial standard for grounded AI-assisted articles, social posts, and optional illustrations.
+<p align="center">
+  A vendor-neutral editorial standard for grounded AI-assisted articles, social posts, and optional illustrations.
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-1677C8"></a>
+  <a href="release/1.1.0.md"><img alt="Release: 1.1.0" src="https://img.shields.io/badge/release-1.1.0-2EA043"></a>
+  <a href="rfcs/README.md"><img alt="Normative profile: 1.0.0" src="https://img.shields.io/badge/profile-1.0.0-FF6B35"></a>
+</p>
+
+<p align="center">
+  <a href="README.md">English</a> · <a href="README.ru.md">Русский</a>
+</p>
+
+> **Facts before fluency. Meaning before engagement.**
 
 Human Writing Rules helps an AI agent turn a brief and a source set into a publication-ready content package with explicit evidence boundaries, author perspective, review output, and audit records. The package may contain a long-form article, a social post, and—when it serves a clear purpose—an illustration brief and generated visual.
 

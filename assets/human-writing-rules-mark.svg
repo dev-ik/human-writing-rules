@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title description">
+  <title id="title">Human Writing Rules mark</title>
+  <desc id="description">Three source nodes converge into a single structured writing path.</desc>
+  <metadata>Original vector mark created for the Human Writing Rules repository; no third-party assets.</metadata>
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="#101827"/>
+  <path d="M35 36h26M35 64h26M35 92h26" fill="none" stroke="#F7F8FA" stroke-width="9" stroke-linecap="round"/>
+  <path d="M61 36v36c0 11 9 20 20 20h12" fill="none" stroke="#FF6B35" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="31" cy="36" r="10" fill="#F7F8FA"/>
+  <circle cx="31" cy="64" r="10" fill="#FF6B35"/>
+  <circle cx="31" cy="92" r="10" fill="#F7F8FA"/>
+  <path d="M91 82l14 10-14 10z" fill="#F7F8FA"/>
+</svg>

@@ -1,8 +1,24 @@
-# Human Writing Rules
+<p align="center">
+  <img src="assets/human-writing-rules-mark.svg" width="112" height="112" alt="Знак Human Writing Rules: три узла источников соединяются в единый редакционный путь">
+</p>
 
-[English](README.md) | [Русский](README.ru.md)
+<h1 align="center">Human Writing Rules</h1>
 
-> Вендорно-нейтральный редакционный стандарт для обоснованных AI-assisted статей, социальных постов и необязательных иллюстраций.
+<p align="center">
+  Вендорно-нейтральный редакционный стандарт для обоснованных AI-assisted статей, социальных постов и необязательных иллюстраций.
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img alt="Лицензия: MIT" src="https://img.shields.io/badge/license-MIT-1677C8"></a>
+  <a href="release/1.1.0.md"><img alt="Релиз: 1.1.0" src="https://img.shields.io/badge/release-1.1.0-2EA043"></a>
+  <a href="rfcs/README.md"><img alt="Нормативный профиль: 1.0.0" src="https://img.shields.io/badge/profile-1.0.0-FF6B35"></a>
+</p>
+
+<p align="center">
+  <a href="README.md">English</a> · <a href="README.ru.md">Русский</a>
+</p>
+
+> **Факты важнее гладкости. Смысл важнее вовлечения.**
 
 Human Writing Rules помогает AI-агенту превратить бриф и набор источников в готовый к публикации пакет материалов с явными границами доказательств, авторской позицией, результатом ревью и audit record. Пакет может содержать развернутую статью, социальный пост и, когда это действительно нужно, бриф для иллюстрации и сгенерированный визуал.
 

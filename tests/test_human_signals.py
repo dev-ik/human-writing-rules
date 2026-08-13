@@ -15,6 +15,8 @@ class HumanSignalsTests(unittest.TestCase):
             "## Reader proximity",
             "## Human edit pass",
             "Do not invent texture.",
+            "Avoid stock AI-like connective tissue",
+            "Replace stock setup, hype, and transition phrases",
             "Do not vary sentence length, add fragments, or break paragraphs merely to simulate spontaneity.",
         ):
             with self.subTest(expected=expected):
@@ -29,6 +31,8 @@ class HumanSignalsTests(unittest.TestCase):
             "invented first-person anecdotes",
             "fake uncertainty",
             "deliberate grammar errors",
+            "optimize for a detector to classify the text as human-written",
+            "defeat AI-detection",
             "style mimicry",
             "reject the deceptive mechanism",
         ):
@@ -43,6 +47,7 @@ class HumanSignalsTests(unittest.TestCase):
             "Human texture is legitimate",
             "Structure follows the material",
             "compressed where it relies on generic abstractions",
+            "Stock setup, hype, and transition phrases",
         ):
             with self.subTest(expected=expected):
                 self.assertIn(expected, text)

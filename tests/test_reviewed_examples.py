@@ -24,11 +24,11 @@ class ReviewedExampleCatalogTests(unittest.TestCase):
     def test_checked_in_catalog_is_valid_and_complete(self) -> None:
         summary, errors = validate_checked_in_reviewed_examples(ROOT)
         self.assertEqual([], errors)
-        self.assertEqual(17, summary["examples"])
+        self.assertEqual(21, summary["examples"])
         self.assertEqual(11, summary["topics_covered"])
-        self.assertEqual(7, summary["platforms_covered"])
+        self.assertEqual(11, summary["platforms_covered"])
         self.assertEqual(2, summary["languages_covered"])
-        self.assertEqual(10, summary["articles"])
+        self.assertEqual(14, summary["articles"])
         self.assertEqual(7, summary["social_posts"])
 
     def test_catalog_covers_every_registered_topic_and_platform(self) -> None:
@@ -105,7 +105,7 @@ class ReviewedExampleCatalogTests(unittest.TestCase):
         self.assertEqual(0, result.returncode, result.stderr)
         envelope = json.loads(result.stdout)
         self.assertTrue(envelope["ok"])
-        self.assertEqual(17, envelope["data"]["examples"])
+        self.assertEqual(21, envelope["data"]["examples"])
 
 
 if __name__ == "__main__":

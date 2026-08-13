@@ -31,8 +31,8 @@ class RegistryIndexTests(unittest.TestCase):
         )
 
         self.assertTrue(result["valid"])
-        self.assertEqual(56, result["objects"])
-        self.assertEqual(35, result["values"])
+        self.assertEqual(60, result["objects"])
+        self.assertEqual(39, result["values"])
         self.assertEqual(6, result["rfcs"])
         self.assertEqual(
             self.repository["registry_revision"],

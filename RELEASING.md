@@ -6,11 +6,11 @@ release.
 
 ## Current stable release
 
-- Distribution: `1.0.0`
+- Distribution: `1.1.0`
 - Specification: `1.0.0`
 - Channel: `stable`
 - Manifest status: `released`
-- Release date: `2026-07-26`
+- Release date: `2026-08-13`
 - Network requirement for verification: none
 
 The canonical release record is [`release/manifest.json`](release/manifest.json).
@@ -45,7 +45,7 @@ npm run check:release
 
 ## Stable release checklist
 
-- [ ] `VERSION`, `package.json`, and `release/manifest.json` equal `1.0.0`.
+- [ ] `VERSION`, `package.json`, and `release/manifest.json` equal the current release.
 - [ ] Every normative RFC is `active` at revision `1.0.0`.
 - [ ] Every registered runtime object is `active`.
 - [ ] The manifest registry source revision matches the generated index.
@@ -68,7 +68,7 @@ npm run check:release
 3. Run CI and confirm every matrix job passes.
 4. Set manifest `status` to `released` and `release_date` to the publication
    date in the release commit.
-5. Create annotated tag `v1.0.0` from the verified commit.
+5. Create annotated tag for the current release, for example `v1.1.0`, from the verified commit.
 6. Publish release notes from `CHANGELOG.md`.
 7. Confirm the archive contains the required artifacts and no secrets.
 

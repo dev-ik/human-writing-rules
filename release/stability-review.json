@@ -1,8 +1,8 @@
 {
   "$schema": "https://human-writing-rules.example/schemas/stability-review.schema.json",
-  "target_release": "1.0.0",
+  "target_release": "1.1.0",
   "spec_revision": "1.0.0",
-  "review_revision": "stability-review-1",
+  "review_revision": "stability-review-2",
   "reviewer": {
     "id": "codex.internal-stability-review",
     "type": "internal",
@@ -37,7 +37,7 @@
       "id": "runtime-alignment",
       "verdict": "pass",
       "evidence": [
-        "All 56 registered runtime objects are active and resolve through the generated index.",
+        "All 60 registered runtime objects are active and resolve through the generated index.",
         "The starter config pins specification 1.0.0 and the generated registry source revision."
       ]
     },
@@ -53,7 +53,7 @@
       "id": "reviewed-examples",
       "verdict": "pass",
       "evidence": [
-        "Seventeen reviewed examples cover all 11 registered topics and all 7 platform families.",
+        "Twenty-one reviewed examples cover all 11 registered topics and all 11 platform families.",
         "High-risk examples preserve their non-advisory editorial-method boundary."
       ]
     },
@@ -76,12 +76,12 @@
   ],
   "external_review": {
     "status": "not-run",
-    "notes": "No independent external normative review is claimed for 1.0.0; public review remains welcome and will inform compatible 1.x clarifications or a future major revision."
+    "notes": "No independent external normative review is claimed for 1.1.0; public review remains welcome and will inform compatible 1.x clarifications or a future major revision."
   },
   "decision": "ready-for-stable-candidate",
   "limitations": [
     "This review was performed inside the project workflow and is not independent.",
     "Implementation requirements remain planned unless a concrete engine supplies the declared verification evidence.",
-    "No public comparative model-quality benchmark result is part of the 1.0.0 release claim."
+    "No public comparative model-quality benchmark result is part of the 1.1.0 release claim."
   ]
 }

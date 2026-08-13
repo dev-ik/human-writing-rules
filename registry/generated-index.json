@@ -3,8 +3,8 @@
   "counts": {
     "formats": 2,
     "languages": 2,
-    "objects": 56,
-    "platforms": 7,
+    "objects": 60,
+    "platforms": 11,
     "rfcs": 6,
     "skills": 5,
     "tones": 8,
@@ -153,6 +153,28 @@
       ],
       "title": "Generic Blog"
     },
+    "platform.devto.foundation": {
+      "kind": "platform",
+      "path": "rules/platform/devto/foundation.md",
+      "requires": [
+        "platform.blog.foundation"
+      ],
+      "selectors": {
+        "formats": [
+          "article"
+        ],
+        "platforms": [
+          "devto"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "platform",
+        "blog",
+        "developer"
+      ],
+      "title": "DEV Community"
+    },
     "platform.dzen.foundation": {
       "kind": "platform",
       "path": "rules/platform/dzen/foundation.md",
@@ -173,6 +195,28 @@
         "blog"
       ],
       "title": "Dzen"
+    },
+    "platform.github.foundation": {
+      "kind": "platform",
+      "path": "rules/platform/github/foundation.md",
+      "requires": [
+        "platform.blog.foundation"
+      ],
+      "selectors": {
+        "formats": [
+          "article"
+        ],
+        "platforms": [
+          "github"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "platform",
+        "blog",
+        "developer"
+      ],
+      "title": "GitHub"
     },
     "platform.habr.foundation": {
       "kind": "platform",
@@ -215,6 +259,28 @@
         "social"
       ],
       "title": "LinkedIn"
+    },
+    "platform.newsletter.foundation": {
+      "kind": "platform",
+      "path": "rules/platform/newsletter/foundation.md",
+      "requires": [
+        "platform.blog.foundation"
+      ],
+      "selectors": {
+        "formats": [
+          "article"
+        ],
+        "platforms": [
+          "newsletter"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "platform",
+        "blog",
+        "email"
+      ],
+      "title": "Newsletter"
     },
     "platform.setka.foundation": {
       "kind": "platform",
@@ -278,6 +344,28 @@
         "social"
       ],
       "title": "Telegram"
+    },
+    "platform.vc.foundation": {
+      "kind": "platform",
+      "path": "rules/platform/vc/foundation.md",
+      "requires": [
+        "platform.blog.foundation"
+      ],
+      "selectors": {
+        "formats": [
+          "article"
+        ],
+        "platforms": [
+          "vc"
+        ]
+      },
+      "status": "active",
+      "tags": [
+        "platform",
+        "blog",
+        "business"
+      ],
+      "title": "vc.ru"
     },
     "principle.audience-before-format": {
       "kind": "principle",
@@ -944,7 +1032,7 @@
     "registry/tones.json",
     "registry/rfcs.json"
   ],
-  "source_revision": "sha256:2ac12acb50fb231bf317f4608152335a588515c05927fe568e15ff1411517f42",
+  "source_revision": "sha256:ff1e5dc535193620b92291e547ba431545c43d2401f314c69e97b7002ab4f9bf",
   "spec_revision": "1.0.0",
   "values": {
     "formats": {
@@ -975,10 +1063,20 @@
         "module": "platform.blog.foundation",
         "name": "Generic Blog"
       },
+      "devto": {
+        "default_format": "article",
+        "module": "platform.devto.foundation",
+        "name": "DEV Community"
+      },
       "dzen": {
         "default_format": "article",
         "module": "platform.dzen.foundation",
         "name": "Dzen"
+      },
+      "github": {
+        "default_format": "article",
+        "module": "platform.github.foundation",
+        "name": "GitHub"
       },
       "habr": {
         "default_format": "article",
@@ -989,6 +1087,11 @@
         "default_format": "social-post",
         "module": "platform.linkedin.foundation",
         "name": "LinkedIn"
+      },
+      "newsletter": {
+        "default_format": "article",
+        "module": "platform.newsletter.foundation",
+        "name": "Newsletter"
       },
       "setka": {
         "default_format": "article",
@@ -1004,6 +1107,11 @@
         "default_format": "social-post",
         "module": "platform.telegram.foundation",
         "name": "Telegram"
+      },
+      "vc": {
+        "default_format": "article",
+        "module": "platform.vc.foundation",
+        "name": "vc.ru"
       }
     },
     "skills": {

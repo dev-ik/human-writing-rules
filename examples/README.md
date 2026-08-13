@@ -79,6 +79,10 @@ forecast, transaction instruction, or personalized advice.
 | Habr | [Business metric method](ru/habr/business-metrics.md) |
 | Dzen | [Reader promise method](ru/dzen/reader-promise.md) |
 | Setka | [Culture context article](ru/setka/culture-context.md) |
+| GitHub | [Release notes](en/github/release-notes.md) |
+| vc.ru | [Product positioning article](ru/vc/product-positioning.md) |
+| DEV Community | [Tutorial boundary](en/devto/tutorial-boundary.md) |
+| Newsletter | [Source digest](ru/newsletter/source-digest.md) |
 
 ## Add a reviewed example
 

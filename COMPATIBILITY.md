@@ -1,6 +1,7 @@
 # Compatibility
 
-Human Writing Rules `1.0.0` is the first stable specification release. Stable
+Human Writing Rules `1.1.0` is a compatible 1.x release built on the stable
+`1.0.0` specification profile. Stable
 refers to normative semantics, active identifiers, schemas, protocols, and
 documented migration boundaries. It does not mean that every writing engine or
 the bundled reference tooling has proven full implementation conformance.
@@ -9,7 +10,7 @@ the bundled reference tooling has proven full implementation conformance.
 
 | Axis | Current value | Meaning |
 | --- | --- | --- |
-| Distribution release | `1.0.0` | Version of this repository snapshot and its tooling |
+| Distribution release | `1.1.0` | Version of this repository snapshot and its tooling |
 | Specification revision | `1.0.0` | Normative RFC profile defined by the snapshot |
 | Registry source revision | SHA-256 in the generated index | Exact active object and RFC resolver state |
 | Schema or protocol version | Defined by each artifact | Compatibility boundary for a specific JSON record or adapter exchange |
@@ -34,7 +35,10 @@ resolution.
 
 ## Runtime support
 
-- Python `3.9` or newer is supported.
+- The TypeScript CLI is the primary user-facing entry point for supported
+  native commands.
+- Python `3.9` or newer remains supported as a compatibility backend and for
+  release validators.
 - CI validates Python `3.9` and `3.12`.
 - Runtime and validation tooling use the Python standard library.
 - npm supplies optional command aliases and is not a runtime library
@@ -60,8 +64,9 @@ factual, safe, lawful, accessible, or publication-ready.
 ## Historical records
 
 Pilot runs and audit artifacts pinned to `0.2.0-draft` remain historical. They
-must not be rewritten to look like 1.0 executions. Current tasks, configs,
-benchmarks, examples, and release artifacts use the stable revision.
+must not be rewritten to look like stable 1.x executions. Current tasks,
+configs, benchmarks, examples, and release artifacts use the stable
+specification revision.
 
 See [`MIGRATING-TO-1.0.md`](MIGRATING-TO-1.0.md) for consumer changes and
 [`RELEASING.md`](RELEASING.md) for release verification.

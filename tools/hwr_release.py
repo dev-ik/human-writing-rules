@@ -63,6 +63,7 @@ COUNT_FIELDS = {
 REQUIRED_PROFILES = {"editorial-core", "editorial-visual", "benchmark"}
 REQUIRED_ARTIFACTS = {
     "README.md",
+    "README.ru.md",
     "LICENSE",
     "CHANGELOG.md",
     "COMPATIBILITY.md",
@@ -82,6 +83,7 @@ REQUIRED_ARTIFACTS = {
     "examples/reviewed-examples.json",
     "benchmarks/README.md",
     "release/1.0.0.md",
+    "release/1.1.0.md",
     "release/stability-review.json",
     "release/manifest.json",
 }

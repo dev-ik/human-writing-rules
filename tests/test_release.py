@@ -24,13 +24,13 @@ class ReleaseTests(unittest.TestCase):
     def test_checked_in_release_is_valid(self) -> None:
         summary, errors = validate_checked_in_release(ROOT)
         self.assertEqual([], errors)
-        self.assertEqual("1.0.0", summary["release"])
+        self.assertEqual("1.1.0", summary["release"])
         self.assertEqual("released", summary["status"])
         self.assertEqual("stable", summary["channel"])
         self.assertEqual(8, summary["gates"])
-        self.assertEqual(22, summary["artifacts"])
+        self.assertEqual(24, summary["artifacts"])
         self.assertEqual(200, summary["counts"]["requirements"])
-        self.assertEqual(17, summary["counts"]["reviewed_examples"])
+        self.assertEqual(21, summary["counts"]["reviewed_examples"])
 
     def test_version_files_match_release(self) -> None:
         version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()

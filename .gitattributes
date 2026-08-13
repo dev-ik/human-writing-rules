@@ -1,0 +1,3 @@
+# Python files are support tooling for the TypeScript reference runner.
+tools/*.py -linguist-detectable
+tests/*.py -linguist-detectable

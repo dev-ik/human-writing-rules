@@ -1,6 +1,6 @@
 {
   "$schema": "https://human-writing-rules.example/schemas/reviewed-example-catalog.schema.json",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "spec_revision": "1.0.0",
   "coverage_policy": {
     "topics": "every-registered-value-at-least-once",
@@ -458,6 +458,106 @@
       ],
       "limitations": [
         "Stable specification announcement; it makes no adoption, universal conformance, or quality-improvement claim."
+      ]
+    },
+    {
+      "id": "example.en.github.release-notes",
+      "revision": "en-github-release-notes-r1",
+      "status": "reviewed",
+      "language": "en",
+      "content_type": "article",
+      "topic": "technology",
+      "platform": "github",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/en/github/release-notes.md",
+      "sha256": "3808398dac234e8956b8b3ad7fc0b8f21a37c83844a0c7ef939b70cbf83b2cae",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Repository release-note example; it claims no external adoption, download count, review outcome, or comparative quality result."
+      ]
+    },
+    {
+      "id": "example.en.devto.tutorial-boundary",
+      "revision": "en-devto-tutorial-boundary-r1",
+      "status": "reviewed",
+      "language": "en",
+      "content_type": "article",
+      "topic": "technology",
+      "platform": "devto",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/en/devto/tutorial-boundary.md",
+      "sha256": "d8bccdc5a8fe733ce6a52029b4ab392beadc8b2f243e897e8f9ac10eaabf75f5",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Developer writing method example; it contains no real package, benchmark, vulnerability, or deployment claim."
+      ]
+    },
+    {
+      "id": "example.ru.vc.product-positioning",
+      "revision": "ru-vc-product-positioning-r1",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "article",
+      "topic": "business",
+      "platform": "vc",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/ru/vc/product-positioning.md",
+      "sha256": "d8c49018934251f18d9e0e02b942b1495c640d9a622a36bf18e7f65ef7bd960a",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Business method example; it contains no real company, client, investor, market, revenue, or growth claim."
+      ]
+    },
+    {
+      "id": "example.ru.newsletter.source-digest",
+      "revision": "ru-newsletter-source-digest-r1",
+      "status": "reviewed",
+      "language": "ru",
+      "content_type": "article",
+      "topic": "education",
+      "platform": "newsletter",
+      "visual_mode": "none",
+      "visual_decision": "none",
+      "path": "examples/ru/newsletter/source-digest.md",
+      "sha256": "c0ab836d51f161a9b8e2aa66251346f1e04cfc2eadf12b5d3e9dacbb2415869c",
+      "reviewers": [
+        "reviewer.source",
+        "reviewer.language",
+        "reviewer.human-signals",
+        "reviewer.format",
+        "reviewer.topic",
+        "reviewer.platform",
+        "reviewer.editor"
+      ],
+      "limitations": [
+        "Newsletter method example; it contains no real study, course, author, provider, price, or measured learning outcome."
       ]
     }
   ]

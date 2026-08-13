@@ -45,8 +45,20 @@ Map material facts and source claims to supporting sources. Record conflicts ins
 - Attribute claims at the level the evidence supports.
 - Preserve uncertainty when sources conflict.
 - Paraphrase rather than imitate source voice.
+- Do not closely paraphrase source structure, sequence, metaphors, examples, or sentence rhythm when the artifact is meant to be original. Build a new reader-facing structure from the task, evidence map, and legitimate author position.
 - Quote only when exact wording matters and the quotation is permitted.
 - Do not extend a source beyond its population, timeframe, jurisdiction, version, or measured outcome.
 - Recalculate derived values and preserve units.
+
+## Originality boundary
+
+Originality means the artifact has its own task-fit structure, claim order,
+framing, examples, and reader promise while preserving source meaning. It does
+not mean inventing facts, hiding sources, stripping required disclosure,
+misrepresenting authorship, or optimizing for AI-detector evasion.
+
+When source material strongly shapes the artifact, record that dependency in
+source notes. If the source wording, sequence, or distinctive framing is
+essential, quote or attribute it instead of disguising it as original prose.
 
 The same rules apply to captions, alt text, chart labels, diagrams, visual prompts, and generated assets.

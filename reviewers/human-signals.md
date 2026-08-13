@@ -12,6 +12,7 @@ status: active
 - [ ] Human texture is legitimate: observations, scenes, examples, or emotions come from supplied experience, sources, or editorial inference rather than fabrication.
 - [ ] Structure follows the material rather than a default template; paragraph and section weights may be uneven when the argument requires it.
 - [ ] The draft has been compressed where it relies on generic abstractions, repeated setup, summary loops, or empty connective tissue.
+- [ ] Stock setup, hype, and transition phrases have been replaced with concrete actors, constraints, consequences, source boundaries, or reader decisions.
 - [ ] No emotion or experience is fabricated.
 - [ ] Variation follows meaning rather than an anti-template performance.
 - [ ] The text does not simulate familiarity, authority, consensus, or certainty.

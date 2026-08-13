@@ -1,5 +1,7 @@
 # Human Writing Rules
 
+[English](README.md) | [Русский](README.ru.md)
+
 > A vendor-neutral editorial specification for publication-ready articles, social posts, and optional illustrations.
 
 Human Writing Rules helps an AI agent turn a brief and a source set into a grounded, audience-aware content package. The package may contain a long-form article, a social post, and—when it serves a clear purpose—an illustration brief and generated visual.
@@ -8,7 +10,7 @@ It is not an AI writer, an AI-detector evasion kit, or one giant prompt. It is a
 
 ## Supported content
 
-- Long-form articles for a generic blog, Habr, Dzen, or Setka
+- Long-form articles for a generic blog, Habr, Dzen, Setka, GitHub, vc.ru, DEV Community, or newsletters
 - Social posts for a generic social platform, Telegram, or LinkedIn
 - Science, technology, entertainment, business, health, finance, culture, lifestyle, education, travel, and mixed topics
 - Product launches, personal stories, tutorials, news, and open-source announcements
@@ -45,16 +47,16 @@ Each selection answers a different question:
 |---|---|---|
 | `content_type` | What artifact are you making? | `article`, `social-post` |
 | `topic` | What evidence and domain risks apply? | `science`, `technology`, `entertainment` |
-| `platform` | Where will it be published? | `blog`, `habr`, `telegram` |
+| `platform` | Where will it be published? | `blog`, `habr`, `dzen`, `github`, `newsletter`, `telegram` |
 | `skill` | What job should the artifact do? | `news`, `tutorial`, `product-launch` |
-| `tone` | How should it sound? | `expert`, `friendly`, `personal`, `blogger`, `developer` |
+| `tone` | How should it sound? | `expert`, `friendly`, `personal`, `blogger`, `developer`, `writer`, `screenwriter`, `amateur` |
 | `author_perspective` | From whose position is it written? | `editorial`, `first-person`, `expert`, `neutral` |
 
 See [`core/content-model.md`](core/content-model.md) for resolution and fallback rules.
 
 ## Status
 
-The current stable release is `1.0.0`, defining the active `1.0.0` normative
+The current stable release is `1.1.0`, built on the active `1.0.0` normative
 profile and stable 1.x identifier and compatibility boundaries. Stable
 specification status does not imply that every writing engine or the bundled
 reference tooling has proven full implementation conformance. See
@@ -63,8 +65,9 @@ reference tooling has proven full implementation conformance. See
 
 The repository includes RU and EN language modules, article and social-post
 formats, generic and platform-specific publishing modules, topic playbooks,
-optional visual integrity rules, reviewers, schemas, registries, examples, a
-reference runner, benchmark contracts, and a starter kit.
+tone profiles, optional visual integrity rules, reviewers, schemas,
+registries, examples, a reference runner, benchmark contracts, and a starter
+kit.
 
 RFC-0001 through RFC-0006 form the [stable normative profile](rfcs/README.md). They define conformance, pipeline states, object lifecycle, module resolution, review, and benchmarking. Runtime rules implement narrower behavior and MUST NOT weaken the RFC invariants.
 
@@ -147,6 +150,11 @@ src/           primary TypeScript CLI and reference runtime
 tools/         Python compatibility, validation, and release tooling
 test-ts/       cross-runtime CLI contract tests
 ```
+
+The TypeScript CLI is the primary user-facing runtime. Python files under
+`tools/` and `tests/` are compatibility, validation, and release support code;
+they are excluded from GitHub language detection through `.gitattributes` so
+the repository language reflects the primary implementation surface.
 
 Canonical registry files are compiled into a deterministic
 [`registry/generated-index.json`](registry/generated-index.json) resolver

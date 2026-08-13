@@ -14,9 +14,9 @@ Use independent axes so editorial intent does not become entangled with platform
 | Language | Native language and locale | `ru`, `en` |
 | Format | Shape and reading experience | `article`, `social-post` |
 | Topic | Domain evidence and risk rules | `science`, `technology`, `entertainment` |
-| Platform | Publishing constraints | `blog`, `habr`, `social`, `telegram` |
+| Platform | Publishing constraints | `blog`, `habr`, `dzen`, `setka`, `github`, `vc`, `devto`, `newsletter`, `social`, `telegram`, `linkedin` |
 | Skill | Job to be done | `news`, `tutorial`, `product-launch` |
-| Tone | Delivery choices | `expert`, `friendly`, `personal`, `blogger`, `developer` |
+| Tone | Delivery choices | `expert`, `friendly`, `personal`, `blogger`, `developer`, `writer`, `screenwriter`, `amateur` |
 | Author perspective | Legitimate speaking position | `editorial`, `first-person`, `expert`, `reporter`, `neutral` |
 | Visual mode | Whether visuals are produced | `none`, `auto`, `required` |
 
@@ -32,6 +32,12 @@ Use independent axes so editorial intent does not become entangled with platform
 - visual mode: the user's choice.
 
 Changing the platform to Telegram changes length, pacing, and media placement. It does not change the evidence standard for the scientific claim.
+
+Platform selection MUST NOT grant a new topic, lower or raise the evidence
+standard, select a tone, create author expertise, authorize first-person
+claims, or permit invented experience. A platform module may shape how a claim
+is packaged for publication; it cannot change what the author is allowed to
+claim.
 
 ## Format selection
 
@@ -49,10 +55,15 @@ Topic selection changes source expectations and review questions. It must not pr
 
 Specific platforms inherit a generic foundation:
 
-- Habr, Dzen, and Setka inherit `blog`;
+- Habr, Dzen, Setka, GitHub, vc.ru, DEV Community, and newsletters inherit `blog`;
 - Telegram and LinkedIn inherit `social`.
 
 Use the generic platform directly for an unlisted blog or social network. Add a new platform module only when it has durable, material constraints.
+
+When platform convention appears to conflict with topic, source, perspective,
+or tone requirements, preserve the narrower publication mechanics only after
+the evidence boundary, legitimate author position, and source integrity remain
+intact.
 
 ## Skill selection
 

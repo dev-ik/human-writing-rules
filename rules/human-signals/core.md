@@ -11,6 +11,8 @@ Prefer concrete observations, relevant detail, sentence variation driven by thou
 
 Avoid mechanical paragraph symmetry, empty “not just X, but Y” contrasts, generic significance claims, repetitive preview-and-summary framing, overexplaining, unrelated motivational conclusions, and lists used only because they are easy to generate.
 
+Avoid stock AI-like connective tissue: “in today's fast-paced world,” “it is important to note,” “whether you're a beginner or an expert,” “delve into,” “unlock the power of,” “game-changer,” “seamlessly,” “robust solution,” and similar phrases that announce importance without adding evidence, context, or voice. This is a contextual edit rule, not a fixed blacklist: keep a phrase only when it is the narrowest accurate wording for the reader and claim.
+
 ## Legitimate human texture
 
 Use human texture only when it follows from the brief, sources, author position, or reader situation:
@@ -50,3 +52,4 @@ After drafting, run a human edit pass:
 3. Move caveats next to the claim they constrain.
 4. Cut symmetrical filler from intros, transitions, and conclusions.
 5. Check whether the ending lands on the reader promise rather than a template CTA or moral.
+6. Replace stock setup, hype, and transition phrases with the actual actor, constraint, source, consequence, or reader decision.

@@ -335,6 +335,58 @@
       "requires": ["platform.blog.foundation"]
     },
     {
+      "id": "platform.github.foundation",
+      "kind": "platform",
+      "title": "GitHub",
+      "status": "active",
+      "path": "rules/platform/github/foundation.md",
+      "tags": ["platform", "blog", "developer"],
+      "languages": [],
+      "platforms": ["github"],
+      "formats": ["article"],
+      "topics": [],
+      "requires": ["platform.blog.foundation"]
+    },
+    {
+      "id": "platform.vc.foundation",
+      "kind": "platform",
+      "title": "vc.ru",
+      "status": "active",
+      "path": "rules/platform/vc/foundation.md",
+      "tags": ["platform", "blog", "business"],
+      "languages": [],
+      "platforms": ["vc"],
+      "formats": ["article"],
+      "topics": [],
+      "requires": ["platform.blog.foundation"]
+    },
+    {
+      "id": "platform.devto.foundation",
+      "kind": "platform",
+      "title": "DEV Community",
+      "status": "active",
+      "path": "rules/platform/devto/foundation.md",
+      "tags": ["platform", "blog", "developer"],
+      "languages": [],
+      "platforms": ["devto"],
+      "formats": ["article"],
+      "topics": [],
+      "requires": ["platform.blog.foundation"]
+    },
+    {
+      "id": "platform.newsletter.foundation",
+      "kind": "platform",
+      "title": "Newsletter",
+      "status": "active",
+      "path": "rules/platform/newsletter/foundation.md",
+      "tags": ["platform", "blog", "email"],
+      "languages": [],
+      "platforms": ["newsletter"],
+      "formats": ["article"],
+      "topics": [],
+      "requires": ["platform.blog.foundation"]
+    },
+    {
       "id": "topic.general.foundation",
       "kind": "topic",
       "title": "General Topic",

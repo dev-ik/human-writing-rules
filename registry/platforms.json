@@ -42,6 +42,30 @@
       "name": "Setka",
       "module": "platform.setka.foundation",
       "default_format": "article"
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "module": "platform.github.foundation",
+      "default_format": "article"
+    },
+    {
+      "id": "vc",
+      "name": "vc.ru",
+      "module": "platform.vc.foundation",
+      "default_format": "article"
+    },
+    {
+      "id": "devto",
+      "name": "DEV Community",
+      "module": "platform.devto.foundation",
+      "default_format": "article"
+    },
+    {
+      "id": "newsletter",
+      "name": "Newsletter",
+      "module": "platform.newsletter.foundation",
+      "default_format": "article"
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
   "$schema": "https://human-writing-rules.example/schemas/release-manifest.schema.json",
-  "release": "1.1.0",
+  "release": "1.1.1",
   "status": "released",
   "channel": "stable",
-  "release_date": "2026-08-13",
+  "release_date": "2026-09-25",
   "spec_revision": "1.0.0",
   "registry_source_revision": "sha256:ff1e5dc535193620b92291e547ba431545c43d2401f314c69e97b7002ab4f9bf",
   "profiles": [
@@ -59,6 +59,8 @@
     "benchmarks/README.md",
     "release/1.0.0.md",
     "release/1.1.0.md",
+    "release/1.1.1.md",
+    "guides/editing-existing-text.md",
     "release/stability-review.json",
     "release/manifest.json"
   ],
@@ -154,6 +156,6 @@
     "The checked-in benchmark runner preserves execution evidence but the repository contains no public comparative model-quality result.",
     "The optional OpenAI adapter requires explicit live opt-in and credentials; release verification is offline.",
     "The TypeScript migration is incomplete: source creation, lifecycle, adapter, workflow, benchmark, and release commands still require the Python compatibility backend.",
-    "Release provenance is anchored by the v1.1.0 tag, specification revision, and generated registry source revision."
+    "Release provenance is anchored by the v1.1.1 tag, specification revision, and generated registry source revision."
   ]
 }

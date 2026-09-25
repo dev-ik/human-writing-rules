@@ -23,6 +23,10 @@ npm link
 hwr --json doctor
 ```
 
+`hwr --version` and the top-level help report the installed distribution version
+from `package.json`. The `spec_revision` in `doctor` reports the normative
+profile; these versions can differ.
+
 These commands are native TypeScript:
 
 - `doctor`

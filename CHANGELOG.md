@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 1.1.1 — 2026-09-25
+
+- Added a practical editing guide with six RU/EN worked examples, including
+  passages that should remain unchanged. Clarified preservation of supplied
+  voice, meaning checks, contextual style findings, and when to stop revising
+  in the human-signals rule and editor review checklists.
+- Fixed CLI version and help output to use the installed package version
+  instead of the specification revision, with a regression check from outside
+  the repository and without Python on PATH.
 - Polished README and package positioning to emphasize grounded AI-assisted
   editorial workflow, evidence boundaries, review contracts, and audit records
   rather than detector-oriented naturalness.

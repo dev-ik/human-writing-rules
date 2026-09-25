@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-1677C8"></a>
-  <a href="release/1.1.0.md"><img alt="Release: 1.1.0" src="https://img.shields.io/badge/release-1.1.0-2EA043"></a>
+  <a href="release/1.1.1.md"><img alt="Release: 1.1.1" src="https://img.shields.io/badge/release-1.1.1-2EA043"></a>
   <a href="rfcs/README.md"><img alt="Normative profile: 1.0.0" src="https://img.shields.io/badge/profile-1.0.0-FF6B35"></a>
 </p>
 
@@ -72,7 +72,7 @@ See [`core/content-model.md`](core/content-model.md) for resolution and fallback
 
 ## Status
 
-The current stable release is `1.1.0`, built on the active `1.0.0` normative
+The current stable release is `1.1.1`, built on the active `1.0.0` normative
 profile and stable 1.x identifier and compatibility boundaries. Stable
 specification status does not imply that every writing engine or the bundled
 reference tooling has proven full implementation conformance. See
@@ -184,6 +184,11 @@ For complete end-to-end processes, use
 selected [format rules](rules/format/), [topic foundations](rules/topic/),
 platform module, and
 [illustration integrity rule](rules/visual/illustration-integrity.md).
+
+For an existing draft, use
+[Editing without losing meaning or voice](guides/editing-existing-text.md).
+Its six RU/EN examples show bounded corrections, checks for meaning changes,
+and cases where a useful passage should stay unchanged.
 
 To execute the deterministic lifecycle, use the
 [reference runner](reference-runner/README.md). It resolves modules, validates

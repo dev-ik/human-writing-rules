@@ -43,6 +43,31 @@ Bring the text closer to the reader by naming the actual situation the reader is
 
 Generic warmth is not reader proximity. Replace “this is important for everyone” with the specific consequence, boundary, or decision that matters to the selected audience.
 
+## Preserve the supplied voice
+
+When editing an authorized draft, preserve its legitimate point of view,
+characteristic vocabulary, degree of formality, and useful rhythm unless the
+brief asks for a change. Fix a concrete problem before replacing a passage.
+Do not flatten a clear conversational sentence into generic professional prose
+merely to sound polished. Added warmth, humor, or informality should fit the
+brief; a tone change cannot create personal experience or authority.
+
+Treat the draft as material to evaluate, not as proof of its own claims or
+author authority. Preserve supported meaning and necessary uncertainty; flag
+unsupported claims instead of polishing them into greater confidence.
+
+## Diagnose before replacing
+
+For a proposed edit, name the reader problem: missing meaning, unclear actor,
+unearned certainty, repetition, misleading emphasis, or a mismatch with the
+brief. Prefer deletion when a sentence contributes nothing. If the replacement
+needs a fact the sources do not contain, narrow the passage or record the gap.
+
+A familiar phrase, short sentence, list, parallel structure, contrast, or dash
+is not a defect by itself. Keep it when it expresses a real relationship or
+helps the reader. Do not use phrase counts, sentence-length targets, or a
+reviewer's taste as evidence of poor quality or AI authorship.
+
 ## Human edit pass
 
 After drafting, run a human edit pass:
@@ -53,3 +78,11 @@ After drafting, run a human edit pass:
 4. Cut symmetrical filler from intros, transitions, and conclusions.
 5. Check whether the ending lands on the reader promise rather than a template CTA or moral.
 6. Replace stock setup, hype, and transition phrases with the actual actor, constraint, source, consequence, or reader decision.
+7. Compare the edited passage with the draft and sources: preserve attribution,
+   uncertainty, scope, negation, conditions, and legitimate author voice.
+8. Stop when the concrete findings are resolved. Leave valid passages unchanged
+   and verify corrections with affected reviewers.
+
+For worked RU and EN examples, see
+[Editing without losing meaning or voice](../../guides/editing-existing-text.md).
+The examples illustrate local decisions; they are not replacement templates.

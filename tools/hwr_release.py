@@ -84,6 +84,8 @@ REQUIRED_ARTIFACTS = {
     "benchmarks/README.md",
     "release/1.0.0.md",
     "release/1.1.0.md",
+    "release/1.1.1.md",
+    "guides/editing-existing-text.md",
     "release/stability-review.json",
     "release/manifest.json",
 }

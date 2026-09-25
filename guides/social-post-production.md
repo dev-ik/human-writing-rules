@@ -454,6 +454,9 @@ use performer likenesses, or imply official affiliation.
 
 ## Step 10 — Review, revise, and package
 
+Use [Editing without losing meaning or voice](editing-existing-text.md) for
+bounded revisions that preserve the post's conditions, uncertainty, and register.
+
 Freeze one copy and asset revision per review pass.
 
 Review:

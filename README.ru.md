@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="LICENSE"><img alt="Лицензия: MIT" src="https://img.shields.io/badge/license-MIT-1677C8"></a>
-  <a href="release/1.1.0.md"><img alt="Релиз: 1.1.0" src="https://img.shields.io/badge/release-1.1.0-2EA043"></a>
+  <a href="release/1.1.1.md"><img alt="Релиз: 1.1.1" src="https://img.shields.io/badge/release-1.1.1-2EA043"></a>
   <a href="rfcs/README.md"><img alt="Нормативный профиль: 1.0.0" src="https://img.shields.io/badge/profile-1.0.0-FF6B35"></a>
 </p>
 
@@ -72,7 +72,7 @@ Human Writing Rules помогает AI-агенту превратить бри
 
 ## Статус
 
-Текущий стабильный релиз — `1.1.0`. Он построен на активном нормативном профиле `1.0.0`, стабильных идентификаторах 1.x и границах совместимости. Стабильный статус спецификации не означает, что каждый writing engine или встроенный reference tooling уже доказал полное соответствие реализации. См. [Compatibility](COMPATIBILITY.md), [Migration](MIGRATING-TO-1.0.md) и [Releasing](RELEASING.md).
+Текущий стабильный релиз — `1.1.1`. Он построен на активном нормативном профиле `1.0.0`, стабильных идентификаторах 1.x и границах совместимости. Стабильный статус спецификации не означает, что каждый writing engine или встроенный reference tooling уже доказал полное соответствие реализации. См. [Compatibility](COMPATIBILITY.md), [Migration](MIGRATING-TO-1.0.md) и [Releasing](RELEASING.md).
 
 Репозиторий включает RU и EN языковые модули, форматы article и social-post, универсальные и платформенные publishing-модули, topic playbooks, tone profiles, правила visual integrity, reviewers, схемы, регистры, примеры, reference runner, benchmark contracts и starter kit.
 
@@ -152,6 +152,8 @@ TypeScript CLI — основной пользовательский runtime. Py
 Канонические registry-файлы компилируются в детерминированный resolver manifest [`registry/generated-index.json`](registry/generated-index.json). После изменений registry регенерируйте его и проверяйте командой `npm run check:registry-index`; см. [generated index contract](reference-runner/README.md#generated-registry-index).
 
 Для полных end-to-end процессов используйте [Producing a grounded article](guides/article-production.md) или [Producing a grounded social post](guides/social-post-production.md). Применяйте выбранные [format rules](rules/format/), [topic foundations](rules/topic/), platform module и [illustration integrity rule](rules/visual/illustration-integrity.md).
+
+Для редактуры готового черновика используйте [руководство по сохранению смысла и авторского голоса](guides/editing-existing-text.md). Шесть разборов на русском и английском показывают, как исправлять конкретные проблемы, сохранять важные оговорки и оставлять удачные фрагменты без изменений.
 
 Для выполнения детерминированного lifecycle используйте [reference runner](reference-runner/README.md). Он разрешает модули, валидирует claim ledger и gates, экспортирует vendor-neutral adapter packets, валидирует stage results, может запускать доверенный stdin/stdout adapter без shell и создает versioned output package без зависимости от model vendor.
 

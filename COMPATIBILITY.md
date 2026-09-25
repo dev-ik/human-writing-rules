@@ -1,6 +1,6 @@
 # Compatibility
 
-Human Writing Rules `1.1.0` is a compatible 1.x release built on the stable
+Human Writing Rules `1.1.1` is a compatible 1.x release built on the stable
 `1.0.0` specification profile. Stable
 refers to normative semantics, active identifiers, schemas, protocols, and
 documented migration boundaries. It does not mean that every writing engine or
@@ -10,7 +10,7 @@ the bundled reference tooling has proven full implementation conformance.
 
 | Axis | Current value | Meaning |
 | --- | --- | --- |
-| Distribution release | `1.1.0` | Version of this repository snapshot and its tooling |
+| Distribution release | `1.1.1` | Version of this repository snapshot and its tooling |
 | Specification revision | `1.0.0` | Normative RFC profile defined by the snapshot |
 | Registry source revision | SHA-256 in the generated index | Exact active object and RFC resolver state |
 | Schema or protocol version | Defined by each artifact | Compatibility boundary for a specific JSON record or adapter exchange |

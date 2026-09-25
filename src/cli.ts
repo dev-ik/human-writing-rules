@@ -18,7 +18,7 @@ import { loadRepository } from "./repository.js";
 import type { JsonObject, ObjectEntry } from "./types.js";
 
 const PACKAGE_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
-const VERSION = "1.0.0";
+const VERSION = readJson(resolve(PACKAGE_ROOT, "package.json")).version;
 
 interface ParsedGlobal {
   repository: string;

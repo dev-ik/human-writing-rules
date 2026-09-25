@@ -409,6 +409,9 @@ Do not optimize the title, opening flourish, CTA, or metadata yet.
   and claims of personal experience.
 - Do not add errors or awkwardness to evade AI detection.
 
+For local corrections and examples of passages worth keeping, use
+[Editing without losing meaning or voice](editing-existing-text.md).
+
 ## Step 8 — Finish article elements
 
 ### Title

@@ -1,8 +1,8 @@
 {
   "$schema": "https://human-writing-rules.example/schemas/stability-review.schema.json",
-  "target_release": "1.1.0",
+  "target_release": "1.1.1",
   "spec_revision": "1.0.0",
-  "review_revision": "stability-review-2",
+  "review_revision": "stability-review-3",
   "reviewer": {
     "id": "codex.internal-stability-review",
     "type": "internal",
@@ -38,7 +38,8 @@
       "verdict": "pass",
       "evidence": [
         "All 60 registered runtime objects are active and resolve through the generated index.",
-        "The starter config pins specification 1.0.0 and the generated registry source revision."
+        "The starter config pins specification 1.0.0 and the generated registry source revision.",
+        "Human-signals and editor guidance preserves supplied voice, source boundaries, and finding-driven revisions under the unchanged normative profile."
       ]
     },
     {
@@ -46,7 +47,8 @@
       "verdict": "pass",
       "evidence": [
         "The offline reference runner, workflow, source snapshots, adapters, and guarded transitions pass the unit suite.",
-        "Compatibility documentation does not present reference tooling as a fully conforming universal writing engine."
+        "Compatibility documentation does not present reference tooling as a fully conforming universal writing engine.",
+        "CLI version and help are checked against the installed package version from an unrelated working directory without Python on PATH."
       ]
     },
     {
@@ -54,7 +56,8 @@
       "verdict": "pass",
       "evidence": [
         "Twenty-one reviewed examples cover all 11 registered topics and all 11 platform families.",
-        "High-risk examples preserve their non-advisory editorial-method boundary."
+        "High-risk examples preserve their non-advisory editorial-method boundary.",
+        "Six new RU/EN editing exercises are explicitly informative and are not counted as full reviewed examples or comparative quality evidence."
       ]
     },
     {
@@ -76,12 +79,12 @@
   ],
   "external_review": {
     "status": "not-run",
-    "notes": "No independent external normative review is claimed for 1.1.0; public review remains welcome and will inform compatible 1.x clarifications or a future major revision."
+    "notes": "No independent external normative review is claimed for 1.1.1; public review remains welcome and will inform compatible 1.x clarifications or a future major revision."
   },
   "decision": "ready-for-stable-candidate",
   "limitations": [
     "This review was performed inside the project workflow and is not independent.",
     "Implementation requirements remain planned unless a concrete engine supplies the declared verification evidence.",
-    "No public comparative model-quality benchmark result is part of the 1.1.0 release claim."
+    "No public comparative model-quality benchmark result is part of the 1.1.1 release claim."
   ]
 }
